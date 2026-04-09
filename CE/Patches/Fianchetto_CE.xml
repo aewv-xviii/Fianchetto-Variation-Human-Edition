@@ -71,8 +71,8 @@
       <projectile Class="CombatExtended.ProjectilePropertiesCE">
         <damageDef>Milira_FunnelBit_C_HeavyLaser</damageDef>
         <damageAmountBase>38</damageAmountBase>
-        <armorPenetrationSharp>22.5</armorPenetrationSharp>
-        <armorPenetrationBlunt>5.6</armorPenetrationBlunt>
+        <armorPenetrationSharp>30</armorPenetrationSharp>
+        <armorPenetrationBlunt>7.5</armorPenetrationBlunt>
         <stoppingPower>1.8</stoppingPower>
         <speed>300</speed>
       </projectile>
@@ -138,7 +138,7 @@
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/DamageDef[defName="Milira_FunnelBit_C_HeavyLaser"]</xpath>
     <value>
-      <defaultArmorPenetration>22.5</defaultArmorPenetration>
+      <defaultArmorPenetration>30</defaultArmorPenetration>
     </value>
   </Operation>
 

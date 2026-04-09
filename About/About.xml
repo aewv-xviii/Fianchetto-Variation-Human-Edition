@@ -16,7 +16,7 @@
     <li>CETeam.CombatExtended_steam</li>
     <li>CETeam.CombatExtended_copy</li>
   </loadAfter>
-  <description>Standalone human-usable port of the Fianchetto arsenal. Adds the Milian Conductor Rod, Strike drone: Malkuth / Gevurah / Keter, and related abilities for ordinary humanlike pawns without requiring Milira Race, Ancot Library, or the original workshop addon.</description>
+  <description>Standalone human-usable port of the Fianchetto arsenal. Adds the Milian Conductor Rod, Strike drone: Malkuth / Gevurah / Keter, and related abilities for ordinary humanlike pawns without requiring Milira Race, Ancot Library, or the original workshop addon. Includes CE patch.</description>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>

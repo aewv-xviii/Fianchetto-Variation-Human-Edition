@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- drone trail -->
+  <FleckDef ParentName="FleckBase">
+    <defName>Milira_FunnelBit_trailA</defName>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>0.0</solidTime>
+    <fadeOutTime>0.9</fadeOutTime>
+    <graphicData>
+      <texPath>Things/Milira_FunnelBit/Effects/trail_A</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(1,2.5)</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <!-- sub projectile -->
+  <FleckDef ParentName="FleckBase">
+    <defName>Milira_FunnelBit_B_subProjectile_trail</defName>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <fadeInTime>0.0</fadeInTime>
+    <solidTime>0.0</solidTime>
+    <fadeOutTime>0.2</fadeOutTime>
+    <graphicData>
+      <texPath>Things/Milira_FunnelBit/Effects/Milira_FunnelBit_B_subProjectile_trail</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(1, 1.92)</drawSize>
+      <color>(255, 255, 255, 180)</color>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>Milira_FunnelBit_B_subProjectile_trailB</defName>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>0.0</solidTime>
+    <fadeOutTime>0.25</fadeOutTime>
+    <graphicData>
+      <texPath>Things/Milira_FunnelBit/Effects/Milira_FunnelBit_B_subProjectile_trailB</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(1, 1.85)</drawSize>
+      <color>(255, 60, 90, 255)</color>
+    </graphicData>
+  </FleckDef>
+
+
+
+  <!-- ================================= muzzleflash effecter ================================= -->
+  <EffecterDef>
+    <defName>Milira_FunnelBit_B_subProjectile_MuzzleFlashEffect</defName>
+    <offsetTowardsTarget>0.3</offsetTowardsTarget>
+    <children>
+
+      <!-- glow -->
+      <!-- <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_FireGlowFast</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>0.7~1.4</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li> -->
+
+      <!-- energy spark -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_B_subProjectile_EnergySpark</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>0.7~1.4</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+      <!-- muzzleflash -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_MuzzleFlashA_1</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>2.2</scale>
+        <spawnLocType>OnSource</spawnLocType>
+        <useTargetAInitialRotation>true</useTargetAInitialRotation>
+        <rotation>0</rotation>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_MuzzleFlashA_2</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>2.2</scale>
+        <spawnLocType>OnSource</spawnLocType>
+        <useTargetAInitialRotation>true</useTargetAInitialRotation>
+        <rotation>0</rotation>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_MuzzleFlashA_3</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>2.2</scale>
+        <spawnLocType>OnSource</spawnLocType>
+        <useTargetAInitialRotation>true</useTargetAInitialRotation>
+        <rotation>0</rotation>
+      </li>
+
+    </children>
+  </EffecterDef>
+
+
+  <!-- ================================= impact effecter ================================= -->
+  <EffecterDef>
+    <defName>Milira_FunnelBit_B_subProjectile_ImpactEffect</defName>
+    <children>
+
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_FireGlowFast</fleckDef>
+        <burstCount>2</burstCount>
+        <scale>1~1.3</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+    </children>
+  </EffecterDef>
+
+  <!-- boost -->
+  <EffecterDef>
+    <defName>Milira_FunnelBit_Boost</defName>
+    <children>
+
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_Distortion_A</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>4~5</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_B_subProjectile_EnergySpark</fleckDef>
+        <burstCount>2</burstCount>
+        <scale>3~4.7</scale>
+        <positionRadius>1.6</positionRadius>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+    </children>
+  </EffecterDef>
+
+
+
+  <!-- ================================= fleck ================================= -->
+  <!-- energy spark -->
+  <FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+    <defName>Milira_FunnelBit_B_subProjectile_EnergySpark</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.0</fadeInTime>
+    <solidTime>.1</solidTime>
+    <fadeOutTime>.1</fadeOutTime>
+    <growthRate>-.125</growthRate>
+    <randomGraphics>
+      <li>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <texPath>Things/Mote/EnergyCrackleA</texPath>
+        <shaderType>MoteGlowPulse</shaderType>
+        <renderInstanced>true</renderInstanced>
+        <color>(1, .4, .3, 1)</color>
+        <shaderParameters>
+          <_Interval>0.02</_Interval>
+        </shaderParameters>
+        <drawSize>1.2</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <texPath>Things/Mote/EnergyCrackleB</texPath>
+        <shaderType>MoteGlowPulse</shaderType>
+        <renderInstanced>true</renderInstanced>
+        <color>(1, .4, .3, 1)</color>
+        <shaderParameters>
+          <_Interval>0.02</_Interval>
+        </shaderParameters>
+        <drawSize>1.2</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <texPath>Things/Mote/EnergyCrackleC</texPath>
+        <shaderType>MoteGlowPulse</shaderType>
+        <renderInstanced>true</renderInstanced>
+        <color>(1, .4, .3, 1)</color>
+        <shaderParameters>
+          <_Interval>0.02</_Interval>
+        </shaderParameters>
+        <drawSize>1.2</drawSize>
+      </li>
+    </randomGraphics>
+  </FleckDef>
+
+  <!-- distortion -->
+  <FleckDef ParentName="FleckGlowDistortBackground">
+    <defName>Milira_FunnelBit_Distortion_A</defName>
+    <fleckSystemClass>FleckSystemThrown</fleckSystemClass>
+    <altitudeLayer>MoteOverheadLow</altitudeLayer>
+    <graphicData>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderParameters>
+        <_distortionIntensity>0.06</_distortionIntensity>
+        <_brightnessMultiplier>1.0</_brightnessMultiplier>
+        <!-- I'm not sure, but it seems like the first / in the texture path is required. -->
+        <_DistortionTex>/Things/Milira_FunnelBit/Effects/Milira_FunnelBit_Distortion</_DistortionTex>
+      </shaderParameters>
+      <drawSize>(1, 1)</drawSize>
+    </graphicData>
+    <fadeInTime>0.015</fadeInTime>
+    <solidTime>0.01</solidTime>
+    <fadeOutTime>0.15</fadeOutTime>
+    <growthRate>30</growthRate>
+  </FleckDef>
+
+
+  <!-- 1 tick = 0.0166 sec -->
+  <FleckDef ParentName="FleckBase">
+    <defName>Milira_FunnelBit_MuzzleFlashA_1</defName>
+    <graphicData>
+      <texPath>Things/Milira_FunnelBit/Effects/MuzzleFlash_A/1</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(1, 1)</drawSize>
+      <renderInstanced>true</renderInstanced>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.0</fadeInTime>
+    <solidTime>0.03333</solidTime>
+    <fadeOutTime>0.03333</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>Milira_FunnelBit_MuzzleFlashA_2</defName>
+    <graphicData>
+      <texPath>Things/Milira_FunnelBit/Effects/MuzzleFlash_A/2</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(0.01, 0.01)</drawSize>
+      <renderInstanced>true</renderInstanced>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.03333</fadeInTime>
+    <solidTime>0.03333</solidTime>
+    <fadeOutTime>0.03333</fadeOutTime>
+    <scalers>
+      <li>
+        <scaleTime>0.0333334</scaleTime>
+        <scaleAmt>100</scaleAmt>
+        <curve>
+          <points>
+            <li>(0, 0)</li>
+            <li>(0.999999999, 0)</li>
+            <li>(1, 1)</li>
+          </points>
+        </curve>
+      </li>
+    </scalers>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>Milira_FunnelBit_MuzzleFlashA_3</defName>
+    <graphicData>
+      <texPath>Things/Milira_FunnelBit/Effects/MuzzleFlash_A/3</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(0.01, 0.01)</drawSize>
+      <renderInstanced>true</renderInstanced>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.0</fadeInTime>
+    <solidTime>0.06666</solidTime>
+    <fadeOutTime>0.0666</fadeOutTime>
+    <scalers>
+      <li>
+        <scaleTime>0.13333332</scaleTime>
+        <scaleAmt>150</scaleAmt>
+        <curve>
+          <points>
+            <li>(0, 0)</li>
+            <li>(0.499999999, 0)</li>
+            <li>(0.5, 0.8)</li>
+            <li>(1, 1)</li>
+          </points>
+        </curve>
+      </li>
+    </scalers>
+
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase">
+    <defName>Milira_FunnelBit_FireGlowFast</defName>
+    <graphicData>
+      <texPath>Things/Milira_FunnelBit/Effects/BeamGlow_Red</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(0.6, 0.6)</drawSize>
+      <renderInstanced>true</renderInstanced>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.02</fadeInTime>
+    <solidTime>0.0</solidTime>
+    <fadeOutTime>0.4</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>Milira_FunnelBit_SmokeFast</defName>
+    <graphicData>
+      <texPath>Things/Mote/Smoke</texPath>
+      <renderInstanced>true</renderInstanced>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.50</fadeInTime>
+    <solidTime>1.3</solidTime>
+    <fadeOutTime>1.2</fadeOutTime>
+    <growthRate>0.005</growthRate>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>Milira_FunnelBit_ShotFlashA</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <solidTime>0.05</solidTime>
+    <fadeOutTime>0.05</fadeOutTime>
+    <graphicData>
+      <texPath>Things/Milira_FunnelBit/Effects/BeamGlow_Red</texPath>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+  </FleckDef>
+
+
+
+  <!-- other effects -->
+
+</Defs>

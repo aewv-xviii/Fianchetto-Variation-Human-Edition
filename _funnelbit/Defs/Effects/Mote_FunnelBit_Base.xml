@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Name="Mote_FunnelBitProgressBarBase" ParentName="MoteBase" Abstract="True">
+    <thingClass>FunnelBit.Mote_FunnelBitProgressBar</thingClass>
+    <graphicData>
+      <!-- dummy tex -->
+      <texPath>UI/Overlays/ThingLine</texPath>
+      <graphicClass>Graphic_Mote</graphicClass>
+    </graphicData>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <mote>
+      <fadeInTime>0.2</fadeInTime>
+      <solidTime>99999</solidTime>
+      <fadeOutTime>0.2</fadeOutTime>
+    </mote>
+  </ThingDef>
+
+</Defs>

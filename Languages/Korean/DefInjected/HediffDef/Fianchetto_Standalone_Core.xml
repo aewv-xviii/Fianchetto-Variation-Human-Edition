@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Milira_PlasmaMeltdown.label>플라즈마 붕괴</Milira_PlasmaMeltdown.label>
+  <Milira_PlasmaMeltdown.description>지속적인 플라즈마 노출로 이 폰의 장갑이 약화되고 있습니다.</Milira_PlasmaMeltdown.description>
+
+  <Milira_PlasmaVulnerable.label>취약화</Milira_PlasmaVulnerable.label>
+  <Milira_PlasmaVulnerable.description>이 폰은 약점이 노출되어 추가 피해를 받습니다.</Milira_PlasmaVulnerable.description>
+</LanguageData>

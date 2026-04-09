@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<loadFolders>
+  <v1.6>
+    <li IfModNotActive="rabiosus.funnelbit">_funnelbit</li>
+    <li>Common</li>
+    <li IfModActive="CETeam.CombatExtended,CETeam.CombatExtended_steam,CETeam.CombatExtended_copy">CE</li>
+  </v1.6>
+</loadFolders>

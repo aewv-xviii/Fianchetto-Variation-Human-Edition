@@ -1,0 +1,568 @@
+:root {
+    --bg-dark: #121212;
+    --bg-panel: #1e1e1e;
+    --bg-input: #2a2a2a;
+    --border: #333;
+    --text-main: #e0e0e0;
+    --text-muted: #888;
+    --accent: #7c4dff;
+    --accent-hover: #9a75ff;
+    --font-ui: 'Outfit', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-ui);
+}
+
+.app-container {
+    display: flex;
+    height: 100%;
+}
+
+.sidebar {
+    width: 320px;
+    background: var(--bg-panel);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.sidebar-header {
+    padding: 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+.sidebar-header h1 {
+    margin: 0 0 12px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.btn {
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    border-color: var(--accent);
+}
+
+.btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+
+.btn.primary:hover {
+    background: var(--accent-hover);
+}
+
+.btn.secondary {
+    width: 100%;
+}
+
+.btn.full-width {
+    width: 100%;
+    margin-top: 8px;
+}
+
+.io-panel {
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+textarea {
+    width: 100%;
+    height: 80px;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    color: var(--text-mono);
+    font-size: 11px;
+    padding: 6px;
+    resize: vertical;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.io-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.section-title {
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.tree-view-wrapper {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--border);
+    min-height: 150px;
+}
+
+.tree-view {
+    padding: 8px 0;
+}
+
+.tree-node {
+    padding: 6px 16px;
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tree-node:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tree-node.selected {
+    background: rgba(124, 77, 255, 0.2);
+    border-left: 2px solid var(--accent);
+}
+
+.pair-icon {
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-left: auto;
+}
+
+.properties-panel {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.properties-content {
+    padding: 16px;
+}
+
+.prop-row {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.prop-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    width: 80px;
+}
+
+.prop-input {
+    flex: 1;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    width: 100%;
+}
+
+.prop-group-h {
+    display: flex;
+    gap: 4px;
+    flex: 1;
+}
+
+/* Viewport */
+.viewport-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+    cursor: default;
+}
+
+.viewport-overlay-ui {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.viewport-controls {
+    pointer-events: auto;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+}
+
+.icon-btn {
+    background: rgba(30, 30, 30, 0.8);
+    border: 1px solid var(--border);
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.zoom-level {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.help-hint {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+.viewport-world {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    transform-origin: 0 0;
+}
+
+/* Gizmos */
+.thruster-gizmo {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.thruster-point {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(124, 77, 255, 0.5);
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: move;
+    transition: background 0.1s;
+}
+
+.thruster-point:hover {
+    background: var(--accent);
+}
+
+.thruster-point.selected {
+    background: #fff;
+    border-color: var(--accent);
+    z-index: 10;
+    width: 12px;
+    height: 12px;
+}
+
+.thruster-arrow {
+    position: absolute;
+    height: 2px;
+    background: yellow;
+    transform-origin: 0 50%;
+    pointer-events: none;
+    margin-top: -1px;
+    /* Center (half of height) */
+    z-index: 5;
+    /* Below point (z-10) */
+}
+
+/* Arrowhead removed as requested */
+.thruster-arrow::after {
+    content: none;
+}
+
+/* Paired visual feedback */
+.thruster-point.paired {
+    border-color: #00e5ff;
+}
+
+.empty-state {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    width: 600px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    padding: 12px 16px;
+    background: var(--bg-input);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 14px;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.texture-grid {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 8px;
+}
+
+.tex-item {
+    aspect-ratio: 1;
+    border: 1px solid var(--border);
+    background: #000;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+}
+
+.tex-item:hover {
+    border-color: var(--accent);
+}
+
+.tex-item img {
+    max-width: 100%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+.tex-item span {
+    font-size: 10px;
+    color: #aaa;
+    margin-top: 4px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    text-align: center;
+}
+
+/* Simulation UI */
+.sim-controls {
+    pointer-events: auto;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    /* margin-left: 20px; Removed */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+}
+
+.sim-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-main);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.sim-panel {
+    display: flex;
+    gap: 16px;
+    transition: opacity 0.3s;
+}
+
+.sim-panel.disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/* Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 18px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #555;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: var(--accent);
+}
+
+input:checked+.slider:before {
+    transform: translateX(16px);
+}
+
+/* Joystick */
+.joystick-area {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.joystick-base {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #555;
+    border-radius: 50%;
+    position: relative;
+}
+
+.joystick-knob {
+    width: 24px;
+    height: 24px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: grab;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.joystick-knob:active {
+    cursor: grabbing;
+    background: var(--accent-hover);
+}
+
+/* Speed Slider */
+.speed-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.speed-slider-track {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+#sim-speed {
+    writing-mode: bt-lr;
+    /* IE/Edge */
+    -webkit-appearance: slider-vertical;
+    /* Webkit */
+    width: 8px;
+    height: 100%;
+    background: #444;
+}
+
+.speed-input {
+    width: 40px;
+    text-align: center;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    color: var(--text-mono);
+    font-size: 11px;
+    padding: 2px;
+}

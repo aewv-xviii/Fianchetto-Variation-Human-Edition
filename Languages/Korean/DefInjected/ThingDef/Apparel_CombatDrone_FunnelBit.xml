@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Milira_CombatDrone_FunnelBitB.label>타격 드론: 말쿠트</Milira_CombatDrone_FunnelBitB.label>
+  <Milira_CombatDrone_FunnelBitB.description>자율성이 전혀 없는 원격 조종 '퍼핏' 드론으로, '피안케토' 기체의 표준 무장입니다.\n\nAI 코어와 대형 배터리를 제거한 대신, 말쿠트는 숙주의 대규모 병렬 연산에 전투 판단을 의존합니다. 덕분에 역장 추진으로 구동되는 불규칙한 고기동 선회가 가능하며, 이는 일반 자율 유닛으로는 흉내 낼 수 없는 성능입니다.\n군집전과 단일 목표전 모두에 대응할 수 있는 다목적 올라운더입니다.</Milira_CombatDrone_FunnelBitB.description>
+  <MiliraTurret_CombatDrone_FunnelBitB.label>타격 드론: 말쿠트</MiliraTurret_CombatDrone_FunnelBitB.label>
+  <MiliraTurret_CombatDrone_FunnelBitB.description>꽤나 그럴듯하게 떠다니는 총열입니다.</MiliraTurret_CombatDrone_FunnelBitB.description>
+
+  <Milira_CombatDrone_FunnelBitC.label>타격 드론: 게부라</Milira_CombatDrone_FunnelBitC.label>
+  <Milira_CombatDrone_FunnelBitC.description>파괴적인 중형 레이저를 탑재한 중타격 드론입니다. 장갑 목표와 요새화된 구조물을 뚫는 데 뛰어나며, 위협도가 높은 메카노이드나 적 지휘관 같은 고가치 목표를 제거하는 데 적합합니다.\n\n게부라는 본래 운동량 반발장을 관통하기 위한 감마선 레이저 원격 플랫폼으로 구상되었습니다. 하지만 '드론을 방패 안으로 날려서 코어를 쏘면 되는 거 아냐?'라는 가벼운 한마디에 개발 논리가 붕괴했고, 결국 이미 완성된 기체에 표준 중형 레이저를 얹은 방향으로 급선회했습니다.</Milira_CombatDrone_FunnelBitC.description>
+  <MiliraTurret_CombatDrone_FunnelBitC.label>타격 드론: 게부라</MiliraTurret_CombatDrone_FunnelBitC.label>
+  <MiliraTurret_CombatDrone_FunnelBitC.description>느리고 두 기뿐입니다.\n대신 처리할 게 적어서 밀리안은 행복해합니다.</MiliraTurret_CombatDrone_FunnelBitC.description>
+
+  <Milira_CombatDrone_FunnelBitD.label>타격 드론: 케테르</Milira_CombatDrone_FunnelBitD.label>
+  <Milira_CombatDrone_FunnelBitD.description>여러 특화 드론으로 구성된 대형 복합 무장 시스템입니다. 장갑 목표, 비장갑 목표, 밀집한 적 무리까지 모든 교전 유형에 매우 효과적입니다.\n\n이 시스템은 플라즈마 블레이드를 장착한 중형 근접 드론 2기, 레이저 캐논을 장비한 중형 드론 2기, 집속 입자 빔을 사용하는 경량 드론 4기를 전개합니다. 단일 밀리안 기체만으로도 보병 분대에 준하는 화력을 투사할 수 있지만, 운용에는 훨씬 더 높은 대역폭이 필요합니다.</Milira_CombatDrone_FunnelBitD.description>
+  <MiliraTurret_CombatDrone_FunnelBitD.label>타격 드론: 케테르</MiliraTurret_CombatDrone_FunnelBitD.label>
+  <MiliraTurret_CombatDrone_FunnelBitD.description>이 시스템을 장비한 밀리안이 문을 통과하려 하면 길을 비켜 주세요. 가능하다면 문틀의 안녕도 함께 빌어 주세요.</MiliraTurret_CombatDrone_FunnelBitD.description>
+</LanguageData>

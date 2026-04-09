@@ -1,0 +1,8 @@
+.vs/
+Thumbs.db
+*.user
+*.suo
+
+_codex/dotnet-home/
+_codex/**/bin/
+_codex/**/obj/

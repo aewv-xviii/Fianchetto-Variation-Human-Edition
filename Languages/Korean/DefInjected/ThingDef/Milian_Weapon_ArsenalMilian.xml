@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Milian_ConductorRod.label>밀리안 컨덕터 로드</Milian_ConductorRod.label>
+  <Milian_ConductorRod.description>피안케토 전용으로 설계된 드론 제어 인터페이스입니다.\n\n양자 얽힘 송수신기를 이용해 원격 유닛과 지연 없는 동기화 링크를 형성합니다. 이 로드는 숙주의 내부 병렬 연산 결과를 군집에 직접 방송하는 고대역 신경 브리지 역할을 하며, 표준 프로토콜을 뛰어넘는 복잡한 통합 기동을 수행하게 합니다.\n자위용으로는 저출력 입자 빔 방사기가 내장되어 있습니다.</Milian_ConductorRod.description>
+  <Milian_ConductorRod.tools.0.label>자루</Milian_ConductorRod.tools.0.label>
+
+  <MiliraBullet_ConductorRod.label>이온 빔</MiliraBullet_ConductorRod.label>
+</LanguageData>

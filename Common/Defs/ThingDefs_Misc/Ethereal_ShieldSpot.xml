@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="FunnelBit_ShieldSpotBase">
+    <defName>FunnelBit_ShieldSpot</defName>
+    <label>Pulse protection</label>
+    <description>A temporary pulse barrier projected by nearby strike drones. It intercepts incoming fire until it burns out.</description>
+    <!-- <selectable>true</selectable> -->
+    <graphicData>
+      <texPath>Things/Milira_FunnelBit/blank</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <comps>
+      <li Class="FunnelBit.CompProperties_ProjectileInterceptor_FunnelBit">
+        <forceFieldTexturePath>Effects/ForceField_Malkuth</forceFieldTexturePath>
+        <forceFieldConeTexturePath>Effects/ForceFieldCone_Malkuth</forceFieldConeTexturePath>
+        <radius>6</radius>
+        <interceptGroundProjectiles>true</interceptGroundProjectiles>
+        <interceptNonHostileProjectiles>false</interceptNonHostileProjectiles>
+        <interceptOutgoingProjectiles>false</interceptOutgoingProjectiles>
+        <skipFriendlyProjectiles>true</skipFriendlyProjectiles>
+        <!-- <color>(0.7, 0.7, 0.7)</color> -->
+        <interceptEffect>ForceField_Malkuth_ShieldBlock</interceptEffect>
+        <shieldBreakEffecter>ForceField_Malkuth_Break</shieldBreakEffecter>
+        <!-- <reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect> -->
+        <activeSound>BulletShield_Ambience</activeSound>
+        <hitPoints>5000</hitPoints>
+        <hitPointsRestoreInstantlyAfterCharge>true</hitPointsRestoreInstantlyAfterCharge>
+        <chargeDurationTicks>600</chargeDurationTicks>
+        <rechargeHitPointsIntervalTicks>120</rechargeHitPointsIntervalTicks>
+        <!-- minAlpha ~ 0.62(hardcoded) whyyy;; -->
+        <minAlpha>0.42</minAlpha>
+        <!-- <minIdleAlpha>0.6</minIdleAlpha> -->
+        <idlePulseSpeed>160.0</idlePulseSpeed>
+        <drawWithNoSelection>True</drawWithNoSelection>
+        <disarmedByEmpForTicks>1500</disarmedByEmpForTicks>
+        <gizmoTipKey>ProjectileInterceptorTip</gizmoTipKey>
+
+        
+      </li>
+      <li Class="FunnelBit.CompProperties_FunnelBit_DestroyAfterDelay">
+        <countdownLabel>Burnout in</countdownLabel>
+      </li>
+
+      <li Class="CompProperties_Glower">
+        <glowRadius>6</glowRadius>
+        <glowColor>(255,170,185,0)</glowColor>
+      </li>
+      <li Class="CompProperties_Effecter">
+        <effecterDef>Milira_FunnelBit_ShieldEffecter</effecterDef>
+      </li>
+      <li Class="RimWorld.CompProperties_SpawnEffecterOnDestroy">
+        <effect>ForceField_Malkuth_Burnout</effect>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <FunnelBit.FunnelBitGizmoLayoutDef>
+    <defName>Milian_FunnelGizmo_C</defName>
+    <windowWidth>238</windowWidth>
+    <backgroundTexPath>UI/Milian_FunnelGizmo_C/background</backgroundTexPath>
+    <overlayTexPath>UI/Milian_FunnelGizmo_C/background_overlay</overlayTexPath>
+    <tooltipBackgroundTexPath>UI/Milira_FunnelBit_TooltipBG</tooltipBackgroundTexPath>
+    <tooltipTextColor>(0.12, 0.12, 0.12, 1)</tooltipTextColor>
+    <drawWindowBackground>true</drawWindowBackground>
+    <useInnerContentRect>false</useInnerContentRect>
+    <innerPadding>0</innerPadding>
+    <backgroundDrawOrder>0</backgroundDrawOrder>
+    <overlayDrawOrder>60</overlayDrawOrder>
+    <hideWhenMultiSelected>true</hideWhenMultiSelected>
+    <mergeWhenMultiSelected>true</mergeWhenMultiSelected>
+    <gizmoOrder>-92</gizmoOrder>
+    <elements>
+      <li Class="FunnelBit.FunnelGizmoElement_SlotStateIcon">
+        <position>(-2,-34)</position>
+        <size>(94,94)</size>
+        <interactionSize>(86,15)</interactionSize>
+        <interactionOffset>(5,39)</interactionOffset>
+        <slotIndex>0</slotIndex>
+        <stateMappings>
+          <li>
+            <texPath>UI/Milian_FunnelGizmo_C/state_ready</texPath>
+            <states>
+              <li>Docked</li>
+            </states>
+          </li>
+          <li>
+            <texPath>UI/Milian_FunnelGizmo_C/state_charging</texPath>
+            <states>
+              <li>Charging</li>
+            </states>
+          </li>
+          <li>
+            <texPath>UI/Milian_FunnelGizmo_C/state_active</texPath>
+            <states>
+              <li>Returning</li>
+              <li>Launched</li>
+            </states>
+          </li>
+        </stateMappings>
+      </li>
+      <li Class="FunnelBit.FunnelGizmoElement_Toggle">
+        <position>(48,-33)</position>
+        <size>(140,140)</size>
+        <interactionSize>(50,70)</interactionSize>
+        <interactionOffset>(45,35)</interactionOffset>
+        <iconTexPathOff>UI/Milian_FunnelGizmo_common/FireAtWill_a</iconTexPathOff>
+        <labelKey>FunnelBit_Toggle_Auto</labelKey>
+        <clickSoundOn>ArsenalMilian_Beep_Large_On</clickSoundOn>
+        <clickSoundOff>ArsenalMilian_Beep_Large_Off</clickSoundOff>
+        <visuals>
+          <li Class="FunnelBit.FunnelGizmoVisualNode_UVScrollTexture">
+            <offset>(-48,35)</offset>
+            <size>(238,18)</size>
+            <texPath>UI/Milian_FunnelGizmo_common/FireAtWill_b</texPath>
+            <visibleWhenToggleOn>false</visibleWhenToggleOn>
+            <uvScrollSpeed>(0.2,0)</uvScrollSpeed>
+          </li>
+          <li Class="FunnelBit.FunnelGizmoVisualNode_UVScrollTexture">
+            <offset>(-48,88)</offset>
+            <size>(238,18)</size>
+            <texPath>UI/Milian_FunnelGizmo_common/FireAtWill_b</texPath>
+            <visibleWhenToggleOn>false</visibleWhenToggleOn>
+            <uvScrollSpeed>(-0.2,0)</uvScrollSpeed>
+          </li>
+        </visuals>
+      </li>
+      <li Class="FunnelBit.FunnelGizmoElement_Toggle">
+        <position>(148,33)</position>
+        <size>(48,48)</size>
+        <interactionSize>(36,25)</interactionSize>
+        <interactionOffset>(6,11)</interactionOffset>
+        <iconTexPathOn>UI/Milian_FunnelGizmo_common/toggle_focus_on</iconTexPathOn>
+        <iconTexPathOff>UI/Milian_FunnelGizmo_common/toggle_focus_off</iconTexPathOff>
+        <labelKey>FunnelBit_Toggle_TurretFocusFire</labelKey>
+        <target>TurretFocusFire</target>
+        <clickSoundOn>ArsenalMilian_Beep_Small_On</clickSoundOn>
+        <clickSoundOff>ArsenalMilian_Beep_Small_Off</clickSoundOff>
+      </li>
+      <li Class="FunnelBit.FunnelGizmoElement_Toggle">
+        <position>(188,33)</position>
+        <size>(48,48)</size>
+        <interactionSize>(36,25)</interactionSize>
+        <interactionOffset>(6,11)</interactionOffset>
+        <iconTexPathOn>UI/Milian_FunnelGizmo_common/toggle_sync_on</iconTexPathOn>
+        <iconTexPathOff>UI/Milian_FunnelGizmo_common/toggle_sync_off</iconTexPathOff>
+        <labelKey>FunnelBit_Toggle_TurretAutoFireAtFocus</labelKey>
+        <target>TurretAutoFireAtFocus</target>
+        <clickSoundOn>ArsenalMilian_Beep_Small_On</clickSoundOn>
+        <clickSoundOff>ArsenalMilian_Beep_Small_Off</clickSoundOff>
+      </li>
+      <li Class="FunnelBit.FunnelGizmoElement_Toggle">
+        <position>(42,33)</position>
+        <size>(48,48)</size>
+        <interactionSize>(36,25)</interactionSize>
+        <interactionOffset>(6,11)</interactionOffset>
+        <iconTexPathOn>UI/Milian_FunnelGizmo_common/toggle_draft_on</iconTexPathOn>
+        <iconTexPathOff>UI/Milian_FunnelGizmo_common/toggle_draft_off</iconTexPathOff>
+        <labelKey>FunnelBit_Toggle_TurretOnlyAutoFireWhileDraft</labelKey>
+        <target>TurretOnlyAutoFireWhileDraft</target>
+        <clickSoundOn>ArsenalMilian_Beep_Small_On</clickSoundOn>
+        <clickSoundOff>ArsenalMilian_Beep_Small_Off</clickSoundOff>
+      </li>
+      <li Class="FunnelBit.FunnelGizmoElement_Toggle">
+        <position>(1,33)</position>
+        <size>(48,48)</size>
+        <interactionSize>(36,25)</interactionSize>
+        <interactionOffset>(6,11)</interactionOffset>
+        <iconTexPathOn>UI/Milian_FunnelGizmo_common/toggle_auto_on</iconTexPathOn>
+        <iconTexPathOff>UI/Milian_FunnelGizmo_common/toggle_auto_off</iconTexPathOff>
+        <labelKey>FunnelBit_Toggle_TurretAutoFire</labelKey>
+        <target>TurretAutoFire</target>
+        <clickSoundOn>ArsenalMilian_Beep_Small_On</clickSoundOn>
+        <clickSoundOff>ArsenalMilian_Beep_Small_Off</clickSoundOff>
+      </li>
+      <li Class="FunnelBit.FunnelGizmoElement_SlotStateIcon">
+        <position>(143,-34)</position>
+        <size>(94,94)</size>
+        <interactionSize>(86,15)</interactionSize>
+        <interactionOffset>(5,39)</interactionOffset>
+        <slotIndex>1</slotIndex>
+        <stateMappings>
+          <li>
+            <texPath>UI/Milian_FunnelGizmo_C/state_ready</texPath>
+            <states>
+              <li>Docked</li>
+            </states>
+          </li>
+          <li>
+            <texPath>UI/Milian_FunnelGizmo_C/state_charging</texPath>
+            <states>
+              <li>Charging</li>
+            </states>
+          </li>
+          <li>
+            <texPath>UI/Milian_FunnelGizmo_C/state_active</texPath>
+            <states>
+              <li>Returning</li>
+              <li>Launched</li>
+            </states>
+          </li>
+        </stateMappings>
+      </li>
+      <li Class="FunnelBit.FunnelGizmoElement_BarGauge">
+        <position>(-2,-14)</position>
+        <size>(94,94)</size>
+        <interactionSize>(85,12)</interactionSize>
+        <interactionOffset>(5,40)</interactionOffset>
+        <drawOrder>20</drawOrder>
+        <slotIndex>0</slotIndex>
+        <visuals>
+          <li Class="FunnelBit.FunnelGizmoVisualNode_BarGauge">
+            <offset>(9,41)</offset>
+            <size>(79,10)</size>
+            <texPath>UI/Milian_FunnelGizmo_common/gauge_bar</texPath>
+            <drawOrder>19</drawOrder>
+          </li>
+          <li Class="FunnelBit.FunnelGizmoVisualNode_Texture">
+            <offset>(0,0)</offset>
+            <size>(94,94)</size>
+            <texPath>UI/Milian_FunnelGizmo_C/gauge</texPath>
+            <drawOrder>20</drawOrder>
+          </li>
+        </visuals>
+      </li>
+      <li Class="FunnelBit.FunnelGizmoElement_BarGauge">
+        <position>(144,-14)</position>
+        <size>(94,94)</size>
+        <interactionSize>(85,12)</interactionSize>
+        <interactionOffset>(5,40)</interactionOffset>
+        <drawOrder>20</drawOrder>
+        <slotIndex>1</slotIndex>
+        <visuals>
+          <li Class="FunnelBit.FunnelGizmoVisualNode_BarGauge">
+            <offset>(9,41)</offset>
+            <size>(79,10)</size>
+            <texPath>UI/Milian_FunnelGizmo_common/gauge_bar</texPath>
+            <drawOrder>19</drawOrder>
+          </li>
+          <li Class="FunnelBit.FunnelGizmoVisualNode_Texture">
+            <offset>(0,0)</offset>
+            <size>(94,94)</size>
+            <texPath>UI/Milian_FunnelGizmo_C/gauge</texPath>
+            <drawOrder>20</drawOrder>
+          </li>
+        </visuals>
+      </li>
+    </elements>
+  </FunnelBit.FunnelBitGizmoLayoutDef>
+
+</Defs>

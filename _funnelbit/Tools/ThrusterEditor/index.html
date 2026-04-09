@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FunnelBit Thruster Editor</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap"
+        rel="stylesheet">
+    <script>
+        window.onerror = function (msg, url, line, col, error) {
+            alert("Error: " + msg + "\n" + url + ":" + line + ":" + col);
+            return false;
+        };
+    </script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h1>Thruster Editor</h1>
+                <div class="toolbar">
+                    <button id="btn-load-tex" class="btn primary">Load Batch Textures</button>
+                    <input type="file" id="file-input-tex" webkitdirectory directory style="display: none;">
+
+                    <button id="btn-load-bg" class="btn secondary" style="margin-top:4px;">Load Background...</button>
+                    <input type="file" id="file-input-bg" accept="image/png" style="display: none;">
+                </div>
+            </div>
+
+            <div class="io-panel">
+                <textarea id="xml-input" placeholder="Paste ThingDef or <thrusters> block here..."></textarea>
+                <div class="io-controls">
+                    <button id="btn-import" class="btn secondary">Import</button>
+                    <button id="btn-export" class="btn secondary">Export</button>
+                </div>
+            </div>
+
+            <div class="tree-view-wrapper">
+                <div class="section-title">Thrusters</div>
+                <div id="thruster-list" class="tree-view"></div>
+                <button id="btn-add-thruster" class="btn secondary full-width">+ Add Thruster</button>
+            </div>
+
+            <div class="properties-panel">
+                <div class="section-title">Properties</div>
+                <div id="properties-content" class="properties-content">
+                    <div class="empty-state">Select a thruster to edit</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Viewport -->
+        <div class="viewport-container" id="viewport-container">
+            <div class="viewport-overlay-ui">
+                <div class="viewport-controls">
+                    <button id="btn-reset-view" class="icon-btn" title="Reset View">⟲</button>
+                    <div class="zoom-level" id="zoom-level">100%</div>
+                </div>
+
+                <!-- Simulation Controls -->
+                <div class="sim-controls">
+                    <div class="sim-header">
+                        <label class="switch">
+                            <input type="checkbox" id="sim-toggle">
+                            <span class="slider round"></span>
+                        </label>
+                        <span>Test Mode</span>
+                    </div>
+                    <div id="sim-panel" class="sim-panel disabled">
+                        <div class="joystick-area">
+                            <div id="joystick-base" class="joystick-base">
+                                <div id="joystick-knob" class="joystick-knob"></div>
+                            </div>
+                        </div>
+                        <div class="speed-control">
+                            <label style="font-size:9px; margin-bottom:2px;">SPD</label>
+                            <div class="speed-slider-track">
+                                <input type="range" id="sim-speed" min="0" max="3" step="0.1" value="0"
+                                    orient="vertical">
+                            </div>
+                            <input type="number" id="sim-max-speed" value="3" class="speed-input" title="Max Speed">
+                        </div>
+                        <div class="speed-control">
+                            <label style="font-size:9px; margin-bottom:2px;">ACL</label>
+                            <div class="speed-slider-track">
+                                <input type="range" id="sim-accel" min="0" max="0.25" step="0.01" value="0"
+                                    orient="vertical">
+                            </div>
+                            <input type="number" id="sim-max-accel" value="0.25" class="speed-input" title="Max Accel">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="help-hint">
+                    Drag: Move | Shift+Drag: Rotate | Ctrl: Snap | Sym: Pair
+                </div>
+            </div>
+
+            <div id="viewport-world" class="viewport-world">
+                <!-- Content here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal-overlay" class="modal-overlay" style="display: none;">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Select Texture</h3>
+                <button id="btn-close-modal" class="btn-close">×</button>
+            </div>
+            <div id="texture-grid" class="texture-grid">
+                <!-- Items -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="xml.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

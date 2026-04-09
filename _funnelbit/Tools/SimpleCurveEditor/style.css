@@ -1,0 +1,226 @@
+:root {
+    --bg-dark: #121212;
+    --bg-panel: #1e1e1e;
+    --bg-hover: #2a2a2a;
+    --border-color: #333;
+    --accent-color: #3b82f6;
+    --accent-hover: #2563eb;
+    --text-primary: #e5e5e5;
+    --text-secondary: #a3a3a3;
+    --font-ui: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --danger-color: #ef4444;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-ui);
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.app-header {
+    height: 60px;
+    background-color: var(--bg-panel);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.app-header h1 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.editor-workspace {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.canvas-container {
+    flex: 1;
+    position: relative;
+    background-color: #0f0f0f;
+    overflow: hidden;
+    cursor: crosshair;
+}
+
+.canvas-container canvas {
+    display: block;
+}
+
+.canvas-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    pointer-events: none;
+}
+
+.coords-display {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: var(--bg-panel);
+    border-left: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+.panel-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.panel-section.flex-grow {
+    flex: 1;
+}
+
+h2 {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+/* Controls */
+.radio-group {
+    display: flex;
+    background: var(--bg-dark);
+    padding: 2px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+
+.radio-btn {
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.radio-btn input {
+    position: absolute;
+    opacity: 0;
+}
+
+.radio-btn span {
+    display: block;
+    padding: 8px 0;
+    font-size: 13px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    color: var(--text-secondary);
+}
+
+.radio-btn input:checked+span {
+    background: var(--accent-color);
+    color: white;
+}
+
+.control-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.control-group label {
+    font-size: 13px;
+}
+
+input[type="number"] {
+    background: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 6px;
+    border-radius: 4px;
+    width: 80px;
+    font-family: var(--font-mono);
+}
+
+input[type="number"]:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+.btn {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    background: var(--bg-hover);
+    border-color: var(--text-secondary);
+}
+
+.btn-primary {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+}
+
+.btn-danger {
+    color: var(--danger-color);
+    border-color: #442222;
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.btn-danger:hover {
+    background: rgba(239, 68, 68, 0.2);
+}
+
+.code-editor {
+    flex: 1;
+    background: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    padding: 10px;
+    resize: none;
+    border-radius: 4px;
+    white-space: pre;
+    min-height: 200px;
+}
+
+.code-editor:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}

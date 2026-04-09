@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Name="FunnelBit_ShieldSpotBase" Abstract="True">
+    <category>Ethereal</category>
+    <thingClass>ThingWithComps</thingClass>
+    <useHitPoints>false</useHitPoints>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <!-- <drawerType>None</drawerType> -->
+    <passability>Standable</passability>
+  </ThingDef>
+
+</Defs>

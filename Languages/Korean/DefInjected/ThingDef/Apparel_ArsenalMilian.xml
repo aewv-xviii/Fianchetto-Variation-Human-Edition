@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Milian_ConductorCloakAC.label>밀리안 컨덕터 망토</Milian_ConductorCloakAC.label>
+  <Milian_ConductorCloakAC.description>원래는 피안케토 기체를 군수 전시회에 처음 공개할 때 입히기 위해 맞춤 제작된 의장용 복장입니다.\n개발 계획이 중단되면서 전용 전투 장갑은 끝내 실현되지 못했고, 그 결과 이 복장은 기본 장비로 등록되었습니다. 충격 흡수 라이너나 방탄 섬유가 전혀 없어 전투 보호력은 사실상 기대할 수 없습니다.</Milian_ConductorCloakAC.description>
+
+  <Milian_ConductorHeadSetAC.label>밀리안 컨덕터 헤드셋</Milian_ConductorHeadSetAC.label>
+  <Milian_ConductorHeadSetAC.description>비숍 III-S 피안케토용으로 설계된 특수 사격 통제 헤드셋입니다.\n'퍼핏' 드론이 주고받는 대규모 데이터를 처리하기 위한 고대역 양자 송수신 배열을 내장하고 있습니다. 숙주의 증강 신경 처리기와 직접 동기화해 원격 제어 링크를 안정화하고, 복잡한 군집 기동을 가능하게 합니다.</Milian_ConductorHeadSetAC.description>
+</LanguageData>

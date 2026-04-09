@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_Milira_FunnelBit_D</defName>
+    <label>Strike drone: Keter(Plasma Blade)</label>
+    <thingClass>FunnelBit.Projectile_FunnelBit</thingClass>
+    <graphicData>
+      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Transparent</shaderType>
+      <drawSize>1.5</drawSize>
+      <!-- ? -->
+      <!-- drawsize(slotoverlay) * 1.5  ????? -->
+      <!-- no idea why -->
+    </graphicData>
+    
+
+    <projectile Class="FunnelBit.FunnelBitProperties">
+      <moveWorker Class="FunnelBit.FunnelBitMoveWorker_MeleeChargeEx">
+        <idleMovesMin>0</idleMovesMin>
+        <idleMovesMax>1</idleMovesMax>
+        <hitRadius>1.5</hitRadius>
+        <idleStrategies>
+          <li>
+            <mode>Linear</mode>
+            <weight>1.0</weight>
+            <speed>0.8</speed>
+
+            <linearTargetDistanceMin>7.0</linearTargetDistanceMin>
+            <linearTargetDistanceMax>11.0</linearTargetDistanceMax>
+
+            <linearMinMoveDistance>5.0</linearMinMoveDistance>
+
+            <linearSpeedCurve>
+              <points>
+                <li>(0.00, 0.00)</li>
+                <li>(0.28, 0.40)</li>
+                <li>(0.50, 0.68)</li>
+                <li>(0.67, 0.86)</li>
+                <li>(0.82, 0.95)</li>
+                <li>(1.00, 1.00)</li>
+              </points>
+            </linearSpeedCurve>
+          </li>
+          <!-- <li>
+            <mode>Drift</mode>
+            <weight>3</weight>
+            <speed>0.5</speed>
+            <driftRadius>8</driftRadius>
+            <driftRadiusMin>8</driftRadiusMin>
+            <driftMinMoveDistance>8</driftMinMoveDistance> 
+            <handleLenFactor>0.8</handleLenFactor>
+          </li> -->
+        </idleStrategies>
+        <attackStrategies>
+          <!-- <li>
+            <mode>FlyThrough</mode>
+            <weight>3</weight>
+            <speed>0.8</speed>
+            <disengageDistance>8</disengageDistance>
+          </li> -->
+          <li>
+            <mode>ChargeRun</mode>
+            <chargeStartDistance>8</chargeStartDistance>
+            <chargeEndDistance>8</chargeEndDistance>
+            <approachMinMoveDistance>6</approachMinMoveDistance>
+            <!-- <chargeStartAngleRange>180</chargeStartAngleRange> -->
+            <approachUseBezier>true</approachUseBezier>
+            <chargeWaitTicks>8</chargeWaitTicks>
+            <approachSpeed>0.55</approachSpeed>
+            <approachSpeedCurve>
+              <points>
+                <li>(0.00, 0.00)</li>
+                <li>(0.04, 0.26)</li>
+                <li>(0.10, 0.48)</li>
+                <li>(0.17, 0.64)</li>
+                <li>(0.26, 0.77)</li>
+                <li>(0.36, 0.86)</li>
+                <li>(0.47, 0.93)</li>
+                <li>(0.59, 0.97)</li>
+                <li>(0.72, 0.99)</li>
+                <li>(0.85, 1.00)</li>
+                <li>(1.00, 1.00)</li>
+                <li>(1.00, 1.00)</li>
+              </points>
+            </approachSpeedCurve>
+
+            <approachMinMoveDistance>6</approachMinMoveDistance>
+            <chargeSpeed>0.9</chargeSpeed>
+            <chargeSpeedCurve>
+              <points>
+                <li>(0.00, 0.00)</li>
+                <li>(0.13, 0.34)</li>
+                <li>(0.27, 0.58)</li>
+                <li>(0.42, 0.74)</li>
+                <li>(0.59, 0.85)</li>
+                <li>(0.78, 0.92)</li>
+                <li>(1.00, 1.00)</li>
+                <li>(1.00, 1.00)</li>
+              </points>
+            </chargeSpeedCurve>
+            <interceptEnabled>true</interceptEnabled>
+            <interceptDamageFactor>0.65</interceptDamageFactor>
+
+            <chargePathFleck>Milira_FunnelBit_D_Slash</chargePathFleck>
+
+            
+
+          </li>
+        </attackStrategies>
+
+        <meleeEvents>
+
+          
+          <li>
+            <timing>OnChargeWaitStart</timing>
+            <effecter>Milira_FunnelBit_D_warmUp</effecter>
+            <sound>ArsenalMilian_Spark</sound>
+            <visualOverride>
+              <overlayGraphicDataList>
+                <li>
+                  <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D_beamBlade</texPath>
+                  <graphicClass>Graphic_Single</graphicClass>
+                  <!-- <drawSize>(2.25, 2.25)</drawSize> -->
+                  <drawSize>(4.8,4.8)</drawSize>
+                  <shaderType>MoteGlow</shaderType>
+                </li>
+              </overlayGraphicDataList>
+            </visualOverride>
+          </li>
+          <li>
+            <timing>OnChargeStart</timing>
+            <effecter>Milira_FunnelBit_D_Charge</effecter>
+          </li>
+          <li>
+            <timing>OnHit</timing>
+            <sound>ArsenalMilian_BeamBlade1</sound>
+          </li>
+        </meleeEvents>
+      </moveWorker>
+
+      <defaultLaunchWorker Class="FunnelBit.FunnelBitLaunchWorker_FloatUpBezier">
+        <launchSpeed>0.5</launchSpeed>
+
+        <forwardDistance>1.2</forwardDistance>
+        <upDistance>2.7</upDistance>
+        <p1HandleFactor>0.8</p1HandleFactor>
+        <p2HandleFactor>0.4</p2HandleFactor>
+        <arcSampleCount>24</arcSampleCount>
+        <travelTimeMultiplier>8.0</travelTimeMultiplier>
+
+        <speedCurve>
+          <points>
+            <li>(0, 0)</li>
+            <li>(0.1264, 0.0311)</li>
+            <li>(0.2194, 0.1086)</li>
+            <li>(0.2894, 0.2207)</li>
+            <li>(0.3467, 0.3559)</li>
+            <li>(0.4015, 0.5025)</li>
+            <li>(0.4643, 0.6489)</li>
+            <li>(0.5452, 0.7835)</li>
+            <li>(0.6546, 0.8946)</li>
+            <li>(0.8027, 0.9707)</li>
+            <li>(1, 1)</li>
+          </points>
+        </speedCurve>
+
+        <enableRotationMergeToTarget>true</enableRotationMergeToTarget>
+        <mergeStartRatio>0.1</mergeStartRatio>
+        <blendFromLaunchRotation>true</blendFromLaunchRotation>
+        <rotationMergeCurve>
+          <points>
+            <li>(0.2, 0)</li>
+            <li>(0.3052, 0.0307)</li>
+            <li>(0.4013, 0.1079)</li>
+            <li>(0.4897, 0.2201)</li>
+            <li>(0.5715, 0.3556)</li>
+            <li>(0.6482, 0.5025)</li>
+            <li>(0.721, 0.6492)</li>
+            <li>(0.7913, 0.784)</li>
+            <li>(0.8604, 0.8952)</li>
+            <li>(0.9295, 0.9711)</li>
+            <li>(1, 1)</li>
+          </points>
+        </rotationMergeCurve>
+
+      </defaultLaunchWorker>
+
+      <defaultReturnWorker Class="FunnelBit.FunnelBitReturnWorker_BarrelDockBezier">
+        <returnSpeed>0.75</returnSpeed>
+
+        <!-- Caster / Barrel -->
+        <hoverOffsetOrigin>Barrel</hoverOffsetOrigin>
+        <!-- World / Rot4 / Barrel -->
+        <hoverOffsetAngleMode>Barrel</hoverOffsetAngleMode>
+
+        <hoverOffset>(0,0,1.5)</hoverOffset>
+
+        <bezierHandleHeight>1.2</bezierHandleHeight>
+
+        <bezierHandleHeight>1.2</bezierHandleHeight>
+        <switchToAnchorDistance>2.5</switchToAnchorDistance>
+
+        <anchorForwardOffset>0.7</anchorForwardOffset>
+        <anchorBackwardDistance>0.4</anchorBackwardDistance>
+
+        <dirSlerpDistance>5</dirSlerpDistance>
+
+        <anchorMinDurationTicks>35</anchorMinDurationTicks>
+        <anchorMaxDurationTicks>120</anchorMaxDurationTicks>
+
+        <bezierSpeedCurve>
+          <points>
+            <li>(0.2, 0)</li>
+            <li>(0.2684, 0.0802)</li>
+            <li>(0.3349, 0.1854)</li>
+            <li>(0.4012, 0.3079)</li>
+            <li>(0.4689, 0.4399)</li>
+            <li>(0.5397, 0.5738)</li>
+            <li>(0.6154, 0.7017)</li>
+            <li>(0.6976, 0.8161)</li>
+            <li>(0.7879, 0.909)</li>
+            <li>(0.8882, 0.9729)</li>
+            <li>(1, 1)</li>
+          </points>
+        </bezierSpeedCurve>
+
+        <anchorMoveSpeedCurve>
+          <points>
+            <li>(0.2, 0)</li>
+            <li>(0.2536, 0.0572)</li>
+            <li>(0.3051, 0.1416)</li>
+            <li>(0.355, 0.2463)</li>
+            <li>(0.4042, 0.3643)</li>
+            <li>(0.4533, 0.4886)</li>
+            <li>(0.503, 0.6124)</li>
+            <li>(0.5539, 0.7285)</li>
+            <li>(0.6067, 0.8302)</li>
+            <li>(0.6621, 0.9103)</li>
+            <li>(0.7209, 0.962)</li>
+            <li>(0.7361, 0.9648)</li>
+            <li>(0.7554, 0.968)</li>
+            <li>(0.7782, 0.9715)</li>
+            <li>(0.8041, 0.9753)</li>
+            <li>(0.8327, 0.9792)</li>
+            <li>(0.8635, 0.9833)</li>
+            <li>(0.8961, 0.9874)</li>
+            <li>(0.93, 0.9916)</li>
+            <li>(0.9648, 0.9958)</li>
+            <li>(1, 1)</li>
+          </points>
+        </anchorMoveSpeedCurve>
+
+        <alignToBarrelCurve>
+          <points>
+            <li>(0, 0)</li>
+            <li>(0.0651, 0.1028)</li>
+            <li>(0.1372, 0.2419)</li>
+            <li>(0.2143, 0.4022)</li>
+            <li>(0.2942, 0.5688)</li>
+            <li>(0.3749, 0.7268)</li>
+            <li>(0.4541, 0.8614)</li>
+            <li>(0.5299, 0.9574)</li>
+            <li>(0.6, 1)</li>
+            <li>(1, 1)</li>
+          </points>
+        </alignToBarrelCurve>
+      </defaultReturnWorker>
+
+      <tacticsWorker Class="FunnelBit.FunnelBitTacticsWorker_MeleeCharge">
+        <retargetRadius>15</retargetRadius>
+      </tacticsWorker>
+
+      <!-- NOT trash -->
+      <!-- <damageDef>Cut</damageDef> -->
+      <damageDef>Milira_FunnelBit_D_cut</damageDef>
+      <damageAmountBase>38</damageAmountBase>
+      <armorPenetrationBase>0.35</armorPenetrationBase>
+      <stoppingPower>3.2</stoppingPower>
+
+      <speed>4</speed> 
+
+      <!-- subProjectiles -->
+      <subProjectileDef>Milira_FunnelBit_B_subProjectile</subProjectileDef>
+      <subVerbProps>
+        <!-- <accuracyTouch>0.9</accuracyTouch> -->
+        <!-- <accuracyShort>0.8</accuracyShort> -->
+        <!-- <accuracyMedium>0.6</accuracyMedium> -->
+        <!-- <accuracyLong>0.4</accuracyLong> -->
+        <!-- <forcedMissRadius>0</forcedMissRadius> -->
+        <soundCast>ArsenalMilian_Shot_Laser3</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+      </subVerbProps>
+      <!-- <muzzleFlashEffecter>Milira_FunnelBit_B_subProjectile_MuzzleFlashEffect</muzzleFlashEffecter> -->
+
+      <!-- <additionalSubProjectiles>
+        <li>
+          <projectileDef>Bullet_ChargeLance</projectileDef>
+          <tag>test_lance</tag>
+          <verbProps>
+            <soundCast>ChargeLance_Fire</soundCast>
+          </verbProps>
+        </li>
+        <li>
+          <projectileDef>Bullet_SniperRifle</projectileDef>
+          <tag>test_sniper</tag>
+          <verbProps>
+            <soundCast>Shot_AssaultRifle</soundCast>
+          </verbProps>
+        </li>
+      </additionalSubProjectiles> -->
+
+      <!-- drone settings -->
+      <maxLifeTimeTicks>3000</maxLifeTimeTicks>
+      <maxAttackCycles>12</maxAttackCycles>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+
+      <!-- Charge time calculation
+          finalCharge = (shotsFired * chargeTime) + (flightTicks * chargeLifeFactor)
+
+            Example:
+              chargeTime = 60  (1 shot = 1 sec)
+              chargeLifeFactor = 0.5  (flight time × 0.5)
+
+            Drone fired 3 shots and flew 10 sec (600 ticks):
+              Shot cost   = 3 * 60  = 180 ticks
+              Flight cost = 600 * 0.5 = 300 ticks
+              Total        = 480 ticks (8 sec)
+      -->
+      <chargeTime>50</chargeTime>
+      <chargeLifeFactor>0.0</chargeLifeFactor>
+
+      <preAttackDelay>8</preAttackDelay>
+      <postAttackDelay>12</postAttackDelay>
+
+
+      <!-- visual -->
+      <trails>
+        <li>
+          <texturePath>Things/Milira_FunnelBit/Effects/Milira_FunnelBit_B_subProjectile_trailC</texturePath>
+          <width>0.15</width>
+          <length>13</length>
+          <minSpeed>18</minSpeed>
+          <cutoffSpeed>1</cutoffSpeed>
+          <uvScale>1.0</uvScale>
+          <localOffset>(0, 0, -0.2)</localOffset>
+          <widthCurve>
+            <!-- 1:head 0:end -->
+            <points>
+              <li>(0, 0)</li>
+              <li>(0.8, 1)</li>
+              <li>(1, 0)</li>
+            </points>
+          </widthCurve>
+          <alphaCurve>
+            <points>
+              <li>(0, 0)</li>
+              <li>(0.5, 1)</li>
+              <li>(0.8, 1)</li>
+              <li>(1, 0)</li>
+            </points>
+          </alphaCurve>
+        </li>
+      </trails>
+      <!-- sound? -->
+      <soundLaunch>Milira_FunnelBit_Malkut_Launch</soundLaunch>
+
+      <highAccelSound>Milira_FunnelBit_Malkut_Booster</highAccelSound>
+      <highAccelEffecter>Milira_FunnelBit_Boost_B</highAccelEffecter>
+      <highAccelThreshold>0.2</highAccelThreshold>
+      <highAccelCooldownTicks>20</highAccelCooldownTicks>
+      <!-- ============================== 🌸✋️ちょっと待って❗️❗️ここからスラスターの設定だよ❗️❗️🫙🔥 ============================== -->
+      <thrusters>
+        <li>
+          <localOffset>(0,0,-0.07512019230769226)</localOffset>
+          <localFlameDir>(0,0,1)</localFlameDir>
+          <minSize>1</minSize>
+          <cruiseMaxSize>1.5</cruiseMaxSize>
+          <jitterWidth>0.25</jitterWidth>
+          <cruiseMaxSpeed>0.1</cruiseMaxSpeed>
+          <accelMin>0.02</accelMin>
+          <accelMax>0.2</accelMax>
+          <omniThruster>true</omniThruster>
+          <graphicData>
+            <texPath>Things/Milira_FunnelBit/Flame/FunnelBit_Glow_C</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>MoteGlow</shaderType>
+          </graphicData>
+        </li>
+        <li>
+          <localOffset>(-0.05785569185175568,0,-0.29488854463199965)</localOffset>
+          <localFlameDir>(-0.6321835928650422,0,-0.7748186271071744)</localFlameDir>
+          <cruiseMaxSize>0.6</cruiseMaxSize>
+          <boostMaxSize>1</boostMaxSize>
+          <jitterWidth>0.25</jitterWidth>
+          <cruiseMaxSpeed>0</cruiseMaxSpeed>
+          <accelMin>0.002</accelMin>
+          <accelMax>0.02</accelMax>
+          <graphicData>
+            <texPath>Things/Milira_FunnelBit/Flame/FunnelBit_Flame_D2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>MoteGlow</shaderType>
+          </graphicData>
+        </li>
+        <li>
+          <localOffset>(0.05785569185175568,0,-0.29488854463199965)</localOffset>
+          <localFlameDir>(0.6321835928650422,0,-0.7748186271071744)</localFlameDir>
+          <cruiseMaxSize>0.6</cruiseMaxSize>
+          <boostMaxSize>1</boostMaxSize>
+          <jitterWidth>0.25</jitterWidth>
+          <cruiseMaxSpeed>0</cruiseMaxSpeed>
+          <accelMin>0.002</accelMin>
+          <accelMax>0.02</accelMax>
+          <graphicData>
+            <texPath>Things/Milira_FunnelBit/Flame/FunnelBit_Flame_D2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>MoteGlow</shaderType>
+          </graphicData>
+        </li>
+        <li>
+          <localOffset>(-0.04367135949308115,0,-0.027525910616405334)</localOffset>
+          <localFlameDir>(-0.6843150104733647,0,0.7291865100513301)</localFlameDir>
+          <cruiseMaxSize>0.6</cruiseMaxSize>
+          <boostMaxSize>1</boostMaxSize>
+          <jitterWidth>0.25</jitterWidth>
+          <cruiseMaxSpeed>0</cruiseMaxSpeed>
+          <accelMin>0.002</accelMin>
+          <accelMax>0.02</accelMax>
+          <graphicData>
+            <texPath>Things/Milira_FunnelBit/Flame/FunnelBit_Flame_D2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>MoteGlow</shaderType>
+          </graphicData>
+        </li>
+        <li>
+          <localOffset>(0.04367135949308115,0,-0.027525910616405334)</localOffset>
+          <localFlameDir>(0.6843150104733647,0,0.7291865100513301)</localFlameDir>
+          <cruiseMaxSize>0.6</cruiseMaxSize>
+          <boostMaxSize>1</boostMaxSize>
+          <jitterWidth>0.25</jitterWidth>
+          <cruiseMaxSpeed>0</cruiseMaxSpeed>
+          <accelMin>0.002</accelMin>
+          <accelMax>0.02</accelMax>
+          <graphicData>
+            <texPath>Things/Milira_FunnelBit/Flame/FunnelBit_Flame_D2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>MoteGlow</shaderType>
+          </graphicData>
+        </li>
+        <li>
+          <localOffset>(0,0,-0.35000000000000003)</localOffset>
+          <localFlameDir>(0,0,-1)</localFlameDir>
+          <cruiseMaxSize>2</cruiseMaxSize>
+          <boostMaxSize>3.5</boostMaxSize>
+          <cruiseMaxSpeed>0.35</cruiseMaxSpeed>
+          <accelMin>0.02</accelMin>
+          <accelMax>0.2</accelMax>
+          <graphicData>
+            <texPath>Things/Milira_FunnelBit/Flame/FunnelBit_Flame_D1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+          </graphicData>
+        </li>
+      </thrusters>
+
+      <overlayGraphicData>
+        <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D_emissive</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+        <shaderType>TransparentPostLight</shaderType>
+        <drawSize>(1.125, 1.125)</drawSize>
+      </overlayGraphicData>
+    </projectile>
+  </ThingDef>
+
+
+  <!-- subProjectile -->
+
+</Defs>

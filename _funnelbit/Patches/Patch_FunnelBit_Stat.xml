@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <!-- Damage Multiplier -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/StatDef[defName="RangedWeapon_DamageMultiplier"]/parts</xpath>
+    <value>
+      <li Class="FunnelBit.StatPart_FunnelBitQuality">
+        <factorAwful>0.9</factorAwful>
+        <factorPoor>1</factorPoor>
+        <factorNormal>1</factorNormal>
+        <factorGood>1</factorGood>
+        <factorExcellent>1</factorExcellent>
+        <factorMasterwork>1.25</factorMasterwork>
+        <factorLegendary>1.5</factorLegendary>
+      </li>
+      <li Class="FunnelBit.StatPart_FunnelBitSubProjectile" />
+    </value>
+  </Operation>
+
+  <!-- Armor Penetration Multiplier -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/StatDef[defName="RangedWeapon_ArmorPenetrationMultiplier"]/parts</xpath>
+    <value>
+      <li Class="FunnelBit.StatPart_FunnelBitQuality">
+        <factorAwful>0.9</factorAwful>
+        <factorPoor>1</factorPoor>
+        <factorNormal>1</factorNormal>
+        <factorGood>1</factorGood>
+        <factorExcellent>1</factorExcellent>
+        <factorMasterwork>1.25</factorMasterwork>
+        <factorLegendary>1.5</factorLegendary>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Accuracy -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/StatDef[@Name="AccuracyBase"]/parts</xpath>
+    <value>
+      <li Class="FunnelBit.StatPart_FunnelBitQuality">
+        <factorAwful>0.8</factorAwful>
+        <factorPoor>0.9</factorPoor>
+        <factorNormal>1</factorNormal>
+        <factorGood>1.1</factorGood>
+        <factorExcellent>1.2</factorExcellent>
+        <factorMasterwork>1.35</factorMasterwork>
+        <factorLegendary>1.5</factorLegendary>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

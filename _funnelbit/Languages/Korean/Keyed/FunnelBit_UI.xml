@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <FunnelBit_Toggle_Auto>공격 허용을 전환합니다.\n\n비활성화하면 다른 설정과 상관없이 모든 드론이 자동 공격을 중지합니다.\n이미 전개된 드론도 즉시 사격을 멈추고 복귀합니다.</FunnelBit_Toggle_Auto>
+  <FunnelBit_Toggle_PawnFireAtWill>폰의 '자유 사격'을 전환합니다.</FunnelBit_Toggle_PawnFireAtWill>
+  <FunnelBit_Toggle_TurretFireAtWill>드론 포대의 '자유 사격'을 전환합니다.</FunnelBit_Toggle_TurretFireAtWill>
+  <FunnelBit_Toggle_TurretFocusFire>집중 사격 모드를 전환합니다.\n\n활성화하면 드론은 주인이 공격 중인 목표를 우선시하고 화력을 집중합니다.\n주인이 아무도 공격하지 않는 경우에는 평소처럼 주변 적을 탐색합니다.</FunnelBit_Toggle_TurretFocusFire>
+  <FunnelBit_Toggle_TurretAutoFireAtFocus>동기화 공격 모드를 전환합니다.\n\n활성화하면 드론이 주인이 현재 교전 중인 적을 자동으로 전개해 공격합니다.</FunnelBit_Toggle_TurretAutoFireAtFocus>
+  <FunnelBit_Toggle_TurretAutoFire>자동 조준을 전환합니다.\n\n활성화하면 드론이 사거리 내 적을 자동으로 탐색해 공격합니다.\n비활성화하면 자동 공격을 멈춥니다. 단, 동기화 공격 모드가 켜져 있으면 주인의 목표에는 계속 반응합니다.</FunnelBit_Toggle_TurretAutoFire>
+  <FunnelBit_Toggle_TurretOnlyAutoFireWhileDraft>주인이 징집 중일 때만 자동 공격을 전환합니다.\n\n활성화하면 주인이 비징집 상태일 때 드론은 사거리 내 적을 자동으로 공격하지 않습니다.</FunnelBit_Toggle_TurretOnlyAutoFireWhileDraft>
+  <FunnelBit_Toggle_TurretDroneWorkEnabled>작업 지원을 전환합니다.\n\n활성화하면 드론이 작업을 자동으로 보조합니다.</FunnelBit_Toggle_TurretDroneWorkEnabled>
+
+  <FunnelBit_NoDroneAvailable>사용 가능한 드론이 없습니다.</FunnelBit_NoDroneAvailable>
+</LanguageData>

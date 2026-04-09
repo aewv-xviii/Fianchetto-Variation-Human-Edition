@@ -1,0 +1,501 @@
+:root {
+    --bg-dark: #121214;
+    --bg-panel: #1e1e20;
+    --bg-input: #2a2a2d;
+    --border-color: #3e3e42;
+    --accent-color: #7c4dff;
+    /* FunnelBit-ish purple? */
+    --accent-hover: #9975ff;
+    --text-main: #e0e0e0;
+    --text-dim: #a0a0a0;
+    --font-ui: 'Outfit', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-ui);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 350px;
+    background-color: var(--bg-panel);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+.sidebar-header {
+    padding: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-header h1 {
+    margin: 0 0 12px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.toolbar {
+    display: flex;
+    gap: 8px;
+}
+
+.section-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-dim);
+    margin: 16px 16px 8px 16px;
+    font-weight: 600;
+}
+
+/* Buttons */
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-ui);
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.btn.primary {
+    background-color: var(--accent-color);
+    color: white;
+    width: 100%;
+}
+
+.btn.primary:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn.secondary {
+    background-color: var(--bg-input);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+}
+
+.btn.secondary:hover {
+    background-color: var(--border-color);
+}
+
+.icon-btn {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-color);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.icon-btn:hover {
+    background: var(--accent-color);
+}
+
+/* I/O Panel */
+.io-panel {
+    padding: 16px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: #18181a;
+}
+
+#xml-input {
+    width: 100%;
+    height: 80px;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-color);
+    color: var(--text-dim);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    padding: 8px;
+    border-radius: 4px;
+    resize: none;
+    margin-bottom: 8px;
+}
+
+#xml-input:focus {
+    color: var(--text-main);
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+.io-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.io-controls button {
+    flex: 1;
+}
+
+/* Tree View */
+.tree-view-wrapper {
+    flex: 1;
+    overflow-y: auto;
+    border-bottom: 1px solid var(--border-color);
+    min-height: 150px;
+}
+
+.tree-view {
+    padding: 0 8px 16px 8px;
+}
+
+.tree-node {
+    padding: 4px 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    color: var(--text-dim);
+}
+
+.tree-node:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+}
+
+.tree-node.selected {
+    background-color: rgba(124, 77, 255, 0.2);
+    color: var(--accent-hover);
+    border-left: 2px solid var(--accent-color);
+}
+
+.tree-indent {
+    margin-left: 16px;
+}
+
+/* Properties Panel */
+.properties-panel {
+    height: 350px;
+    overflow-y: auto;
+    background-color: #18181a;
+    display: flex;
+    flex-direction: column;
+}
+
+.properties-content {
+    padding: 0 16px 32px 16px;
+}
+
+.prop-row {
+    margin-bottom: 12px;
+}
+
+.prop-label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-bottom: 4px;
+}
+
+.prop-input {
+    width: 100%;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+
+.prop-input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+.prop-group-h {
+    display: flex;
+    gap: 8px;
+}
+
+.prop-group-h .prop-input {
+    flex: 1;
+}
+
+.texture-input-group {
+    display: flex;
+    gap: 4px;
+}
+
+.texture-input-group button {
+    padding: 0 12px;
+}
+
+/* Viewport */
+.viewport-container {
+    flex: 1;
+    background-color: #000;
+    /* Dark bg for contrast */
+    background-image: radial-gradient(#222 1px, transparent 1px);
+    background-size: 20px 20px;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+}
+
+.viewport-overlay-ui {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    pointer-events: none;
+    /* Let clicks pass through to canvas */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 100;
+}
+
+.viewport-controls {
+    pointer-events: auto;
+    display: flex;
+    gap: 8px;
+    background: rgba(30, 30, 32, 0.8);
+    backdrop-filter: blur(4px);
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.help-hint {
+    background: rgba(30, 30, 32, 0.6);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+}
+
+.zoom-level {
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-main);
+}
+
+/* The World - transformed container */
+.viewport-world {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    /* Transformation will be applied via JS inline styles */
+    transform-origin: 0 0;
+}
+
+/* Gizmo Elements in Viewport */
+.gizmo-anchor {
+    /* Positioned absolute by JS */
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    /* Container itself has no size */
+    z-index: 10;
+}
+
+.gizmo-hitbox {
+    position: absolute;
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    /* Faint interaction area */
+    pointer-events: auto;
+    cursor: move;
+    /* Interaction area is for moving */
+    box-sizing: border-box;
+}
+
+.gizmo-hitbox:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.gizmo-hitbox.selected {
+    border-color: var(--text-dim);
+    /* Interaction area selected but not main focus if element box exists */
+    z-index: 90;
+}
+
+.gizmo-element-box {
+    position: absolute;
+    border: 2px solid var(--accent-color);
+    /* Main Element Body */
+    pointer-events: none;
+    /* Let clicks pass unless resize handles */
+    box-sizing: border-box;
+    z-index: 100;
+}
+
+.visuals-root {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+.visual-node {
+    position: absolute;
+    background-size: 100% 100%;
+    /* Stretch to size usually */
+    background-repeat: no-repeat;
+    pointer-events: none;
+    /* Visual nodes not clickable by default as requested */
+}
+
+/* Selected Visual Node (Interactive) */
+.visual-node.interactive {
+    pointer-events: auto;
+    outline: 1px solid var(--accent-hover);
+    /* Use outline to avoid affecting box size/background */
+    cursor: move;
+    z-index: 110;
+}
+
+/* Resize Handles */
+.resize-handle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--accent-color);
+    border: 1px solid white;
+    z-index: 200;
+}
+
+.resize-handle.se {
+    bottom: -5px;
+    right: -5px;
+    cursor: se-resize;
+}
+
+.resize-handle.sw {
+    bottom: -5px;
+    left: -5px;
+    cursor: sw-resize;
+}
+
+.resize-handle.ne {
+    top: -5px;
+    right: -5px;
+    cursor: ne-resize;
+}
+
+.resize-handle.nw {
+    top: -5px;
+    left: -5px;
+    cursor: nw-resize;
+}
+
+/* Texture Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: var(--bg-panel);
+    width: 800px;
+    height: 600px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+}
+
+.modal-header {
+    padding: 16px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.texture-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.texture-item {
+    width: 120px;
+    height: 140px;
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.texture-item:hover {
+    border-color: var(--accent-color);
+    background: #333;
+}
+
+.texture-thumb {
+    width: 100%;
+    height: 100px;
+    object-fit: contain;
+    background: #000;
+    border-bottom: 1px solid var(--border-color);
+    padding: 4px;
+}
+
+.texture-name {
+    padding: 8px;
+    font-size: 0.75rem;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

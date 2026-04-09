@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Effecter -->
+  <!-- ================================= warmup effecter ================================= -->
+  <EffecterDef>
+    <defName>Milira_FunnelBit_C_SuperLaser_WarmupEffect</defName>
+    <offsetTowardsTarget>0.8</offsetTowardsTarget>
+    <children>
+      <!-- sound -->
+      <li>
+        <subEffecterClass>SubEffecter_Sustainer</subEffecterClass>
+        <soundDef>ArsenalMilian_SuperLaser_Warmup</soundDef>
+      </li>
+      <!-- flash -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>PlainFlash</fleckDef>
+        <burstCount>1</burstCount>
+        <chancePerTick>1</chancePerTick>
+        <chancePeriodTicks>15</chancePeriodTicks>
+        <scale>3.5~6.0</scale>
+        <color>(1.0,0.2,0.3)</color>
+        <spawnLocType>BetweenTouchingCells</spawnLocType>
+      </li>
+
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_C_SuperLaser_GlowFadeIn</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>4</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <!-- spark -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <positionRadius>0.37</positionRadius>
+        <!-- <positionOffset>(0.55, 0.10)</positionOffset> -->
+        <fleckDef>Milira_FunnelBit_B_subProjectile_EnergySpark</fleckDef>
+        <chancePerTick>.15</chancePerTick>
+        <chancePeriodTicks>15</chancePeriodTicks>
+        <!-- <rotation>90</rotation> -->
+        <burstCount>1~4</burstCount>
+        <scale>3.0~4.45</scale>
+        <color>(0.6,0.8,1.0,1)</color>
+        <!-- 
+        public enum MoteSpawnLocType : byte
+        {
+          OnSource,
+          BetweenPositions,
+          BetweenTouchingCells,
+          RandomCellOnTarget,
+          RandomDrawPosOnTarget,
+          OnTarget
+        } -->
+        <spawnLocType>BetweenTouchingCells</spawnLocType>
+        <!-- <positionLerpFactor>1</positionLerpFactor> -->
+        <!-- <positionOffset>(0, 0, 0)</positionOffset> -->
+        <soundDef>ArsenalMilian_Spark</soundDef>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <!-- ================================= muzzleflash effecter ================================= -->
+  <EffecterDef>
+    <defName>Milira_FunnelBit_C_SuperLaser_MuzzleFlashEffect</defName>
+    <offsetTowardsTarget>0.8</offsetTowardsTarget>
+    <children>
+      <!-- camera shake -->
+      <li>
+        <subEffecterClass>SubEffecter_CameraShakeSingle</subEffecterClass>
+        <cameraShake>.4</cameraShake>
+        <distanceAttenuationScale>1</distanceAttenuationScale>
+        <distanceAttenuationMax>100</distanceAttenuationMax>
+      </li>
+
+      <li>
+        <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        <soundDef>ArsenalMilian_SuperLaser_Shot</soundDef>
+      </li>
+
+      <!-- glow -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_FireGlowFast_B</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>22~22</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+
+      <!-- energy spark -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_B_subProjectile_EnergySpark</fleckDef>
+        <burstCount>2</burstCount>
+        <scale>3.6~4.0</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_B_subProjectile_EnergySpark</fleckDef>
+        <burstCount>5</burstCount>
+        <scale>2.6~3.0</scale>
+        <positionRadius>1.2</positionRadius>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+      <!-- distortion -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_Distortion_A</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>2~2.5</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+      <!-- particles -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>MicroSparks</fleckDef>
+        <burstCount>4</burstCount>
+        <positionRadius>0.6</positionRadius>
+        <scale>1.6~3.0</scale>
+        <rotationRate>-12~12</rotationRate>
+        <angle>35~45</angle>
+        <speed>1.2</speed>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <positionRadius>0.02</positionRadius>
+        <moteDef>Milira_FunnelBit_C_SuperLaser_ParticleA</moteDef>
+        <burstCount>4~5</burstCount>
+        <speed>3~5</speed>
+        <angle>135~225</angle>
+        <scale>0.1~0.2</scale>
+        <spawnLocType>OnSource</spawnLocType>
+        <color>(1,0.8,0.5)</color>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>Milira_FunnelBit_C_SuperLaser_ParticleB</moteDef>
+        <burstCount>3~8</burstCount>
+        <scale>0.38~0.6</scale>
+        <speed>10~16</speed>
+        <angle>-15~15</angle>
+        <positionRadius>0.01</positionRadius>
+        <spawnLocType>OnSource</spawnLocType>
+        <color>(1,0.8,0.7)</color>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>Milira_FunnelBit_C_SuperLaser_ParticleB</moteDef>
+        <burstCount>4~7</burstCount>
+        <scale>0.38~0.6</scale>
+        <speed>5~8</speed>
+        <angle>-30~30</angle>
+        <positionRadius>0.01</positionRadius>
+        <spawnLocType>OnSource</spawnLocType>
+        <color>(1,0.8,0.7)</color>
+      </li>
+
+      <!-- muzzleflash -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_MuzzleFlashA_1</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>7.5~7.5</scale>
+        <spawnLocType>OnSource</spawnLocType>
+        <!-- <useTargetAInitialRotation>true</useTargetAInitialRotation> -->
+        <rotation>0</rotation>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_MuzzleFlashA_2</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>7.5~7.5</scale>
+        <spawnLocType>OnSource</spawnLocType>
+        <!-- <useTargetAInitialRotation>true</useTargetAInitialRotation> -->
+        <rotation>0</rotation>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_MuzzleFlashA_3</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>7.5~7.5</scale>
+        <spawnLocType>OnSource</spawnLocType>
+        <!-- <useTargetAInitialRotation>true</useTargetAInitialRotation> -->
+        <rotation>0</rotation>
+      </li>
+
+    </children>
+  </EffecterDef>
+
+
+
+
+
+
+  <!-- ================================= fleck ================================= -->
+  <ThingDef ParentName="MoteBase">
+    <defName>Milira_FunnelBit_C_SuperLaser_ParticleA</defName>
+    <graphicData>
+      <texPath>Effects/ForceField_Malkuth_particle</texPath>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <mote>
+      <fadeInTime>0.03</fadeInTime>
+      <solidTime>0.04</solidTime>
+      <fadeOutTime>0.13</fadeOutTime>
+      <collide>true</collide>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Milira_FunnelBit_C_SuperLaser_ParticleB</defName>
+    <graphicData>
+      <texPath>Effects/ForceField_Malkuth_particle</texPath>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <mote>
+      <fadeInTime>0.02</fadeInTime>
+      <solidTime>0.05</solidTime>
+      <fadeOutTime>0.2</fadeOutTime>
+      <collide>true</collide>
+      <rotateTowardsMoveDirection>true</rotateTowardsMoveDirection>
+    </mote>
+  </ThingDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>Milira_FunnelBit_C_SuperLaser_GlowFadeIn</defName>
+    <graphicData>
+      <texPath>Things/Milira_FunnelBit/Effects/BeamGlow_Red_B</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(1, 1)</drawSize>
+      <renderInstanced>true</renderInstanced>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>2.3</fadeInTime>
+    <solidTime>0.0</solidTime>
+    <fadeOutTime>0.033</fadeOutTime>
+    <growthRate>1.24</growthRate>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>Milira_FunnelBit_FireGlowFast_B</defName>
+    <graphicData>
+      <texPath>Things/Milira_FunnelBit/Effects/BeamGlow_Red_B</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(0.6, 0.6)</drawSize>
+      <renderInstanced>true</renderInstanced>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.025</fadeInTime>
+    <solidTime>0.0</solidTime>
+    <fadeOutTime>0.25</fadeOutTime>
+  </FleckDef>
+
+
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Milira_FunnelBit_C_SuperLaser_Beam</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.01</fadeInTime>
+      <fadeOutTime>0.25</fadeOutTime>
+      <solidTime>0.0</solidTime>
+      <rotateTowardsTarget>True</rotateTowardsTarget>
+      <scaleToConnectTargets>True</scaleToConnectTargets>
+    </mote>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData>
+      <drawSize>(4, 1)</drawSize>
+      <texPath>Things/Milira_FunnelBit/Effects/SuperLaser</texPath>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>MoteBeam</shaderType>
+      <shaderParameters>
+        <_ExtraTexA>/Things/Mote/BeamSecondaryNoise_A</_ExtraTexA>
+        <_ExtraTexB>/Things/Mote/BeamSecondaryNoise_B</_ExtraTexB>
+        <_ScrollSpeedA>0</_ScrollSpeedA>
+        <_ScrollSpeedB>0</_ScrollSpeedB>
+        <!-- <_NumFrames>25</_NumFrames> -->
+        <_Intensity>1</_Intensity>
+      </shaderParameters>
+    </graphicData>
+  </ThingDef>
+
+
+
+  <!-- damage effecter -->
+  <EffecterDef>
+    <defName>Milira_FunnelBit_C_SuperLaser_damageEffect</defName>
+    <children>
+
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_B_subProjectile_EnergySpark</fleckDef>
+        <burstCount>2~3</burstCount>
+        <scale>2.6~4.2</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Smoke</fleckDef>
+        <burstCount>3</burstCount>
+        <positionRadius>1.2</positionRadius>
+        <scale>2.5~3.5</scale>
+        <rotationRate>-30~30</rotationRate>
+        <angle>30~40</angle>
+        <speed>0.5~0.7</speed>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>AirPuff</fleckDef>
+        <burstCount>2</burstCount>
+        <positionRadius>0.6</positionRadius>
+        <scale>1.5</scale>
+        <rotationRate>-240~240</rotationRate>
+        <angle>-45~45</angle>
+        <speed>1.2~1.5</speed>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>MicroSparks</fleckDef>
+        <burstCount>3</burstCount>
+        <positionRadius>0.6</positionRadius>
+        <scale>0.8~1.2</scale>
+        <rotationRate>-12~12</rotationRate>
+        <angle>35~45</angle>
+        <speed>1.2</speed>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+
+
+    </children>
+  </EffecterDef>
+
+
+
+</Defs>

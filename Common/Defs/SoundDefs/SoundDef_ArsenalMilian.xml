@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Drone launch -->
+  <SoundDef>
+    <defName>Milira_FunnelBit_Malkut_Launch</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArsenalMilian/Milira_FunnelBit_Malkut_Launch</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>12~18</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>FunnelBit_Launch_Large</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArsenalMilian/FunnelBit_Launch_Large</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>24~28</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Milira_FunnelBit_Small_Launch</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArsenalMilian/Milira_FunnelBit_Small_Launch</clipFolderPath>
+          </li>
+        </grains>
+        <pitchRange>0.95~1.05</pitchRange>
+        <volumeRange>7~12</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Milira_FunnelBit_Malkut_Booster</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArsenalMilian/Milira_FunnelBit_Malkut_Booster</clipFolderPath>
+          </li>
+        </grains>
+        <pitchRange>0.9~1.15</pitchRange>
+        <volumeRange>8~13</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ArsenalMilian_Booster1</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArsenalMilian/ArsenalMilian_Booster1</clipFolderPath>
+          </li>
+        </grains>
+        <pitchRange>0.85~1.3</pitchRange>
+        <volumeRange>12~18</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+
+
+  <!-- UI Sound -->
+  <!-- Small -->
+  <SoundDef>
+    <defName>ArsenalMilian_Beep_Small_On</defName>
+    <maxVoices>1</maxVoices>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>ArsenalMilian/ArsenalMilian_Beep_Small_On</clipPath>
+          </li>
+        </grains>
+        <volumeRange>12~12</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ArsenalMilian_Beep_Small_Off</defName>
+    <maxVoices>1</maxVoices>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>ArsenalMilian/ArsenalMilian_Beep_Small_Off</clipPath>
+          </li>
+        </grains>
+        <volumeRange>12~12</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <!-- Big -->
+  <SoundDef>
+    <defName>ArsenalMilian_Beep_Large_On</defName>
+    <maxVoices>1</maxVoices>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>ArsenalMilian/ArsenalMilian_Beep_Large_On</clipPath>
+          </li>
+        </grains>
+        <volumeRange>5~5</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ArsenalMilian_Beep_Large_Off</defName>
+    <maxVoices>1</maxVoices>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>ArsenalMilian/ArsenalMilian_Beep_Large_Off</clipPath>
+          </li>
+        </grains>
+        <volumeRange>12~12</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <!-- Ability -->
+  <SoundDef>
+    <defName>ArsenalMilian_Beep_Ability1</defName>
+    <maxVoices>1</maxVoices>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>ArsenalMilian/ArsenalMilian_Beep_Ability1</clipPath>
+          </li>
+        </grains>
+        <volumeRange>12~12</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+
+  <!-- Fire -->
+  <SoundDef>
+    <defName>ArsenalMilian_Shot_Laser1</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArsenalMilian/ArsenalMilian_Shot_Laser1</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>12~14</volumeRange>
+        <pitchRange>1.0~1.1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ArsenalMilian_Shot_Laser2</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArsenalMilian/ArsenalMilian_Shot_Laser2</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>15~18</volumeRange>
+        <pitchRange>1.0~1.1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ArsenalMilian_Shot_Laser3</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArsenalMilian/ArsenalMilian_Shot_Laser3</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>12~16</volumeRange>
+        <pitchRange>0.95~1.05</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Milira_FunnelBit_Malkut_Shot</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArsenalMilian/Milira_FunnelBit_Malkut_Shot</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>20~25</volumeRange>
+        <pitchRange>1.1~1.4</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ArsenalMilian_Shot_Particle_A</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArsenalMilian/ArsenalMilian_Shot_Particle_A</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>9~11</volumeRange>
+        <pitchRange>1.1~1.4</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ArsenalMilian_Shot_DA</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArsenalMilian/ArsenalMilian_Shot_DA</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>16~22</volumeRange>
+        <pitchRange>0.95~1.1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ArsenalMilian_Shot_DB</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArsenalMilian/ArsenalMilian_Shot_DB</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>11~16</volumeRange>
+        <pitchRange>0.95~1.1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ArsenalMilian_BeamBlade1</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArsenalMilian/ArsenalMilian_BeamBlade1</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>16~22</volumeRange>
+        <pitchRange>0.95~1.1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <!-- effect spark -->
+  <SoundDef>
+    <defName>ArsenalMilian_Spark</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArsenalMilian/ArsenalMilian_Spark_Zap</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>10~16</volumeRange>
+        <distRange>10~35</distRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <!-- shield active -->
+  <SoundDef>
+    <defName>ArsenalMilian_ShieldActive</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArsenalMilian/ArsenalMilian_ShieldActive</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>10~16</volumeRange>
+        <distRange>10~35</distRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <!-- super laser -->
+  <SoundDef>
+    <defName>ArsenalMilian_SuperLaser_Warmup</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <!-- <muteWhenPaused>True</muteWhenPaused> -->
+        <tempoAffectedByGameSpeed>True</tempoAffectedByGameSpeed>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArsenalMilian/ArsenalMilian_SuperLaser_Warmup</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>20~25</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>ArsenalMilian_SuperLaser_Shot</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArsenalMilian/ArsenalMilian_SuperLaser_Shot</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>20~25</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+
+
+  <!-- DroneWork beam -->
+  <SoundDef>
+    <defName>ArsenalMilian_DroneWork_Beam</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <sustainStopSound>ArsenalMilian_DroneWork_BeamResolve</sustainStopSound>
+    <subSounds>
+      <li>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArsenalMilian/ArsenalMilian_DroneWork_Beam</clipFolderPath>
+          </li>
+        </grains>
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>15</volumeRange>
+        <distRange>8~21</distRange>
+        <sustainRelease>0.02</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ArsenalMilian_DroneWork_Beam_big</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <sustainStopSound>ArsenalMilian_DroneWork_BeamResolve</sustainStopSound>
+    <subSounds>
+      <li>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArsenalMilian/ArsenalMilian_DroneWork_Beam</clipFolderPath>
+          </li>
+        </grains>
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>16</volumeRange>
+        <distRange>13~26</distRange>
+        <sustainRelease>0.02</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ArsenalMilian_Beam</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <sustainStopSound>ArsenalMilian_DroneWork_BeamResolve</sustainStopSound>
+    <subSounds>
+      <li>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArsenalMilian/ArsenalMilian_DroneWork_Beam</clipFolderPath>
+          </li>
+        </grains>
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>25</volumeRange>
+        <distRange>25~35</distRange>
+        <sustainRelease>0.02</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ArsenalMilian_DroneWork_BeamResolve</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Weapon/Beamgraser/Resolve</clipFolderPath>
+          </li>
+        </grains>
+        <pitchRange>0.99~1.01</pitchRange>
+        <distRange>8~21</distRange>
+        <volumeRange>10</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+
+
+</Defs>

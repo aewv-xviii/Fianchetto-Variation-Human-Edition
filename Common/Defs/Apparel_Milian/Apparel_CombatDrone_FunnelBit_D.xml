@@ -1,0 +1,1022 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- typeD -->
+  <ThingDef ParentName="Milira_CombatDrone_FunnelBit">
+    <defName>Milira_CombatDrone_FunnelBitD</defName>
+    <label>Strike drone: Keter</label>
+    <description>A massive composite weapon system comprised of multiple specialized drones. It is highly effective against all engagement types, from armored and soft targets to dense enemy clusters.\n\nThe system deploys two heavy melee drones equipped with plasma blades, two heavy drones armed with laser cannons, and four light drones utilizing converged particle beams. While a single Milian unit can project firepower equivalent to a standard infantry squad, it requires a significantly higher bandwidth to maintain operational control.</description>
+    <recipeMaker>
+      <researchPrerequisites Inherit="false">
+        <li>Milira_FieldTheory</li>
+        <li>Milira_ConceptWeaponry</li>
+      </researchPrerequisites>
+      <skillRequirements>
+        <Crafting>10</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <costList>
+      <Plasteel>340</Plasteel>
+      <Steel>120</Steel>
+      <ComponentIndustrial>40</ComponentIndustrial>
+      <ComponentSpacer>8</ComponentSpacer>
+      <Chemfuel>60</Chemfuel>
+    </costList>
+    <graphicData>
+      <texPath>Things/Milira_FunnelBit/DroneBox</texPath>
+    </graphicData>
+    <statBases>
+      <WorkToMake>30000</WorkToMake>
+      <Mass>3.0</Mass>
+      <Flammability>0.4</Flammability>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <apparel>
+      <tags>
+        <li>Milira_CombatDrone_FunnelBit</li>
+      </tags>
+      <!-- <abilities>
+        <li>Milira_CombatDrone_FunnelBitB_Ability_A</li>
+      </abilities> -->
+    </apparel>
+    <comps>
+      <li Class="FunnelBit.CompProperties_TurretGun_FunnelBit">
+        <layoutDef>Milian_FunnelGizmo_D</layoutDef>
+        <turretDef>MiliraTurret_CombatDrone_FunnelBitD</turretDef>
+        <angleOffset>-90</angleOffset>
+        <autoAttack>true</autoAttack>
+        <showDefaultGizmo>false</showDefaultGizmo>
+
+        <autoFire>false</autoFire>
+        <focusFire>false</focusFire>
+        <autoFireAtFocus>true</autoFireAtFocus>
+        <onlyAutoFireWhileDraft>false</onlyAutoFireWhileDraft>
+        <droneWorkEntries>
+          <li>
+            <workDef>DroneWork_ArsenalMilian_Build</workDef>
+            <overrideSlotIndices>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+              <li>7</li>
+            </overrideSlotIndices>
+          </li>
+          <li>
+            <workDef>DroneWork_ArsenalMilian_Deconstruct</workDef>
+            <overrideSlotIndices>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+              <li>7</li>
+            </overrideSlotIndices>
+          </li>
+          <li>
+            <workDef>DroneWork_ArsenalMilian_Repair</workDef>
+            <overrideSlotIndices>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+              <li>7</li>
+            </overrideSlotIndices>
+          </li>
+          <li>
+            <workDef>DroneWork_ArsenalMilian_PlantCut</workDef>
+            <overrideSlotIndices>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+              <li>7</li>
+            </overrideSlotIndices>
+          </li>
+          <li>
+            <workDef>DroneWork_ArsenalMilian_Mine</workDef>
+            <overrideSlotIndices>
+              <li>2</li>
+              <li>3</li>
+            </overrideSlotIndices>
+          </li>
+          <li>
+            <workDef>DroneWork_ArsenalMilian_Craft</workDef>
+            <overrideSlotIndices>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+              <li>7</li>
+            </overrideSlotIndices>
+          </li>
+          <li>
+            <workDef>DroneWork_ArsenalMilian_Clean</workDef>
+            <overrideSlotIndices>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+              <li>7</li>
+            </overrideSlotIndices>
+          </li>
+          <li>
+            <workDef>DroneWork_ArsenalMilian_ClearSnow</workDef>
+            <overrideSlotIndices>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+              <li>7</li>
+            </overrideSlotIndices>
+          </li>
+        </droneWorkEntries>
+      </li>
+      <li Class="FunnelBit.CompProperties_WeaponFunnelGizmo" />
+
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- typeb - turret -->
+  <ThingDef ParentName="Milira_CombatDroneTurretBase">
+    <defName>MiliraTurret_CombatDrone_FunnelBitD</defName>
+    <label>Strike drone: Keter</label>
+    <description>Please give way when a Milian equipped with this system is trying to pass through a doorway. And please, pray for the door frame.</description>
+    <tickerType>Normal</tickerType>
+    <statBases>
+      <Mass>1.2</Mass>
+      <AccuracyTouch>0.56</AccuracyTouch>
+      <AccuracyShort>0.45</AccuracyShort>
+      <AccuracyMedium>0.34</AccuracyMedium>
+      <AccuracyLong>0.22</AccuracyLong>
+      <!-- <RangedWeapon_Cooldown>300</RangedWeapon_Cooldown> -->
+    </statBases>
+    <verbs>
+      <li Class="FunnelBit.VerbProperties_LaunchFunnelBit">
+        <verbClass>FunnelBit.Verb_LaunchFunnelBit</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_Milira_FunnelBit_B</defaultProjectile>
+        <warmupTime>0.0</warmupTime>
+        <!-- <burstShotCount>8</burstShotCount> -->
+        <ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+        <defaultCooldownTime>0.1</defaultCooldownTime>
+        <range>27.9</range>
+        <!-- <range>8.9</range> -->
+        <!-- move to FunnelBitProperties.soundLaunch -->
+        <!-- <soundCast>FunnelBit_Launch_Small</soundCast> -->
+        <!-- <soundCastTail>GunTail_Heavy</soundCastTail> -->
+        <muzzleFlashScale>9</muzzleFlashScale>
+
+        <bitsPerShot>1</bitsPerShot>
+        <maxBitSlots>8</maxBitSlots>
+        <defaultCooldownTime>0.1</defaultCooldownTime>
+
+        <slotProjectiles>
+          <!-- sword -->
+          <li>Bullet_Milira_FunnelBit_D</li>          <!-- slot 0 -->
+          <li>Bullet_Milira_FunnelBit_D</li>          <!-- slot 1 -->
+
+          <!-- rifle -->
+          <li>Bullet_Milira_FunnelBit_D_subA_A</li>          <!-- slot 2 -->
+          <li>Bullet_Milira_FunnelBit_D_subA_B</li>          <!-- slot 3 -->
+
+          <!-- smol -->
+          <li>Bullet_Milira_FunnelBit_D_subB_A</li>          <!-- slot 4 -->
+          <li>Bullet_Milira_FunnelBit_D_subB_B</li>          <!-- slot 5 -->
+          <li>Bullet_Milira_FunnelBit_D_subB_C</li>
+          <li>Bullet_Milira_FunnelBit_D_subB_D</li>
+        </slotProjectiles>
+
+        <initialSlotStates>
+          <li>Docked</li>          <!-- slot0 -->
+          <li>Docked</li>          <!-- slot1 -->
+          <li>Docked</li>          <!-- slot2 -->
+          <li>Docked</li>          <!-- slot3 -->
+          <li>Docked</li>          <!-- slot4 -->
+          <li>Docked</li>          <!-- slot5 -->
+          <li>Docked</li>          <!-- slot6 -->
+          <li>Docked</li>          <!-- slot7 -->
+        </initialSlotStates>
+
+
+
+
+        <slotOverlays>
+          <!-- sword -->
+          <li>
+            <slotIndex>0</slotIndex>
+            <useBarrelPosition>true</useBarrelPosition>
+            <drawSize>(1,1)</drawSize>
+            <offset>(0.0, -0.1, 0.0)</offset>
+            <layer>-2</layer>
+            <perRotLayers>
+              <li>
+                <rot>North</rot>
+                <layer>75</layer>
+                <offset>(0.0, 0.1, 0)</offset>
+              </li>
+              <li>
+                <rot>South</rot>
+                <layer>-3</layer>
+                <offset>(0.0, -0.1, 0)</offset>
+              </li>
+              <li>
+                <rot>East</rot>
+                <layer>75</layer>
+                <offset>(0.0, 0.2, 0)</offset>
+              </li>
+              <li>
+                <rot>West</rot>
+                <layer>75</layer>
+                <offset>(0.0, -0.2, 0)</offset>
+              </li>
+            </perRotLayers>
+            <graphics>
+              <li>
+                <states>
+                  <li>Docked</li>
+                  <li>Charging</li>
+                </states>
+                <graphic>
+                  <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D_close</texPath>
+                  <graphicClass>Graphic_Single</graphicClass>
+                </graphic>
+              </li>
+              <li>
+                <states>
+                  <li>Docked</li>
+                  <li>Charging</li>
+                </states>
+                <graphic>
+                  <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D_emissive</texPath>
+                  <graphicClass>Graphic_Single</graphicClass>
+                  <shaderType>TransparentPostLight</shaderType>
+                </graphic>
+              </li>
+            </graphics>
+          </li>
+          <li>
+            <slotIndex>1</slotIndex>
+            <useBarrelPosition>true</useBarrelPosition>
+            <drawSize>(1,1)</drawSize>
+            <offset>(0.0, -0.1, 0.0)</offset>
+            <layer>-2</layer>
+            <perRotLayers>
+              <li>
+                <rot>North</rot>
+                <layer>75</layer>
+                <offset>(0.0, 0.1, 0)</offset>
+              </li>
+              <li>
+                <rot>South</rot>
+                <layer>-3</layer>
+                <offset>(0.0, -0.1, 0)</offset>
+              </li>
+              <li>
+                <rot>East</rot>
+                <layer>75</layer>
+                <offset>(0.0, -0.2, 0)</offset>
+              </li>
+              <li>
+                <rot>West</rot>
+                <layer>75</layer>
+                <offset>(0.0, 0.2, 0)</offset>
+              </li>
+            </perRotLayers>
+            <graphics>
+              <li>
+                <states>
+                  <li>Docked</li>
+                  <li>Charging</li>
+                </states>
+                <graphic>
+                  <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D_close</texPath>
+                  <graphicClass>Graphic_Single</graphicClass>
+                </graphic>
+              </li>
+              <li>
+                <states>
+                  <li>Docked</li>
+                  <li>Charging</li>
+                </states>
+                <graphic>
+                  <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D_emissive</texPath>
+                  <graphicClass>Graphic_Single</graphicClass>
+                  <shaderType>TransparentPostLight</shaderType>
+                </graphic>
+              </li>
+            </graphics>
+          </li>
+
+          <!-- rifle -->
+          <!-- right -->
+          <li>
+            <slotIndex>2</slotIndex>
+            <useBarrelPosition>true</useBarrelPosition>
+            <drawSize>(1,1)</drawSize>
+            <offset>(0.0, -0.1, 0.0)</offset>
+            <layer>-2</layer>
+            <perRotLayers>
+              <li>
+                <rot>North</rot>
+                <layer>75</layer>
+                <offset>(0.0, 0.1, 0)</offset>
+              </li>
+              <li>
+                <rot>South</rot>
+                <layer>-3</layer>
+                <offset>(0.0, -0.1, 0)</offset>
+              </li>
+              <li>
+                <rot>East</rot>
+                <layer>75</layer>
+                <offset>(0.0, 0.4, 0)</offset>
+              </li>
+              <li>
+                <rot>West</rot>
+                <layer>75</layer>
+                <offset>(0.0, -0.4, 0)</offset>
+              </li>
+            </perRotLayers>
+            <graphics>
+              <li>
+                <states>
+                  <li>Docked</li>
+                  <li>Charging</li>
+                </states>
+                <perRotGraphics>
+                  <li>
+                    <rot>North</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D2</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                    </graphic>
+                  </li>
+                  <li>
+                    <rot>South</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D2_flip</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                    </graphic>
+                  </li>
+                  <li>
+                    <rot>East</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D2_flip</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                    </graphic>
+                  </li>
+                  <li>
+                    <rot>West</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D2_flip</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                    </graphic>
+                  </li>
+                </perRotGraphics>
+              </li>
+              <!-- emissive -->
+              <li>
+                <states>
+                  <li>Docked</li>
+                  <li>Charging</li>
+                </states>
+                <perRotGraphics>
+                  <li>
+                    <rot>North</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D2_emissive</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                      <shaderType>TransparentPostLight</shaderType>
+                    </graphic>
+                  </li>
+                  <li>
+                    <rot>South</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D2_flip_emissive</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                      <shaderType>TransparentPostLight</shaderType>
+                    </graphic>
+                  </li>
+                  <li>
+                    <rot>East</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D2_flip_emissive</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                      <shaderType>TransparentPostLight</shaderType>
+                    </graphic>
+                  </li>
+                  <li>
+                    <rot>West</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D2_flip_emissive</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                      <shaderType>TransparentPostLight</shaderType>
+                    </graphic>
+                  </li>
+                </perRotGraphics>
+              </li>
+            </graphics>
+          </li>
+          <!-- left -->
+          <li>
+            <slotIndex>3</slotIndex>
+            <useBarrelPosition>true</useBarrelPosition>
+            <drawSize>(1,1)</drawSize>
+            <offset>(0.0, -0.1, 0.0)</offset>
+            <layer>-2</layer>
+            <perRotLayers>
+              <li>
+                <rot>North</rot>
+                <layer>75</layer>
+                <offset>(0.0, 0.1, 0)</offset>
+              </li>
+              <li>
+                <rot>South</rot>
+                <layer>-3</layer>
+                <offset>(0.0, -0.1, 0)</offset>
+              </li>
+              <li>
+                <rot>East</rot>
+                <layer>75</layer>
+                <offset>(0.0, -0.4, 0)</offset>
+              </li>
+              <li>
+                <rot>West</rot>
+                <layer>75</layer>
+                <offset>(0.0, 0.4, 0)</offset>
+              </li>
+            </perRotLayers>
+            <graphics>
+              <li>
+                <states>
+                  <li>Docked</li>
+                  <li>Charging</li>
+                </states>
+                <perRotGraphics>
+                  <li>
+                    <rot>North</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D2_flip</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                    </graphic>
+                  </li>
+                  <li>
+                    <rot>South</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D2</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                    </graphic>
+                  </li>
+                  <li>
+                    <rot>East</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D2_flip</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                    </graphic>
+                  </li>
+                  <li>
+                    <rot>West</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D2_flip</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                    </graphic>
+                  </li>
+                </perRotGraphics>
+              </li>
+              <!-- emissive -->
+              <li>
+                <states>
+                  <li>Docked</li>
+                  <li>Charging</li>
+                </states>
+                <perRotGraphics>
+                  <li>
+                    <rot>North</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D2_flip_emissive</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                      <shaderType>TransparentPostLight</shaderType>
+                    </graphic>
+                  </li>
+                  <li>
+                    <rot>South</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D2_emissive</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                      <shaderType>TransparentPostLight</shaderType>
+                    </graphic>
+                  </li>
+                  <li>
+                    <rot>East</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D2_flip_emissive</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                      <shaderType>TransparentPostLight</shaderType>
+                    </graphic>
+                  </li>
+                  <li>
+                    <rot>West</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D2_flip_emissive</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                      <shaderType>TransparentPostLight</shaderType>
+                    </graphic>
+                  </li>
+                </perRotGraphics>
+              </li>
+            </graphics>
+          </li>
+
+          <!-- smol -->
+          <li>
+            <slotIndex>4</slotIndex>
+            <useBarrelPosition>true</useBarrelPosition>
+            <drawSize>(0.5,0.5)</drawSize>
+            <offset>(0.0, -0.1, 0.0)</offset>
+            <layer>-2</layer>
+            <perRotLayers>
+              <li>
+                <rot>North</rot>
+                <layer>75</layer>
+                <offset>(0.0, 0.1, 0)</offset>
+              </li>
+              <li>
+                <rot>South</rot>
+                <layer>-3</layer>
+                <offset>(0.0, -0.1, 0)</offset>
+              </li>
+              <li>
+                <rot>East</rot>
+                <layer>75</layer>
+                <offset>(0.0, 0.3, 0)</offset>
+              </li>
+              <li>
+                <rot>West</rot>
+                <layer>75</layer>
+                <offset>(0.0, -0.3, 0)</offset>
+              </li>
+            </perRotLayers>
+            <graphics>
+              <li>
+                <states>
+                  <li>Docked</li>
+                  <li>Charging</li>
+                </states>
+                <perRotGraphics>
+                  <li>
+                    <rot>North</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D3</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                    </graphic>
+                  </li>
+                  <li>
+                    <rot>South</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D3_flip</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                    </graphic>
+                  </li>
+                  <li>
+                    <rot>East</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D3_flip</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                    </graphic>
+                  </li>
+                  <li>
+                    <rot>West</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D3_flip</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                    </graphic>
+                  </li>
+                </perRotGraphics>
+              </li>
+            </graphics>
+          </li>
+          <li>
+            <slotIndex>5</slotIndex>
+            <useBarrelPosition>true</useBarrelPosition>
+            <drawSize>(0.5,0.5)</drawSize>
+            <offset>(0.0, -0.1, 0.0)</offset>
+            <layer>-2</layer>
+            <perRotLayers>
+              <li>
+                <rot>North</rot>
+                <layer>75</layer>
+                <offset>(0.0, 0.1, 0)</offset>
+              </li>
+              <li>
+                <rot>South</rot>
+                <layer>-3</layer>
+                <offset>(0.0, -0.1, 0)</offset>
+              </li>
+              <li>
+                <rot>East</rot>
+                <layer>75</layer>
+                <offset>(0.0, -0.3, 0)</offset>
+              </li>
+              <li>
+                <rot>West</rot>
+                <layer>75</layer>
+                <offset>(0.0, 0.3, 0)</offset>
+              </li>
+            </perRotLayers>
+            <graphics>
+              <li>
+                <states>
+                  <li>Docked</li>
+                  <li>Charging</li>
+                </states>
+                <perRotGraphics>
+                  <li>
+                    <rot>North</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D3_flip</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                    </graphic>
+                  </li>
+                  <li>
+                    <rot>South</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D3</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                    </graphic>
+                  </li>
+                  <li>
+                    <rot>East</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D3_flip</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                    </graphic>
+                  </li>
+                  <li>
+                    <rot>West</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D3_flip</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                    </graphic>
+                  </li>
+                </perRotGraphics>
+              </li>
+            </graphics>
+          </li>
+
+          <li>
+            <slotIndex>6</slotIndex>
+            <useBarrelPosition>true</useBarrelPosition>
+            <drawSize>(0.5,0.5)</drawSize>
+            <offset>(0.0, -0.1, 0.0)</offset>
+            <layer>-2</layer>
+            <perRotLayers>
+              <li>
+                <rot>North</rot>
+                <layer>75</layer>
+                <offset>(0.0, 0.1, 0)</offset>
+              </li>
+              <li>
+                <rot>South</rot>
+                <layer>-3</layer>
+                <offset>(0.0, -0.1, 0)</offset>
+              </li>
+              <li>
+                <rot>East</rot>
+                <layer>75</layer>
+                <offset>(0.0, 0.1, 0)</offset>
+              </li>
+              <li>
+                <rot>West</rot>
+                <layer>75</layer>
+                <offset>(0.0, -0.1, 0)</offset>
+              </li>
+            </perRotLayers>
+            <graphics>
+              <li>
+                <states>
+                  <li>Docked</li>
+                  <li>Charging</li>
+                </states>
+                <perRotGraphics>
+                  <li>
+                    <rot>North</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D3_flip</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                    </graphic>
+                  </li>
+                  <li>
+                    <rot>South</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D3</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                    </graphic>
+                  </li>
+                  <li>
+                    <rot>East</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D3</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                    </graphic>
+                  </li>
+                  <li>
+                    <rot>West</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D3</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                    </graphic>
+                  </li>
+                </perRotGraphics>
+              </li>
+            </graphics>
+          </li>
+          <li>
+            <slotIndex>7</slotIndex>
+            <useBarrelPosition>true</useBarrelPosition>
+            <drawSize>(0.5,0.5)</drawSize>
+            <offset>(0.0, -0.1, 0.0)</offset>
+            <layer>-2</layer>
+            <perRotLayers>
+              <li>
+                <rot>North</rot>
+                <layer>75</layer>
+                <offset>(0.0, 0.1, 0)</offset>
+              </li>
+              <li>
+                <rot>South</rot>
+                <layer>-3</layer>
+                <offset>(0.0, -0.1, 0)</offset>
+              </li>
+              <li>
+                <rot>East</rot>
+                <layer>75</layer>
+                <offset>(0.0, -0.1, 0)</offset>
+              </li>
+              <li>
+                <rot>West</rot>
+                <layer>75</layer>
+                <offset>(0.0, 0.1, 0)</offset>
+              </li>
+            </perRotLayers>
+            <graphics>
+              <li>
+                <states>
+                  <li>Docked</li>
+                  <li>Charging</li>
+                </states>
+                <perRotGraphics>
+                  <li>
+                    <rot>North</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D3</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                    </graphic>
+                  </li>
+                  <li>
+                    <rot>South</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D3_flip</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                    </graphic>
+                  </li>
+                  <li>
+                    <rot>East</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D3</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                    </graphic>
+                  </li>
+                  <li>
+                    <rot>West</rot>
+                    <graphic>
+                      <texPath>Things/Milira_FunnelBit/FunnelBit_D/FunnelBit_D3</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                    </graphic>
+                  </li>
+                </perRotGraphics>
+              </li>
+            </graphics>
+          </li>
+
+        </slotOverlays>
+
+        <barrelSlots>
+          <li>
+            <slotIndex>0</slotIndex>
+            <absoluteOffset>true</absoluteOffset>
+            <directionMode>FixedWorld</directionMode>
+            <perRot>
+              <li>
+                <rot>0</rot>
+                <offset>(0.4658, 0, -0.1118)</offset>
+                <worldDir>(0.213, 0, -0.9771)</worldDir>
+              </li>
+              <li>
+                <rot>1</rot>
+                <offset>(-0.5358, 0, -0.058)</offset>
+                <worldDir>(-0.213, 0, -0.977)</worldDir>
+              </li>
+              <li>
+                <rot>2</rot>
+                <offset>(-0.595, 0, -0.1458)</offset>
+                <worldDir>(-0.3703, 0, -0.9289)</worldDir>
+              </li>
+              <li>
+                <rot>3</rot>
+                <offset>(0.5695, 0, -0.0355)</offset>
+                <worldDir>(0.2974, 0, -0.9548)</worldDir>
+              </li>
+            </perRot>
+          </li>
+          <li>
+            <slotIndex>1</slotIndex>
+            <absoluteOffset>true</absoluteOffset>
+            <directionMode>FixedWorld</directionMode>
+            <perRot>
+              <li>
+                <rot>0</rot>
+                <offset>(-0.4658, 0, -0.1118)</offset>
+                <worldDir>(-0.213, 0, -0.9771)</worldDir>
+              </li>
+              <li>
+                <rot>1</rot>
+                <offset>(-0.5695, 0, -0.0355)</offset>
+                <worldDir>(-0.2974, 0, -0.9548)</worldDir>
+              </li>
+              <li>
+                <rot>2</rot>
+                <offset>(0.595, 0, -0.1458)</offset>
+                <worldDir>(0.3703, 0, -0.9289)</worldDir>
+              </li>
+              <li>
+                <rot>3</rot>
+                <offset>(0.5358, 0, -0.058)</offset>
+                <worldDir>(0.213, 0, -0.977)</worldDir>
+              </li>
+            </perRot>
+          </li>
+          <li>
+            <slotIndex>2</slotIndex>
+            <absoluteOffset>true</absoluteOffset>
+            <directionMode>FixedWorld</directionMode>
+            <perRot>
+              <li>
+                <rot>0</rot>
+                <offset>(0.7142, 0, 0.0886)</offset>
+                <worldDir>(0.5525, 0, -0.8335)</worldDir>
+              </li>
+              <li>
+                <rot>1</rot>
+                <offset>(-0.7085, 0, 0.111)</offset>
+                <worldDir>(-0.5196, 0, -0.8544)</worldDir>
+              </li>
+              <li>
+                <rot>2</rot>
+                <offset>(-0.8196, 0, 0.1158)</offset>
+                <worldDir>(-0.7385, 0, -0.6743)</worldDir>
+              </li>
+              <li>
+                <rot>3</rot>
+                <offset>(0.726, 0, 0.1553)</offset>
+                <worldDir>(0.5922, 0, -0.8058)</worldDir>
+              </li>
+            </perRot>
+          </li>
+          <li>
+            <slotIndex>3</slotIndex>
+            <absoluteOffset>true</absoluteOffset>
+            <directionMode>FixedWorld</directionMode>
+            <perRot>
+              <li>
+                <rot>0</rot>
+                <offset>(-0.7142, 0, 0.0886)</offset>
+                <worldDir>(-0.5525, 0, -0.8335)</worldDir>
+              </li>
+              <li>
+                <rot>1</rot>
+                <offset>(-0.726, 0, 0.1553)</offset>
+                <worldDir>(-0.5922, 0, -0.8058)</worldDir>
+              </li>
+              <li>
+                <rot>2</rot>
+                <offset>(0.8196, 0, 0.1158)</offset>
+                <worldDir>(0.7385, 0, -0.6743)</worldDir>
+              </li>
+              <li>
+                <rot>3</rot>
+                <offset>(0.7085, 0, 0.111)</offset>
+                <worldDir>(0.5196, 0, -0.8544)</worldDir>
+              </li>
+            </perRot>
+          </li>
+          <li>
+            <slotIndex>4</slotIndex>
+            <absoluteOffset>true</absoluteOffset>
+            <directionMode>FixedWorld</directionMode>
+            <perRot>
+              <li>
+                <rot>0</rot>
+                <offset>(0.6741, 0, -0.0479)</offset>
+                <worldDir>(0.4514, 0, -0.8923)</worldDir>
+              </li>
+              <li>
+                <rot>1</rot>
+                <offset>(-0.7006, 0, -0.004)</offset>
+                <worldDir>(-0.5028, 0, -0.8644)</worldDir>
+              </li>
+              <li>
+                <rot>2</rot>
+                <offset>(-0.7863, 0, -0.0275)</offset>
+                <worldDir>(-0.5979, 0, -0.8015)</worldDir>
+              </li>
+              <li>
+                <rot>3</rot>
+                <offset>(0.7404, 0, 0.0145)</offset>
+                <worldDir>(0.5763, 0, -0.8172)</worldDir>
+              </li>
+            </perRot>
+          </li>
+          <li>
+            <slotIndex>5</slotIndex>
+            <absoluteOffset>true</absoluteOffset>
+            <directionMode>FixedWorld</directionMode>
+            <perRot>
+              <li>
+                <rot>0</rot>
+                <offset>(-0.6741, 0, -0.0479)</offset>
+                <worldDir>(-0.4514, 0, -0.8923)</worldDir>
+              </li>
+              <li>
+                <rot>1</rot>
+                <offset>(-0.7404, 0, 0.0145)</offset>
+                <worldDir>(-0.5763, 0, -0.8172)</worldDir>
+              </li>
+              <li>
+                <rot>2</rot>
+                <offset>(0.7863, 0, -0.0275)</offset>
+                <worldDir>(0.5979, 0, -0.8015)</worldDir>
+              </li>
+              <li>
+                <rot>3</rot>
+                <offset>(0.7006, 0, -0.004)</offset>
+                <worldDir>(0.5028, 0, -0.8644)</worldDir>
+              </li>
+            </perRot>
+          </li>
+          <li>
+            <slotIndex>6</slotIndex>
+            <absoluteOffset>true</absoluteOffset>
+            <directionMode>FixedWorld</directionMode>
+            <perRot>
+              <li>
+                <rot>0</rot>
+                <offset>(0.2271, 0, 0.0698)</offset>
+                <worldDir>(0.039, 0, -0.9992)</worldDir>
+              </li>
+              <li>
+                <rot>1</rot>
+                <offset>(-0.3298, 0, 0.1324)</offset>
+                <worldDir>(-0.0917, 0, -0.9958)</worldDir>
+              </li>
+              <li>
+                <rot>2</rot>
+                <offset>(-0.3325, 0, -0.0016)</offset>
+                <worldDir>(-0.1764, 0, -0.9843)</worldDir>
+              </li>
+              <li>
+                <rot>3</rot>
+                <offset>(0.3373, 0, 0.1336)</offset>
+                <worldDir>(0.1781, 0, -0.984)</worldDir>
+              </li>
+            </perRot>
+          </li>
+          <li>
+            <slotIndex>7</slotIndex>
+            <absoluteOffset>true</absoluteOffset>
+            <directionMode>FixedWorld</directionMode>
+            <perRot>
+              <li>
+                <rot>0</rot>
+                <offset>(-0.2271, 0, 0.0698)</offset>
+                <worldDir>(-0.039, 0, -0.9992)</worldDir>
+              </li>
+              <li>
+                <rot>1</rot>
+                <offset>(-0.3373, 0, 0.1336)</offset>
+                <worldDir>(-0.1781, 0, -0.984)</worldDir>
+              </li>
+              <li>
+                <rot>2</rot>
+                <offset>(0.3325, 0, -0.0016)</offset>
+                <worldDir>(0.1764, 0, -0.9843)</worldDir>
+              </li>
+              <li>
+                <rot>3</rot>
+                <offset>(0.3298, 0, 0.1324)</offset>
+                <worldDir>(0.0917, 0, -0.9958)</worldDir>
+              </li>
+            </perRot>
+          </li>
+        </barrelSlots>
+
+      </li>
+    </verbs>
+  </ThingDef>
+
+</Defs>

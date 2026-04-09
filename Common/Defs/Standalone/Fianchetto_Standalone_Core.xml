@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef Name="Milira_UtilityBase" ParentName="ApparelNoQualityBase" Abstract="True">
+    <techLevel>Spacer</techLevel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <recipeUsers Inherit="False">
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+    </recipeMaker>
+    <tradeTags>
+      <li>Clothing</li>
+    </tradeTags>
+  </ThingDef>
+
+  <ThingDef Name="Milira_CombatDroneBase" ParentName="Milira_UtilityBase" Abstract="True">
+    <techLevel>Spacer</techLevel>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.5</drawSize>
+      <drawOffset>(0,0,0)</drawOffset>
+    </graphicData>
+    <statBases>
+      <WorkToMake>30000</WorkToMake>
+      <Mass>0.2</Mass>
+      <Flammability>0.4</Flammability>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <apparel>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <careIfDamaged>false</careIfDamaged>
+      <wearPerDay>0</wearPerDay>
+      <bodyPartGroups Inherit="False">
+        <li>Shoulders</li>
+      </bodyPartGroups>
+      <layers Inherit="False">
+        <li>Belt</li>
+      </layers>
+    </apparel>
+    <tradeability>Sellable</tradeability>
+  </ThingDef>
+
+  <ThingDef Name="Milira_CombatDroneTurretBase" ParentName="BaseWeaponTurret" Abstract="True">
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <graphicData>
+      <texPath>Things/Milira_FunnelBit/blank</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef Name="Milian_ApparelBase" ParentName="ApparelNoQualityBase" Abstract="True">
+    <techLevel>Spacer</techLevel>
+    <tradeability>Sellable</tradeability>
+    <tradeTags>
+      <li>Apparel</li>
+    </tradeTags>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+      <drawSize>1.0</drawSize>
+      <drawOffset>(0,0,0)</drawOffset>
+    </graphicData>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <recipeUsers Inherit="False">
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+    </recipeMaker>
+    <apparel>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <useWornGraphicMask>false</useWornGraphicMask>
+      <wearPerDay>0</wearPerDay>
+    </apparel>
+    <statBases>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1.0</DeteriorationRate>
+      <Beauty>1</Beauty>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef Name="Milian_MiddleBase" ParentName="Milian_ApparelBase" Abstract="True">
+    <statBases>
+      <Mass>3.0</Mass>
+      <EquipDelay>5.0</EquipDelay>
+    </statBases>
+    <apparel>
+      <layers Inherit="False">
+        <li>Middle</li>
+        <li>Shell</li>
+      </layers>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef Name="Milian_OverheadBase" ParentName="Milian_ApparelBase" Abstract="True">
+    <statBases>
+      <Mass>0.8</Mass>
+      <EquipDelay>1.6</EquipDelay>
+    </statBases>
+    <apparel>
+      <layers Inherit="False">
+        <li>Overhead</li>
+      </layers>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef Name="Milian_BaseMakeableGun" ParentName="BaseGunWithQuality" Abstract="True">
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <recipeUsers Inherit="False">
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+    </recipeMaker>
+    <weaponTags>
+      <li>Gun</li>
+    </weaponTags>
+    <tradeTags>
+      <li>WeaponRanged</li>
+    </tradeTags>
+    <comps>
+      <li Class="CompProperties_Biocodable"/>
+    </comps>
+  </ThingDef>
+
+  <ResearchProjectDef>
+    <defName>Milira_FloatUnitII</defName>
+    <label>float unit architecture</label>
+    <description>Adapts the Fianchetto's remote strike drone frame to ordinary spacer fabrication and human operators.</description>
+    <baseCost>2500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <researchViewX>19.00</researchViewX>
+    <researchViewY>4.20</researchViewY>
+    <prerequisites>
+      <li>ChargedShot</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>Milira_FieldTheory</defName>
+    <label>funnel field control</label>
+    <description>Refines force-field positioning, pulse barriers, and zero-latency swarm control for portable drone arsenals.</description>
+    <baseCost>3500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <researchViewX>20.00</researchViewX>
+    <researchViewY>4.20</researchViewY>
+    <prerequisites>
+      <li>Milira_FloatUnitII</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>Milira_ConceptWeaponry</defName>
+    <label>composite drone weaponry</label>
+    <description>Integrates heavy blades, beam cannons, and coordinated micro-drones into a single composite FunnelBit package.</description>
+    <baseCost>5000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <researchViewX>20.80</researchViewX>
+    <researchViewY>4.80</researchViewY>
+    <prerequisites>
+      <li>Milira_FieldTheory</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+  </ResearchProjectDef>
+
+  <HediffDef ParentName="DiseaseBase">
+    <defName>Milira_PlasmaMeltdown</defName>
+    <label>plasma meltdown</label>
+    <description>Armor on this pawn is weakening under sustained plasma exposure.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(215, 100, 20)</defaultLabelColor>
+    <initialSeverity>0.01</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerSecond">
+        <severityPerSecond>-0.01</severityPerSecond>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsetsBySeverity>
+          <li>
+            <stat>ArmorRating_Sharp</stat>
+            <valueBySeverity>
+              <points>
+                <li>(0, 0)</li>
+                <li>(1, -1)</li>
+              </points>
+            </valueBySeverity>
+          </li>
+          <li>
+            <stat>ArmorRating_Blunt</stat>
+            <valueBySeverity>
+              <points>
+                <li>(0, 0)</li>
+                <li>(1, -0.5)</li>
+              </points>
+            </valueBySeverity>
+          </li>
+          <li>
+            <stat>ArmorRating_Heat</stat>
+            <valueBySeverity>
+              <points>
+                <li>(0, 0)</li>
+                <li>(1, -0.3)</li>
+              </points>
+            </valueBySeverity>
+          </li>
+        </statOffsetsBySeverity>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="DiseaseBase">
+    <defName>Milira_PlasmaVulnerable</defName>
+    <label>vulnerable</label>
+    <description>This pawn has been marked with a weak spot and takes increased damage.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(215, 100, 20)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerSecond">
+        <severityPerSecond>-0.02</severityPerSecond>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <IncomingDamageFactor>0.1</IncomingDamageFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <DamageDef>
+    <defName>Milira_PlasmaBullet</defName>
+    <label>Plasma Beam</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been shot to death.</deathMessage>
+    <hediff>Gunshot</hediff>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Bullet</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+    <additionalHediffs>
+      <li>
+        <hediff>Milira_PlasmaMeltdown</hediff>
+        <victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+        <severityPerDamageDealt>0.003</severityPerDamageDealt>
+      </li>
+    </additionalHediffs>
+  </DamageDef>
+
+  <DamageDef>
+    <defName>Milira_PlasmaBullet_Vulnerable</defName>
+    <label>Plasma Beam</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been shot to death.</deathMessage>
+    <hediff>Gunshot</hediff>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Bullet</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+    <additionalHediffs>
+      <li>
+        <hediff>Milira_PlasmaVulnerable</hediff>
+        <victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+        <severityPerDamageDealt>1.0</severityPerDamageDealt>
+      </li>
+    </additionalHediffs>
+  </DamageDef>
+
+</Defs>

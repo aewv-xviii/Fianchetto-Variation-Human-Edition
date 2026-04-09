@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_Milira_FunnelBit_DroneWorkBeam</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.2</fadeInTime>
+      <fadeOutTime>0.25</fadeOutTime>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+      <rotateTowardsTarget>True</rotateTowardsTarget>
+      <scaleToConnectTargets>True</scaleToConnectTargets>
+      <fadeOutUnmaintained>True</fadeOutUnmaintained>
+    </mote>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData>
+      <drawSize>(0.18, 1)</drawSize>
+      <texPath>Things/Milira_FunnelBit/Effects/SuperLaser</texPath>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>MoteBeam</shaderType>
+      <shaderParameters>
+        <_ExtraTexA>/Things/Mote/BeamSecondaryNoise_A</_ExtraTexA>
+        <_ExtraTexB>/Things/Mote/BeamSecondaryNoise_B</_ExtraTexB>
+        <_ScrollSpeedA>-4 </_ScrollSpeedA>
+        <_ScrollSpeedB>3</_ScrollSpeedB>
+        <_Intensity>0.3</_Intensity>
+      </shaderParameters>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_Milira_FunnelBit_DroneWorkBeam_large</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.2</fadeInTime>
+      <fadeOutTime>0.25</fadeOutTime>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+      <rotateTowardsTarget>True</rotateTowardsTarget>
+      <scaleToConnectTargets>True</scaleToConnectTargets>
+      <fadeOutUnmaintained>True</fadeOutUnmaintained>
+    </mote>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData>
+      <drawSize>(0.6, 1)</drawSize>
+      <texPath>Things/Milira_FunnelBit/Effects/SuperLaser</texPath>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>MoteBeam</shaderType>
+      <shaderParameters>
+        <_ExtraTexA>/Things/Mote/BeamSecondaryNoise_A</_ExtraTexA>
+        <_ExtraTexB>/Things/Mote/BeamSecondaryNoise_B</_ExtraTexB>
+        <_ScrollSpeedA>-4 </_ScrollSpeedA>
+        <_ScrollSpeedB>3</_ScrollSpeedB>
+        <_Intensity>0.3</_Intensity>
+      </shaderParameters>
+    </graphicData>
+  </ThingDef>
+
+  <EffecterDef>
+    <defName>Milira_FunnelBit_DroneWorkBeamEnd</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_SmokeFast</fleckDef>
+        <chancePerTick>0.03</chancePerTick>
+        <scale>0.12~0.4</scale>
+        <spawnLocType>OnSource</spawnLocType>
+        <absoluteAngle>true</absoluteAngle>
+        <angle>30~70</angle>
+        <speed>0.2~0.35</speed>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <positionRadius>0.1</positionRadius>
+        <moteDef>Mote_SparkThrownFast</moteDef>
+        <spawnLocType>OnSource</spawnLocType>
+        <chancePerTick>0.15</chancePerTick>
+        <speed>3.3~5</speed>
+        <scale>0.03~0.06</scale>
+        <angle>88~104</angle>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <positionRadius>0.1</positionRadius>
+        <spawnLocType>OnSource</spawnLocType>
+        <fleckDef>Milira_FunnelBit_FireGlowFast</fleckDef>
+        <chancePerTick>0.05</chancePerTick>
+        <scale>1</scale>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>Milira_FunnelBit_DroneWorkBeamEnd_large</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_SmokeFast</fleckDef>
+        <chancePerTick>0.03</chancePerTick>
+        <scale>0.4~0.8</scale>
+        <spawnLocType>OnSource</spawnLocType>
+        <absoluteAngle>true</absoluteAngle>
+        <angle>30~70</angle>
+        <speed>0.2~0.35</speed>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <positionRadius>0.1</positionRadius>
+        <moteDef>Mote_SparkThrownFast</moteDef>
+        <spawnLocType>OnSource</spawnLocType>
+        <chancePerTick>0.15</chancePerTick>
+        <speed>3.3~5</speed>
+        <scale>0.1~0.2</scale>
+        <angle>88~104</angle>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <positionRadius>0.1</positionRadius>
+        <spawnLocType>OnSource</spawnLocType>
+        <fleckDef>Milira_FunnelBit_FireGlowFast</fleckDef>
+        <chancePerTick>0.05</chancePerTick>
+        <scale>2</scale>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+    <defName>Milira_FunnelBit_Fleck_DroneWorkBeamBurn</defName>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <fadeOutTime>2</fadeOutTime>
+    <solidTime>8</solidTime>
+    <randomGraphics>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/BeamBurn/BeamBurn_A</texPath>
+        <shaderType>Transparent</shaderType>
+        <drawSize>0.65</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/BeamBurn/BeamBurn_B</texPath>
+        <shaderType>Transparent</shaderType>
+        <drawSize>0.65</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/BeamBurn/BeamBurn_C</texPath>
+        <shaderType>Transparent</shaderType>
+        <drawSize>0.65</drawSize>
+      </li>
+    </randomGraphics>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>Milira_FunnelBit_Fleck_AtomizeFilth</defName>
+    <fadeInTime>0.03</fadeInTime>
+    <solidTime>0.3</solidTime>
+    <fadeOutTime>0.5</fadeOutTime>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <graphicData>
+      <texPath>Things/Mote/SparkThrownGreen</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>0.15</drawSize>
+      <color>(0.7, 0.9, 1.0, 1.0)</color>
+    </graphicData>
+    <acceleration>(0, 0, 0.5)</acceleration>
+    <speedPerTime>0.2~0.5</speedPerTime>
+  </FleckDef>
+
+</Defs>

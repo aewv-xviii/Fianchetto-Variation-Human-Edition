@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- boost -->
+  <EffecterDef>
+    <defName>Milira_FunnelBit_Boost_B</defName>
+    <children>
+
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_B_subProjectile_EnergySpark</fleckDef>
+        <burstCount>2</burstCount>
+        <scale>0.75~1.2</scale>
+        <positionRadius>0.4</positionRadius>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+    </children>
+  </EffecterDef>
+  
+
+</Defs>

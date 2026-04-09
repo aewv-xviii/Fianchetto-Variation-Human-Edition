@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="Milian_MiddleBase">
+    <defName>Milian_ConductorCloakAC</defName>
+    <label>Milian conductor cloak</label>
+    <description>A display uniform tailored originally for the Fianchetto class's debut at military trade shows.\nDue to the suspension of the development project, dedicated combat armor was never realized, consequently, this attire was registered as standard equipment by default. It contains no shock-absorbing liners or ballistic fibers, offering virtually no protection in combat.</description>
+    <costStuffCount>80</costStuffCount>
+    <stuffCategories>
+      <li>Leathery</li>
+      <li>Fabric</li>
+    </stuffCategories>
+    <costList>
+      <Steel>40</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <graphicData>
+      <texPath>Things/Apparel/Middle/Milian_ConductorCloak/Milian_ConductorCloak</texPath>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToMake>6000</WorkToMake>
+      <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+      <ArmorRating_Heat>0</ArmorRating_Heat>
+      <StuffEffectMultiplierArmor>0.30</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+    <apparel>
+      <useWornGraphicMask>true</useWornGraphicMask>
+      <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+      <bodyPartGroups>
+        <li>Neck</li>
+        <li>Torso</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Hands</li>
+        <li>Feet</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Apparel/Middle/Milian_ConductorCloak/Milian_ConductorCloak</wornGraphicPath>
+      <tags Inherit="False">
+        <li>Milian_ConductorCloakAC</li>
+      </tags>
+    </apparel>
+    <recipeMaker>
+      <researchPrerequisite>Milira_FieldTheory</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef ParentName="Milian_OverheadBase">
+    <defName>Milian_ConductorHeadSetAC</defName>
+    <label>Milian conductor headset</label>
+    <description>A specialized fire-control headset designed for the Bishop III-S Fianchetto.\nIt houses a high-bandwidth quantum transceiver array essential for managing the massive data traffic of "puppet" drones. By synchronizing directly with the host's augmented neural processor, it stabilizes the remote control link and enables complex swarm maneuvers.</description>
+    <costStuffCount>40</costStuffCount>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costList>
+      <ComponentIndustrial>8</ComponentIndustrial>
+      <Plasteel>20</Plasteel>
+    </costList>
+    <graphicData>
+      <texPath>Things/Apparel/OverHead/ConductorHeadset/ConductorHeadset</texPath>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <WorkToMake>9000</WorkToMake>
+      <ArmorRating_Sharp>0.35</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.2</ArmorRating_Heat>
+      <StuffEffectMultiplierArmor>0.4</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+    <apparel>
+      <useWornGraphicMask>true</useWornGraphicMask>
+      <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Apparel/OverHead/ConductorHeadset/ConductorHeadset</wornGraphicPath>
+      <tags Inherit="False">
+        <li>Milian_ConductorHeadSetAC</li>
+      </tags>
+    </apparel>
+    <recipeMaker>
+      <researchPrerequisite>Milira_FieldTheory</researchPrerequisite>
+    </recipeMaker>
+    <equippedStatOffsets>
+      <ShootingAccuracyPawn>4.0</ShootingAccuracyPawn>
+      <FunnelBit_DroneMobility>0.2</FunnelBit_DroneMobility>
+      <FunnelBit_SubProjectileDamageFactor>0.2</FunnelBit_SubProjectileDamageFactor>
+    </equippedStatOffsets>
+  </ThingDef>
+
+</Defs>

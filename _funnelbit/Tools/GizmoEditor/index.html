@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FunnelBit Gizmo Editor</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts for premium feel as requested -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap"
+        rel="stylesheet">
+    <script>
+        window.onerror = function (msg, url, line, col, error) {
+            alert("Error: " + msg + "\n" + url + ":" + line + ":" + col);
+            return false;
+        };
+    </script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar / Editor Panel -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h1>Gizmo Editor</h1>
+                <div class="toolbar">
+                    <button id="btn-load-tex" class="btn primary">Load Textures</button>
+                    <!-- Hidden file input for directory selection -->
+                    <input type="file" id="file-input-tex" webkitdirectory directory style="display: none;">
+                </div>
+            </div>
+
+            <div class="io-panel">
+                <textarea id="xml-input" placeholder="Paste FunnelBitGizmoLayoutDef XML here..."></textarea>
+                <div class="io-controls">
+                    <button id="btn-import" class="btn secondary">Import XML</button>
+                    <button id="btn-export" class="btn secondary">Export XML</button>
+                </div>
+            </div>
+
+            <div class="tree-view-wrapper">
+                <div class="section-title">Hierarchy</div>
+                <div id="hierarchy-tree" class="tree-view"></div>
+            </div>
+
+            <div class="properties-panel">
+                <div class="section-title">Properties</div>
+                <div id="properties-content" class="properties-content">
+                    <div class="empty-state">Select an element to edit properties</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Viewport -->
+        <div class="viewport-container" id="viewport-container">
+            <div class="viewport-overlay-ui">
+                <div class="viewport-controls">
+                    <button id="btn-reset-view" class="icon-btn" title="Reset View">⟲</button>
+                    <button id="btn-auto-width" class="icon-btn" title="Auto Width from BG">↔</button>
+                    <div class="zoom-level" id="zoom-level">100%</div>
+                </div>
+                <div class="help-hint">
+                    Middle Drag: Pan | Wheel: Zoom | Left Drag: Move Element | H: Toggle Selected | Shift+H: Toggle
+                    Others
+                </div>
+            </div>
+
+            <!-- The "World" transformation container -->
+            <div id="viewport-world" class="viewport-world">
+                <!-- Elements will be rendered here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Texture Picker Modal -->
+    <div id="texture-picker-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Select Texture</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="texture-search" placeholder="Filter textures...">
+                <div id="texture-grid" class="texture-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts loaded sequentially for file:// protocol compatibility -->
+    <script src="xml.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,493 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ================================= warmup effecter ================================= -->
+  
+  <EffecterDef>
+    <defName>Milira_FunnelBit_D_warmUp</defName>
+    <offsetTowardsTarget>0.8</offsetTowardsTarget>
+    <children>
+      <!-- flash -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>PlainFlash</fleckDef>
+        <burstCount>1</burstCount>
+        <chancePerTick>1</chancePerTick>
+        <chancePeriodTicks>6</chancePeriodTicks>
+        <scale>3.0~4.7</scale>
+        <color>(1.0,0.2,0.3)</color>
+        <spawnLocType>BetweenTouchingCells</spawnLocType>
+      </li>
+      <!-- spark -->
+      <li>
+          <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+          <fleckDef>Milira_FunnelBit_B_subProjectile_EnergySpark</fleckDef>
+          <burstCount>3~4</burstCount>
+          <scale>2.6~4.2</scale>
+          <spawnLocType>OnSource</spawnLocType>
+        </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <positionRadius>0.37</positionRadius>
+        <!-- <positionOffset>(0.55, 0.10)</positionOffset> -->
+        <fleckDef>Milira_FunnelBit_B_subProjectile_EnergySpark</fleckDef>
+        <chancePerTick>.15</chancePerTick>
+        <chancePeriodTicks>15</chancePeriodTicks>
+        <!-- <rotation>90</rotation> -->
+        <burstCount>1</burstCount>
+        <scale>3.0~4.45</scale>
+        <color>(0.6,0.8,1.0,1)</color>
+        <spawnLocType>BetweenTouchingCells</spawnLocType>
+        <!-- <positionLerpFactor>1</positionLerpFactor> -->
+        <!-- <positionOffset>(0, 0, 0)</positionOffset> -->
+        <!-- <soundDef>ArsenalMilian_Spark</soundDef> -->
+      </li>
+
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_SmokeFast</fleckDef>
+        <burstCount>2</burstCount>
+        <positionRadius>1.2</positionRadius>
+        <scale>2.0~3.0</scale>
+        <rotationRate>-30~30</rotationRate>
+        <angle>30~40</angle>
+        <speed>0.5~0.7</speed>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>AirPuff</fleckDef>
+        <burstCount>1</burstCount>
+        <positionRadius>0.6</positionRadius>
+        <scale>1.2</scale>
+        <rotationRate>-240~240</rotationRate>
+        <angle>-45~45</angle>
+        <speed>1.2~1.5</speed>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>MicroSparks</fleckDef>
+        <burstCount>3</burstCount>
+        <positionRadius>0.6</positionRadius>
+        <scale>0.8~1.2</scale>
+        <rotationRate>-12~12</rotationRate>
+        <angle>35~45</angle>
+        <speed>1.2</speed>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <!-- ================================= Charge effecter ================================= -->
+  <EffecterDef>
+    <defName>Milira_FunnelBit_D_Charge</defName>
+    <offsetTowardsTarget>0.0</offsetTowardsTarget>
+    <children>
+
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_ShotFlashA</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>12</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+      <!-- glow -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_FireGlowFast_B</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>5~5</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+      <!-- energy spark -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_B_subProjectile_EnergySpark</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>3.6~4.0</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_B_subProjectile_EnergySpark</fleckDef>
+        <burstCount>2</burstCount>
+        <scale>2.6~3.0</scale>
+        <positionRadius>1.2</positionRadius>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+
+    </children>
+  </EffecterDef>
+
+  <!-- slash -->
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>Milira_FunnelBit_D_Slash</defName>
+    <graphicData>
+      <texPath>Things/Milira_FunnelBit/FunnelBit_D/Effects/Slash</texPath>
+      <renderInstanced>true</renderInstanced>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(0.85, 1.5)</drawSize>
+    </graphicData>
+    <rotateTowardsMoveDirection>true</rotateTowardsMoveDirection>
+    <fadeInTime>0.01</fadeInTime>
+    <solidTime>0.07</solidTime>
+    <fadeOutTime>0.1</fadeOutTime>
+
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>Milira_FunnelBit_D_Slash_hit</defName>
+    <graphicData>
+      <texPath>Things/Milira_FunnelBit/FunnelBit_D/Effects/Slash_hit</texPath>
+      <renderInstanced>true</renderInstanced>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(1, 1)</drawSize>
+    </graphicData>
+    <!-- <rotateTowardsMoveDirection>true</rotateTowardsMoveDirection> -->
+    <growthRate>-0.3</growthRate>
+    <altitudeLayer>Gas</altitudeLayer>
+    <fadeInTime>0.01</fadeInTime>
+    <solidTime>0.15</solidTime>
+    <fadeOutTime>0.1</fadeOutTime>
+  </FleckDef>
+
+  <EffecterDef>
+    <defName>Milira_FunnelBit_D_cutEffecter</defName>
+    <!-- <offsetTowardsTarget>0.0</offsetTowardsTarget> -->
+    <children>
+
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_D_Slash_hit</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>1.6</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_D_EnergySpark</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>2.4~1.2</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+    </children>
+  </EffecterDef>
+
+  <!-- energy spark -->
+  <FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+    <defName>Milira_FunnelBit_D_EnergySpark</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.0</fadeInTime>
+    <solidTime>.2</solidTime>
+    <fadeOutTime>.1</fadeOutTime>
+    <growthRate>-.125</growthRate>
+    <randomGraphics>
+      <li>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <texPath>Things/Mote/EnergyCrackleA</texPath>
+        <shaderType>MoteGlowPulse</shaderType>
+        <renderInstanced>true</renderInstanced>
+        <color>(1, .3, .4, 1)</color>
+        <shaderParameters>
+          <_Interval>0.02</_Interval>
+        </shaderParameters>
+        <drawSize>1.2</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <texPath>Things/Mote/EnergyCrackleB</texPath>
+        <shaderType>MoteGlowPulse</shaderType>
+        <renderInstanced>true</renderInstanced>
+        <color>(1, .3, .4, 1)</color>
+        <shaderParameters>
+          <_Interval>0.02</_Interval>
+        </shaderParameters>
+        <drawSize>1.2</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <texPath>Things/Mote/EnergyCrackleC</texPath>
+        <shaderType>MoteGlowPulse</shaderType>
+        <renderInstanced>true</renderInstanced>
+        <color>(1, .3, .4, 1)</color>
+        <shaderParameters>
+          <_Interval>0.02</_Interval>
+        </shaderParameters>
+        <drawSize>1.2</drawSize>
+      </li>
+    </randomGraphics>
+  </FleckDef>
+
+
+  <!-- sub projectile -->
+  <FleckDef ParentName="FleckBase">
+    <defName>Milira_FunnelBit_D_subProjectile_trail</defName>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <fadeInTime>0.0</fadeInTime>
+    <solidTime>0.1</solidTime>
+    <fadeOutTime>0.37</fadeOutTime>
+    <graphicData>
+      <texPath>Things/Milira_FunnelBit/Effects/Milira_FunnelBit_B_subProjectile_trail</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(1, 3.5)</drawSize>
+      <color>(255, 255, 255, 180)</color>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>Milira_FunnelBit_D_subProjectile_trailB</defName>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>0.1</solidTime>
+    <fadeOutTime>0.75</fadeOutTime>
+    <graphicData>
+      <texPath>Things/Milira_FunnelBit/Effects/Milira_FunnelBit_B_subProjectile_trailB</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(1, 2.95)</drawSize>
+      <color>(255, 60, 90, 255)</color>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>Milira_FunnelBit_DB_subProjectile_trail</defName>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <fadeInTime>0.0</fadeInTime>
+    <solidTime>0.0</solidTime>
+    <fadeOutTime>0.06</fadeOutTime>
+    <graphicData>
+      <texPath>Things/Milira_FunnelBit/Effects/Milira_FunnelBit_B_subProjectile_trail</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(1, 1.6)</drawSize>
+      <color>(255, 255, 255, 180)</color>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>Milira_FunnelBit_DB_subProjectile_trailB</defName>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <fadeInTime>0.0</fadeInTime>
+    <solidTime>0.0</solidTime>
+    <fadeOutTime>0.12</fadeOutTime>
+    <graphicData>
+      <texPath>Things/Milira_FunnelBit/Effects/Milira_FunnelBit_B_subProjectile_trailB</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(1, 1.9)</drawSize>
+      <color>(255, 60, 90, 255)</color>
+    </graphicData>
+  </FleckDef>
+
+
+  <EffecterDef>
+    <defName>Milira_FunnelBit_DA_subProjectile_MuzzleFlashEffect</defName>
+    <offsetTowardsTarget>0.3</offsetTowardsTarget>
+    <children>
+
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_ShotFlashA</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>10</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+      <!-- glow -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_FireGlowFast</fleckDef>
+        <burstCount>7</burstCount>
+        <scale>3.8~2.7</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+      <!-- energy spark -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_B_subProjectile_EnergySpark</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>2.3~4.3</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+      <!-- muzzleflash -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_MuzzleFlashA_1</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>2.2</scale>
+        <spawnLocType>OnSource</spawnLocType>
+        <useTargetAInitialRotation>true</useTargetAInitialRotation>
+        <rotation>0</rotation>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_MuzzleFlashA_2</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>2.2</scale>
+        <spawnLocType>OnSource</spawnLocType>
+        <useTargetAInitialRotation>true</useTargetAInitialRotation>
+        <rotation>0</rotation>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_MuzzleFlashA_3</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>2.2</scale>
+        <spawnLocType>OnSource</spawnLocType>
+        <useTargetAInitialRotation>true</useTargetAInitialRotation>
+        <rotation>0</rotation>
+      </li>
+
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>Milira_FunnelBit_DA_subProjectile_ImpactEffect</defName>
+    <children>
+
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_FireGlowFast</fleckDef>
+        <burstCount>6</burstCount>
+        <scale>4~4.3</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>LightningGlow</fleckDef>
+        <burstCount>3</burstCount>
+        <positionRadius>0.0</positionRadius>
+        <scale>2~4</scale>
+        <rotationRate>-3~3</rotationRate>
+        <angle>0~360</angle>
+        <speed>1.2</speed>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_SmokeFast</fleckDef>
+        <burstCount>1</burstCount>
+        <positionRadius>0.4</positionRadius>
+        <scale>2.5~3.5</scale>
+        <rotationRate>-30~30</rotationRate>
+        <angle>30~40</angle>
+        <speed>0.5~0.7</speed>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>AirPuff</fleckDef>
+        <burstCount>1</burstCount>
+        <positionRadius>0.1</positionRadius>
+        <scale>1.5</scale>
+        <rotationRate>-240~240</rotationRate>
+        <angle>-45~45</angle>
+        <speed>1.2~1.5</speed>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>MicroSparks</fleckDef>
+        <burstCount>1</burstCount>
+        <positionRadius>0.1</positionRadius>
+        <scale>0.8~1.2</scale>
+        <rotationRate>-12~12</rotationRate>
+        <angle>35~45</angle>
+        <speed>1.2</speed>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>Milira_FunnelBit_DB_subProjectile_MuzzleFlashEffect</defName>
+    <offsetTowardsTarget>0.2</offsetTowardsTarget>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_ShotFlashA</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>3</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+
+      <!-- muzzleflash -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_MuzzleFlashA_1</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>2.2</scale>
+        <spawnLocType>OnSource</spawnLocType>
+        <useTargetAInitialRotation>true</useTargetAInitialRotation>
+        <rotation>0</rotation>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_MuzzleFlashA_2</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>2.2</scale>
+        <spawnLocType>OnSource</spawnLocType>
+        <useTargetAInitialRotation>true</useTargetAInitialRotation>
+        <rotation>0</rotation>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_MuzzleFlashA_3</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>2.2</scale>
+        <spawnLocType>OnSource</spawnLocType>
+        <useTargetAInitialRotation>true</useTargetAInitialRotation>
+        <rotation>0</rotation>
+      </li>
+
+    </children>
+  </EffecterDef>
+
+  <!-- beam? -->
+  <EffecterDef>
+    <defName>Milira_FunnelBit_D_BeamEnd</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>Milira_FunnelBit_SmokeFast</fleckDef>
+        <chancePerTick>0.1</chancePerTick>
+        <scale>0.4~0.8</scale>
+        <spawnLocType>OnSource</spawnLocType>
+        <absoluteAngle>true</absoluteAngle>
+        <angle>30~70</angle>
+        <speed>0.2~0.35</speed>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <positionRadius>0.1</positionRadius>
+        <moteDef>Mote_SparkThrownFast</moteDef>
+        <spawnLocType>OnSource</spawnLocType>
+        <chancePerTick>0.15</chancePerTick>
+        <speed>3.3~5</speed>
+        <scale>0.1~0.2</scale>
+        <angle>88~104</angle>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <positionRadius>0.1</positionRadius>
+        <spawnLocType>OnSource</spawnLocType>
+        <fleckDef>Milira_FunnelBit_FireGlowFast</fleckDef>
+        <chancePerTick>0.5</chancePerTick>
+        <scale>2.5</scale>
+      </li>
+    </children>
+  </EffecterDef>
+
+</Defs>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Milira_CombatDrone_FunnelBitB_Ability_A.label>펄스 방호</Milira_CombatDrone_FunnelBitB_Ability_A.label>
+  <Milira_CombatDrone_FunnelBitB_Ability_A.description>고정 위치에 펄스 장벽을 전개해 적의 사격을 막아냅니다. 장벽은 내구 한계에 도달할 때까지 엄폐를 제공하며, 영구적이지 않으므로 시간이 지나면 사라집니다.</Milira_CombatDrone_FunnelBitB_Ability_A.description>
+
+  <Milira_CombatDrone_FunnelBitB_Ability_C.label>하이퍼차지</Milira_CombatDrone_FunnelBitB_Ability_C.label>
+  <Milira_CombatDrone_FunnelBitB_Ability_C.description>고출력 레이저로 직선상의 모든 목표를 공격합니다.\n사용 후에는 긴급 재충전이 필요하며, 그동안 드론은 비활성화됩니다.</Milira_CombatDrone_FunnelBitB_Ability_C.description>
+</LanguageData>

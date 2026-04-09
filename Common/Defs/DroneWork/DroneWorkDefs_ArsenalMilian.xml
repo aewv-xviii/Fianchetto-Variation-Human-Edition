@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <FunnelBit.DroneWorkDef>
+    <defName>DroneWork_ArsenalMilian_Build</defName>
+    <label>drone construction assist</label>
+    <workerClass>FunnelBit.Worker_DroneWork_Build</workerClass>
+    <scanIntervalTicks>60</scanIntervalTicks>
+    <burstScanIntervalTicks>5</burstScanIntervalTicks>
+    <burstScanDurationTicks>60</burstScanDurationTicks>
+    <scanRadius>10</scanRadius>
+    <maxWorkTicks>9000</maxWorkTicks>
+    <priority>35</priority>
+    <requireUndrafted>true</requireUndrafted>
+    <requireNotInCombat>true</requireNotInCombat>
+    <beamMoteDef>Mote_Milira_FunnelBit_DroneWorkBeam</beamMoteDef>
+    <beamEndEffecterDef>Milira_FunnelBit_DroneWorkBeamEnd</beamEndEffecterDef>
+    <beamSoundDef>ArsenalMilian_DroneWork_Beam</beamSoundDef>
+    <beamStartOffset>0.14</beamStartOffset>
+    <beamGroundFleckChancePerTick>0.1</beamGroundFleckChancePerTick>
+    <craftMinRemainingTicks>0</craftMinRemainingTicks>
+    <buildWorkSpeedFactor>0.5</buildWorkSpeedFactor>
+    <craftBeamDurationTicks>120</craftBeamDurationTicks>
+    <craftBeamDurationJitter>60</craftBeamDurationJitter>
+    <craftPreBeamDelayTicks>8</craftPreBeamDelayTicks>
+    <craftPostBeamDelayTicks>30</craftPostBeamDelayTicks>
+    <buildJobWaitTicks>20</buildJobWaitTicks>
+    <moveSpeed>0.4</moveSpeed>
+    <standoffDistance>2.5</standoffDistance>
+    <standoffJitter>1.0</standoffJitter>
+    <moveCurveAmplitude>0.2</moveCurveAmplitude>
+    <preCleanDelayTicks>0</preCleanDelayTicks>
+    <postCleanDelayTicks>0</postCleanDelayTicks>
+  </FunnelBit.DroneWorkDef>
+
+  <FunnelBit.DroneWorkDef>
+    <defName>DroneWork_ArsenalMilian_Deconstruct</defName>
+    <label>drone deconstruct assist</label>
+    <workerClass>FunnelBit.Worker_DroneWork_Deconstruct</workerClass>
+    <scanIntervalTicks>60</scanIntervalTicks>
+    <burstScanIntervalTicks>5</burstScanIntervalTicks>
+    <burstScanDurationTicks>60</burstScanDurationTicks>
+    <scanRadius>7</scanRadius>
+    <maxAssistDistance>7</maxAssistDistance>
+    <maxWorkTicks>18000</maxWorkTicks>
+    <priority>45</priority>
+    <requireUndrafted>true</requireUndrafted>
+    <requireNotInCombat>true</requireNotInCombat>
+    <beamMoteDef>Mote_Milira_FunnelBit_DroneWorkBeam</beamMoteDef>
+    <beamEndEffecterDef>Milira_FunnelBit_DroneWorkBeamEnd</beamEndEffecterDef>
+    <beamSoundDef>ArsenalMilian_DroneWork_Beam_big</beamSoundDef>
+    <beamStartOffset>0.14</beamStartOffset>
+    <beamGroundFleckChancePerTick>0.1</beamGroundFleckChancePerTick>
+    <buildWorkSpeedFactor>1.2</buildWorkSpeedFactor>
+    <buildMaxChainDistance>12</buildMaxChainDistance>
+    <craftBeamDurationTicks>1200</craftBeamDurationTicks>
+    <craftBeamDurationJitter>600</craftBeamDurationJitter>
+    <craftPreBeamDelayTicks>8</craftPreBeamDelayTicks>
+    <craftPostBeamDelayTicks>10</craftPostBeamDelayTicks>
+    <buildJobWaitTicks>30</buildJobWaitTicks>
+    <moveSpeed>0.3</moveSpeed>
+    <standoffDistance>2.5</standoffDistance>
+    <standoffJitter>0.5</standoffJitter>
+    <moveCurveAmplitude>0.2</moveCurveAmplitude>
+  </FunnelBit.DroneWorkDef>
+
+  <FunnelBit.DroneWorkDef>
+    <defName>DroneWork_ArsenalMilian_Repair</defName>
+    <label>drone repair assist</label>
+    <workerClass>FunnelBit.Worker_DroneWork_Repair</workerClass>
+    <scanIntervalTicks>120</scanIntervalTicks>
+    <burstScanIntervalTicks>5</burstScanIntervalTicks>
+    <burstScanDurationTicks>60</burstScanDurationTicks>
+    <scanRadius>12</scanRadius>
+    <maxWorkTicks>9000</maxWorkTicks>
+    <priority>20</priority>
+    <requireUndrafted>true</requireUndrafted>
+    <requireNotInCombat>true</requireNotInCombat>
+    <beamMoteDef>Mote_Milira_FunnelBit_DroneWorkBeam</beamMoteDef>
+    <beamEndEffecterDef>Milira_FunnelBit_DroneWorkBeamEnd</beamEndEffecterDef>
+    <beamSoundDef>ArsenalMilian_DroneWork_Beam</beamSoundDef>
+    <beamStartOffset>0.14</beamStartOffset>
+    <beamGroundFleckChancePerTick>0.05</beamGroundFleckChancePerTick>
+    <repairWorkSpeedFactor>2.5</repairWorkSpeedFactor>
+    <craftBeamDurationTicks>180</craftBeamDurationTicks>
+    <craftBeamDurationJitter>60</craftBeamDurationJitter>
+    <craftPreBeamDelayTicks>8</craftPreBeamDelayTicks>
+    <craftPostBeamDelayTicks>15</craftPostBeamDelayTicks>
+    <buildJobWaitTicks>14</buildJobWaitTicks>
+    <moveSpeed>0.17</moveSpeed>
+    <standoffDistance>2.5</standoffDistance>
+    <standoffJitter>1.0</standoffJitter>
+    <moveCurveAmplitude>0.2</moveCurveAmplitude>
+    <preCleanDelayTicks>0</preCleanDelayTicks>
+    <postCleanDelayTicks>0</postCleanDelayTicks>
+  </FunnelBit.DroneWorkDef>
+
+  <FunnelBit.DroneWorkDef>
+    <defName>DroneWork_ArsenalMilian_PlantCut</defName>
+    <label>drone harvest assist</label>
+    <workerClass>FunnelBit.Worker_DroneWork_PlantCut</workerClass>
+    <scanIntervalTicks>150</scanIntervalTicks>
+    <burstScanIntervalTicks>5</burstScanIntervalTicks>
+    <burstScanDurationTicks>60</burstScanDurationTicks>
+    <scanRadius>12</scanRadius>
+    <maxAssistDistance>12</maxAssistDistance>
+    <plantWorkSpeedFactor>1.7</plantWorkSpeedFactor>
+    <maxWorkTicks>12000</maxWorkTicks>
+    <priority>50</priority>
+    <requireUndrafted>true</requireUndrafted>
+    <requireNotInCombat>true</requireNotInCombat>
+    <beamMoteDef>Mote_Milira_FunnelBit_DroneWorkBeam</beamMoteDef>
+    <beamEndEffecterDef>Milira_FunnelBit_DroneWorkBeamEnd</beamEndEffecterDef>
+    <beamSoundDef>ArsenalMilian_DroneWork_Beam_big</beamSoundDef>
+    <beamGroundFleckDef>Milira_FunnelBit_ShotFlashA</beamGroundFleckDef>
+    <beamStartOffset>0.14</beamStartOffset>
+    <beamGroundFleckChancePerTick>0.1</beamGroundFleckChancePerTick>
+    <buildJobWaitTicks>20</buildJobWaitTicks>
+    <beamSwipeMode>Swipe</beamSwipeMode>
+    <beamSwipeAngle>7</beamSwipeAngle>
+    <craftBeamDurationTicks>300</craftBeamDurationTicks>
+    <craftBeamDurationJitter>60</craftBeamDurationJitter>
+    <craftPreBeamDelayTicks>8</craftPreBeamDelayTicks>
+    <craftPostBeamDelayTicks>30</craftPostBeamDelayTicks>
+    <moveSpeed>0.4</moveSpeed>
+    <moveVelocityCurve>
+      <points>
+        <li>(0.00, 0.00)</li>
+        <li>(0.16, 0.08)</li>
+        <li>(0.28, 0.18)</li>
+        <li>(0.38, 0.30)</li>
+        <li>(0.46, 0.42)</li>
+        <li>(0.54, 0.54)</li>
+        <li>(0.61, 0.66)</li>
+        <li>(0.68, 0.78)</li>
+        <li>(0.77, 0.87)</li>
+        <li>(0.87, 0.95)</li>
+        <li>(1.00, 1.00)</li>
+        <li>(1.00, 1.00)</li>
+      </points>
+    </moveVelocityCurve>
+    <standoffDistance>2.3</standoffDistance>
+    <standoffJitter>0.6</standoffJitter>
+    <moveCurveAmplitude>0.25</moveCurveAmplitude>
+    <moveWaypointChance>0.4</moveWaypointChance>
+    <cutOnlyTrees>true</cutOnlyTrees>
+  </FunnelBit.DroneWorkDef>
+
+  <FunnelBit.DroneWorkDef>
+    <defName>DroneWork_ArsenalMilian_Mine</defName>
+    <label>drone mining assist</label>
+    <workerClass>FunnelBit.Worker_DroneWork_Mine</workerClass>
+    <scanIntervalTicks>60</scanIntervalTicks>
+    <burstScanIntervalTicks>5</burstScanIntervalTicks>
+    <burstScanDurationTicks>60</burstScanDurationTicks>
+    <scanRadius>7</scanRadius>
+    <maxAssistDistance>7</maxAssistDistance>
+    <maxWorkTicks>18000</maxWorkTicks>
+    <priority>45</priority>
+    <requireUndrafted>true</requireUndrafted>
+    <requireNotInCombat>true</requireNotInCombat>
+    <beamMoteDef>Mote_Milira_FunnelBit_DroneWorkBeam</beamMoteDef>
+    <beamEndEffecterDef>Milira_FunnelBit_DroneWorkBeamEnd</beamEndEffecterDef>
+    <beamSoundDef>ArsenalMilian_DroneWork_Beam_big</beamSoundDef>
+    <beamStartOffset>0.14</beamStartOffset>
+    <beamGroundFleckChancePerTick>0.1</beamGroundFleckChancePerTick>
+    <mineWorkSpeedFactor>1.2</mineWorkSpeedFactor>
+    <mineMaxChainDistance>12</mineMaxChainDistance>
+    <craftBeamDurationTicks>1200</craftBeamDurationTicks>
+    <craftBeamDurationJitter>600</craftBeamDurationJitter>
+    <craftPreBeamDelayTicks>8</craftPreBeamDelayTicks>
+    <craftPostBeamDelayTicks>10</craftPostBeamDelayTicks>
+    <buildJobWaitTicks>30</buildJobWaitTicks>
+    <moveSpeed>0.3</moveSpeed>
+    <standoffDistance>2.5</standoffDistance>
+    <standoffJitter>0.5</standoffJitter>
+    <moveCurveAmplitude>0.2</moveCurveAmplitude>
+  </FunnelBit.DroneWorkDef>
+
+  <FunnelBit.DroneWorkDef>
+    <defName>DroneWork_ArsenalMilian_Craft</defName>
+    <label>drone crafting assist</label>
+    <workerClass>FunnelBit.Worker_DroneWork_Craft</workerClass>
+    <scanIntervalTicks>60</scanIntervalTicks>
+    <burstScanIntervalTicks>5</burstScanIntervalTicks>
+    <burstScanDurationTicks>60</burstScanDurationTicks>
+    <scanRadius>10</scanRadius>
+    <maxWorkTicks>9000</maxWorkTicks>
+    <priority>40</priority>
+    <requireUndrafted>true</requireUndrafted>
+    <requireNotInCombat>true</requireNotInCombat>
+    <beamMoteDef>Mote_Milira_FunnelBit_DroneWorkBeam</beamMoteDef>
+    <beamEndEffecterDef>Milira_FunnelBit_DroneWorkBeamEnd</beamEndEffecterDef>
+    <beamSoundDef>ArsenalMilian_DroneWork_Beam</beamSoundDef>
+    <beamStartOffset>0.14</beamStartOffset>
+    <beamGroundFleckChancePerTick>0.1</beamGroundFleckChancePerTick>
+    <craftMinRemainingTicks>360</craftMinRemainingTicks>
+    <craftWorkSpeedFactor>0.5</craftWorkSpeedFactor>
+    <craftBeamDurationTicks>150</craftBeamDurationTicks>
+    <craftBeamDurationJitter>60</craftBeamDurationJitter>
+    <craftPreBeamDelayTicks>8</craftPreBeamDelayTicks>
+    <craftPostBeamDelayTicks>30</craftPostBeamDelayTicks>
+    <moveSpeed>0.17</moveSpeed>
+    <standoffDistance>2.0</standoffDistance>
+    <standoffJitter>0.4</standoffJitter>
+    <moveCurveAmplitude>0.2</moveCurveAmplitude>
+    <preCleanDelayTicks>0</preCleanDelayTicks>
+    <postCleanDelayTicks>0</postCleanDelayTicks>
+  </FunnelBit.DroneWorkDef>
+
+  <FunnelBit.DroneWorkDef>
+    <defName>DroneWork_ArsenalMilian_Clean</defName>
+    <label>drone cleaning</label>
+    <workerClass>FunnelBit.Worker_DroneWork_Clean</workerClass>
+    <scanIntervalTicks>150</scanIntervalTicks>
+    <burstScanIntervalTicks>5</burstScanIntervalTicks>
+    <burstScanDurationTicks>60</burstScanDurationTicks>
+    <scanRadius>12</scanRadius>
+    <cleanWorkSpeedFactor>0.7</cleanWorkSpeedFactor>
+    <maxWorkTicks>6000</maxWorkTicks>
+    <priority>50</priority>
+    <requireUndrafted>true</requireUndrafted>
+    <requireNotInCombat>true</requireNotInCombat>
+    <beamMoteDef>Mote_Milira_FunnelBit_DroneWorkBeam</beamMoteDef>
+    <beamEndEffecterDef>Milira_FunnelBit_DroneWorkBeamEnd</beamEndEffecterDef>
+    <beamSoundDef>ArsenalMilian_DroneWork_Beam_big</beamSoundDef>
+    <beamGroundFleckDef>Milira_FunnelBit_ShotFlashA</beamGroundFleckDef>
+    <beamStartOffset>0.14</beamStartOffset>
+    <beamGroundFleckChancePerTick>0.1</beamGroundFleckChancePerTick>
+    <beamSwipeMode>Swipe</beamSwipeMode>
+    <beamSwipeAngle>8</beamSwipeAngle>
+    <moveSpeed>0.4</moveSpeed>
+    <moveVelocityCurve>
+      <points>
+        <li>(0.00, 0.00)</li>
+        <li>(0.16, 0.08)</li>
+        <li>(0.28, 0.18)</li>
+        <li>(0.38, 0.30)</li>
+        <li>(0.46, 0.42)</li>
+        <li>(0.54, 0.54)</li>
+        <li>(0.61, 0.66)</li>
+        <li>(0.68, 0.78)</li>
+        <li>(0.77, 0.87)</li>
+        <li>(0.87, 0.95)</li>
+        <li>(1.00, 1.00)</li>
+        <li>(1.00, 1.00)</li>
+      </points>
+    </moveVelocityCurve>
+    <standoffDistance>4.0</standoffDistance>
+    <standoffJitter>1.2</standoffJitter>
+    <moveCurveAmplitude>0.25</moveCurveAmplitude>
+    <moveWaypointChance>0.4</moveWaypointChance>
+    <preCleanDelayTicks>15</preCleanDelayTicks>
+    <postCleanDelayTicks>15</postCleanDelayTicks>
+  </FunnelBit.DroneWorkDef>
+
+  <FunnelBit.DroneWorkDef>
+    <defName>DroneWork_ArsenalMilian_ClearSnow</defName>
+    <label>drone snow clearing assist</label>
+    <workerClass>FunnelBit.Worker_DroneWork_ClearSnow</workerClass>
+    <scanIntervalTicks>120</scanIntervalTicks>
+    <burstScanIntervalTicks>5</burstScanIntervalTicks>
+    <burstScanDurationTicks>60</burstScanDurationTicks>
+    <scanRadius>10</scanRadius>
+    <maxWorkTicks>9000</maxWorkTicks>
+    <priority>15</priority>
+    <requireUndrafted>true</requireUndrafted>
+    <requireNotInCombat>true</requireNotInCombat>
+    <beamMoteDef>Mote_Milira_FunnelBit_DroneWorkBeam</beamMoteDef>
+    <beamEndEffecterDef>Milira_FunnelBit_DroneWorkBeamEnd</beamEndEffecterDef>
+    <beamSoundDef>ArsenalMilian_DroneWork_Beam</beamSoundDef>
+    <beamStartOffset>0.14</beamStartOffset>
+    <beamGroundFleckChancePerTick>0.05</beamGroundFleckChancePerTick>
+    <beamSwipeMode>Swipe</beamSwipeMode>
+    <beamSwipeAngle>12</beamSwipeAngle>
+    <cleanWorkSpeedFactor>1.0</cleanWorkSpeedFactor>
+    <craftBeamDurationTicks>60</craftBeamDurationTicks>
+    <craftBeamDurationJitter>20</craftBeamDurationJitter>
+    <craftPreBeamDelayTicks>0</craftPreBeamDelayTicks>
+    <craftPostBeamDelayTicks>0</craftPostBeamDelayTicks>
+    <buildJobWaitTicks>60</buildJobWaitTicks>
+    <moveSpeed>0.25</moveSpeed>
+    <standoffDistance>3.0</standoffDistance>
+    <standoffJitter>0.5</standoffJitter>
+    <moveCurveAmplitude>0.15</moveCurveAmplitude>
+    <preCleanDelayTicks>0</preCleanDelayTicks>
+    <postCleanDelayTicks>0</postCleanDelayTicks>
+  </FunnelBit.DroneWorkDef>
+
+</Defs>

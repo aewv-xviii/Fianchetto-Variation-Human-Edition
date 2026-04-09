@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DamageDef>
+    <defName>Milira_FunnelBit_C_HeavyLaser</defName>
+    <label>Heavy&#160;laser</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been shot to death.</deathMessage>
+    <hediff>Burn</hediff>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Bullet</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+    <buildingDamageFactorImpassable>4.2</buildingDamageFactorImpassable>
+    <buildingDamageFactorPassable>2.0</buildingDamageFactorPassable>
+    <plantDamageFactor>4.2</plantDamageFactor>
+    <corpseDamageFactor>0.2</corpseDamageFactor>
+    <additionalHediffs>
+      <li>
+        <hediff>Milira_PlasmaMeltdown</hediff>
+        <victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+        <severityPerDamageDealt>0.004</severityPerDamageDealt>
+      </li>
+    </additionalHediffs>
+  </DamageDef>
+
+
+  <DamageDef>
+    <defName>Milira_FunnelBit_C_SuperLaser</defName>
+    <label>Heavy&#160;laser</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <isExplosive>true</isExplosive>
+    <deathMessage>{0} has been shot to death.</deathMessage>
+    <hediff>Burn</hediff>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Blunt</impactSoundType>
+    <armorCategory>Heat</armorCategory>
+    <!-- The actual damage amount is read from CompProperties_AbilityLineAoE.damageAmount -->
+    <defaultDamage>180</defaultDamage>
+    <minDamageToFragment>8</minDamageToFragment>
+    <defaultStoppingPower>12</defaultStoppingPower>
+    <defaultArmorPenetration>1.62</defaultArmorPenetration>
+    <buildingDamageFactorImpassable>30</buildingDamageFactorImpassable>
+    <buildingDamageFactorPassable>15</buildingDamageFactorPassable>
+    <plantDamageFactor>1</plantDamageFactor>
+    <corpseDamageFactor>0.2</corpseDamageFactor>
+    <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+    <explosionHeatEnergyPerCell>0</explosionHeatEnergyPerCell>
+    <!-- <explosionCellFleck>BlastDry</explosionCellFleck> -->
+    <!-- <explosionColorCenter>(180, 225, 229)</explosionColorCenter> -->
+    <!-- <explosionColorEdge>(200, 225, 229)</explosionColorEdge> -->
+    <!-- <soundExplosion>Explosion_EMP</soundExplosion> -->
+    <combatLogRules>Damage_Bomb</combatLogRules>
+    <additionalHediffs>
+      <li>
+        <hediff>Milira_PlasmaMeltdown</hediff>
+        <victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+        <severityPerDamageDealt>0.02</severityPerDamageDealt>
+      </li>
+    </additionalHediffs>
+    <damageEffecter>Milira_FunnelBit_C_SuperLaser_damageEffect</damageEffecter>
+  </DamageDef>
+
+
+  <DamageDef ParentName="CutBase">
+    <defName>Milira_FunnelBit_D_cut</defName>
+    <label>cut charged</label>
+    <damageEffecter>Milira_FunnelBit_D_cutEffecter</damageEffecter>
+    <additionalHediffs>
+      <li>
+        <hediff>Milira_PlasmaMeltdown</hediff>
+        <victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+        <severityPerDamageDealt>0.002</severityPerDamageDealt>
+      </li>
+    </additionalHediffs>
+  </DamageDef>
+</Defs>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <FunnelBit_ShieldSpot.label>펄스 방호</FunnelBit_ShieldSpot.label>
+  <FunnelBit_ShieldSpot.description>인근 타격 드론이 투영하는 임시 펄스 장벽입니다. 소진될 때까지 날아오는 사격을 차단합니다.</FunnelBit_ShieldSpot.description>
+
+  <Bullet_Milira_FunnelBit_B.label>타격 드론: 말쿠트</Bullet_Milira_FunnelBit_B.label>
+  <Milira_FunnelBit_B_subProjectile.label>집속 입자 빔</Milira_FunnelBit_B_subProjectile.label>
+
+  <Bullet_Milira_FunnelBit_C_A.label>타격 드론: 게부라</Bullet_Milira_FunnelBit_C_A.label>
+  <Bullet_Milira_FunnelBit_C_B.label>타격 드론: 게부라</Bullet_Milira_FunnelBit_C_B.label>
+  <Milira_FunnelBit_C_subProjectile.label>중형 레이저</Milira_FunnelBit_C_subProjectile.label>
+
+  <Bullet_Milira_FunnelBit_D.label>타격 드론: 케테르(플라즈마 블레이드)</Bullet_Milira_FunnelBit_D.label>
+  <Bullet_Milira_FunnelBit_D_subA_A.label>타격 드론: 케테르(레이저)</Bullet_Milira_FunnelBit_D_subA_A.label>
+  <Bullet_Milira_FunnelBit_D_subA_B.label>타격 드론: 케테르(레이저)</Bullet_Milira_FunnelBit_D_subA_B.label>
+  <Milira_FunnelBit_D_subProjectile.label>변조 에너지 빔</Milira_FunnelBit_D_subProjectile.label>
+
+  <Bullet_Milira_FunnelBit_D_subB_A.label>타격 드론: 케테르(입자 빔)</Bullet_Milira_FunnelBit_D_subB_A.label>
+  <Bullet_Milira_FunnelBit_D_subB_B.label>타격 드론: 케테르(입자 빔)</Bullet_Milira_FunnelBit_D_subB_B.label>
+  <Bullet_Milira_FunnelBit_D_subB_C.label>타격 드론: 케테르(입자 빔)</Bullet_Milira_FunnelBit_D_subB_C.label>
+  <Bullet_Milira_FunnelBit_D_subB_D.label>타격 드론: 케테르(입자 빔)</Bullet_Milira_FunnelBit_D_subB_D.label>
+  <Milira_FunnelBit_D_subProjectileB.label>집속 입자 빔</Milira_FunnelBit_D_subProjectileB.label>
+</LanguageData>

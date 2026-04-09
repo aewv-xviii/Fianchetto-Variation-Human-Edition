@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Name="Milira_CombatDrone_FunnelBit" ParentName="Milira_CombatDroneBase" Abstract="true">
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.85</drawSize>
+      <drawOffset>(0,0,0)</drawOffset>
+      <onGroundRandomRotateAngle>0</onGroundRandomRotateAngle>
+    </graphicData>
+  </ThingDef>
+
+
+
+</Defs>

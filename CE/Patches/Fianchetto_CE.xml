@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>Milian_ConductorRod</defName>
+    <statBases>
+      <Mass>1.8</Mass>
+      <Bulk>2.4</Bulk>
+      <SightsEfficiency>1.55</SightsEfficiency>
+      <ShotSpread>0.09</ShotSpread>
+      <SwayFactor>0.85</SwayFactor>
+      <RangedWeapon_Cooldown>1.2</RangedWeapon_Cooldown>
+    </statBases>
+    <Properties>
+      <recoilAmount>0.85</recoilAmount>
+      <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <onlyManualCast>false</onlyManualCast>
+      <defaultProjectile>MiliraBullet_ConductorRod</defaultProjectile>
+      <ai_IsBuildingDestroyer>false</ai_IsBuildingDestroyer>
+      <warmupTime>1.5</warmupTime>
+      <range>27.9</range>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+      <requireLineOfSight>true</requireLineOfSight>
+      <soundCast>ArsenalMilian_Shot_DB</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <noiseRadius>2</noiseRadius>
+      <muzzleFlashScale>5</muzzleFlashScale>
+      <canGoWild>false</canGoWild>
+    </Properties>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="MiliraBullet_ConductorRod"]/projectile</xpath>
+    <value>
+      <projectile Class="CombatExtended.ProjectilePropertiesCE">
+        <damageDef>Milira_PlasmaBullet_Vulnerable</damageDef>
+        <damageAmountBase>8</damageAmountBase>
+        <armorPenetrationSharp>6.3</armorPenetrationSharp>
+        <armorPenetrationBlunt>1.6</armorPenetrationBlunt>
+        <stoppingPower>1.2</stoppingPower>
+        <speed>105</speed>
+      </projectile>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Milira_FunnelBit_B_subProjectile"]/projectile</xpath>
+    <value>
+      <projectile Class="CombatExtended.ProjectilePropertiesCE">
+        <damageDef>Milira_PlasmaBullet</damageDef>
+        <damageAmountBase>7</damageAmountBase>
+        <armorPenetrationSharp>6.3</armorPenetrationSharp>
+        <armorPenetrationBlunt>1.6</armorPenetrationBlunt>
+        <stoppingPower>1.0</stoppingPower>
+        <speed>300</speed>
+      </projectile>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Milira_FunnelBit_C_subProjectile"]/projectile</xpath>
+    <value>
+      <projectile Class="CombatExtended.ProjectilePropertiesCE">
+        <damageDef>Milira_FunnelBit_C_HeavyLaser</damageDef>
+        <damageAmountBase>38</damageAmountBase>
+        <armorPenetrationSharp>22.5</armorPenetrationSharp>
+        <armorPenetrationBlunt>5.6</armorPenetrationBlunt>
+        <stoppingPower>1.8</stoppingPower>
+        <speed>300</speed>
+      </projectile>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Milira_FunnelBit_D_subProjectile"]/projectile</xpath>
+    <value>
+      <projectile Class="CombatExtended.ProjectilePropertiesCE">
+        <damageDef>Milira_PlasmaBullet</damageDef>
+        <damageAmountBase>15</damageAmountBase>
+        <armorPenetrationSharp>15.8</armorPenetrationSharp>
+        <armorPenetrationBlunt>4.0</armorPenetrationBlunt>
+        <stoppingPower>1.5</stoppingPower>
+        <speed>300</speed>
+      </projectile>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Milira_FunnelBit_D_subProjectileB"]/projectile</xpath>
+    <value>
+      <projectile Class="CombatExtended.ProjectilePropertiesCE">
+        <damageDef>Bullet</damageDef>
+        <damageAmountBase>6</damageAmountBase>
+        <armorPenetrationSharp>2.0</armorPenetrationSharp>
+        <armorPenetrationBlunt>0.5</armorPenetrationBlunt>
+        <stoppingPower>0.9</stoppingPower>
+        <speed>145</speed>
+      </projectile>
+    </value>
+  </Operation>
+</Patch>

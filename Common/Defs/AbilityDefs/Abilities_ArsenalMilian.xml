@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <AbilityDef>
+    <defName>Milira_CombatDrone_FunnelBitB_Ability_A</defName>
+    <label>Pulse protection</label>
+    <description>Creates a pulse barrier in a fixed position, providing cover from enemy fire until the barrier reaches its durability limit. The barrier is not permanent and will disappear after time has passed.</description>
+    <iconPath>UI/Milira_FunnelBit/Icon_Shield</iconPath>
+
+    <cooldownTicksRange>15000</cooldownTicksRange>
+    <!-- <charges>2</charges> -->
+    <!-- <cooldownPerCharge>true</cooldownPerCharge> -->
+
+    <aiCanUse>false</aiCanUse>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <gizmoClass>FunnelBit.Command_FunnelBitAbility</gizmoClass>
+    <uiOrder>-90</uiOrder>
+    <!-- <displayOrder></displayOrder> -->
+    <!-- <warmupStartSound>ArsenalMilian_Beep_Ability1</warmupStartSound> -->
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>31.9</range>
+      <warmupTime>0.0</warmupTime>
+      <soundCast>ArsenalMilian_Beep_Ability1</soundCast>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetPawns>false</canTargetPawns>
+      </targetParams>
+      <!-- <requireLineOfSight>false</requireLineOfSight> -->
+    </verbProperties>
+    <comps>
+      <li Class="FunnelBit.CompProperties_AbilityShield">
+        <syncWorkerClass>FunnelBit.Worker_Sync_Gather</syncWorkerClass>
+        <abilityWorkerClass>FunnelBit.Worker_Ability_Shield</abilityWorkerClass>
+
+        <!--  barGauge -->
+        <useProgressMote>true</useProgressMote>
+        <progressMoteDef>Mote_ForceField_Malkuth_barGauge</progressMoteDef>
+        <progressMoteOffsetX>0.5</progressMoteOffsetX>
+        <progressMoteOffsetZ>0.5</progressMoteOffsetZ>
+        <progressMoteScale>1.0</progressMoteScale>
+
+        <launchIntervalTicks>8</launchIntervalTicks>
+
+        <!-- Gather -->
+        <syncGatherRadius>2.5</syncGatherRadius>
+        <syncGatherPattern>Random</syncGatherPattern>
+        <syncMoveSpeed>0.7</syncMoveSpeed>
+
+        <syncVelocityCurve>
+          <points>
+            <li>(0.00, 0.00)</li>
+            <li>(0.02, 0.16)</li>
+            <li>(0.06, 0.28)</li>
+            <li>(0.12, 0.38)</li>
+            <li>(0.22, 0.49)</li>
+            <li>(0.53, 0.82)</li>
+            <li>(0.66, 0.92)</li>
+            <li>(0.77, 0.98)</li>
+            <li>(0.88, 1.00)</li>
+            <li>(1.00, 1.00)</li>
+          </points>
+        </syncVelocityCurve>
+
+        <syncDirectionBlendCurve>
+          <points>
+            <li>(0.00, 0.00)</li>
+            <li>(0.77, 0.00)</li>
+            <li>(0.82, 0.23)</li>
+            <li>(0.86, 0.39)</li>
+            <li>(0.89, 0.57)</li>
+            <li>(0.91, 0.73)</li>
+            <li>(0.93, 0.87)</li>
+            <li>(0.96, 0.96)</li>
+            <li>(1.00, 1.00)</li>
+          </points>
+        </syncDirectionBlendCurve>
+
+        <shieldDef>FunnelBit_ShieldSpot</shieldDef>
+        <droneCount>4</droneCount>
+        <radiusOffset>-0.5</radiusOffset>
+        <duration>1500</duration>
+
+        <droneEffecter>ForceField_Malkuth_DroneEffect</droneEffecter>
+        <randomizeCircleAngle>true</randomizeCircleAngle>
+
+        <moveSpeed>0.7</moveSpeed>
+
+        <startDelayPerDrone>7</startDelayPerDrone>
+
+        <waypointIntervalCells>30</waypointIntervalCells>
+        <waypointRandomOffset>6</waypointRandomOffset>
+        <finalWaypointRandomRadius>2.9</finalWaypointRandomRadius>
+
+        <waypointDistanceRandomRange>0.74</waypointDistanceRandomRange>
+
+        <waypointVelocityCurve>
+          <points>
+            <li>(0, 0)</li>
+            <li>(0.3508, 0.4365)</li>
+            <li>(0.583, 0.7223)</li>
+            <li>(0.7304, 0.8895)</li>
+            <li>(0.8265, 0.9701)</li>
+            <li>(0.9052, 0.9963)</li>
+            <li>(1, 1)</li>
+          </points>
+        </waypointVelocityCurve>
+
+        <velocityCurve>
+          <points>
+            <li>(0, 0)</li>
+            <li>(0.3508, 0.4365)</li>
+            <li>(0.583, 0.7223)</li>
+            <li>(0.7304, 0.8895)</li>
+            <li>(0.8265, 0.9701)</li>
+            <li>(0.9052, 0.9963)</li>
+            <li>(1, 1)</li>
+          </points>
+        </velocityCurve>
+
+        <directionBlendCurve>
+          <points>
+            <li>(0, 0)</li>
+            <li>(0.96, 0.0)</li>
+            <li>(1, 1)</li>
+          </points>
+        </directionBlendCurve>
+      </li>
+    </comps>
+  </AbilityDef>
+
+
+
+  <AbilityDef>
+    <defName>Milira_CombatDrone_FunnelBitB_Ability_C</defName>
+    <label>Hypercharge</label>
+    <description>Attacks all targets in a straight line with a high-output laser.\nRequires a long emergency recharge after use, during which the drone is disabled.</description>
+    <iconPath>UI/Milira_FunnelBit/Icon_SuperLaser</iconPath>
+
+    <cooldownTicksRange>6200</cooldownTicksRange>
+    <charges>2</charges>
+    <cooldownPerCharge>true</cooldownPerCharge>
+
+    <aiCanUse>false</aiCanUse>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <gizmoClass>FunnelBit.Command_FunnelBitAbility</gizmoClass>
+    <uiOrder>-90</uiOrder>
+    <!-- <displayOrder></displayOrder> -->
+    <!-- <warmupStartSound>ArsenalMilian_Beep_Ability1</warmupStartSound> -->
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>24.9</range>
+      <warmupTime>0.0</warmupTime>
+      <soundCast>ArsenalMilian_Beep_Ability1</soundCast>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetPawns>false</canTargetPawns>
+      </targetParams>
+      <!-- <requireLineOfSight>false</requireLineOfSight> -->
+    </verbProperties>
+    <comps>
+      <li Class="FunnelBit.CompProperties_AbilityLineAoE">
+        <warmupTicks>140</warmupTicks>
+        <attackDistance>36.9</attackDistance>
+        <damageDef>Milira_FunnelBit_C_SuperLaser</damageDef>
+        <damageAmount>150</damageAmount>
+        <explosionRadius>0.9</explosionRadius>
+        <allowFriendlyFire>true</allowFriendlyFire>
+        <abilityChargeTicks>2000</abilityChargeTicks>
+        <moveSpeed>0.3</moveSpeed>
+        <launchDockedBits>true</launchDockedBits>
+        <droneCount>1</droneCount>
+        <canPenetrateWalls>false</canPenetrateWalls>
+
+        <velocityCurve>
+          <points>
+            <li>(0.00, 0.00)</li>
+            <li>(0.14, 0.02)</li>
+            <li>(0.23, 0.07)</li>
+            <li>(0.30, 0.13)</li>
+            <li>(0.38, 0.27)</li>
+            <li>(0.55, 0.71)</li>
+            <li>(0.63, 0.85)</li>
+            <li>(0.70, 0.92)</li>
+            <li>(0.81, 0.97)</li>
+            <li>(1.00, 1.00)</li>
+          </points>
+        </velocityCurve>
+
+        <directionBlendCurve>
+          <points>
+            <li>(0.00, 0.00)</li>
+            <li>(0.31, 0.01)</li>
+            <li>(0.44, 0.05)</li>
+            <li>(0.53, 0.11)</li>
+            <li>(0.60, 0.18)</li>
+            <li>(0.65, 0.26)</li>
+            <li>(0.71, 0.43)</li>
+            <li>(0.79, 0.79)</li>
+            <li>(0.82, 0.88)</li>
+            <li>(0.84, 0.92)</li>
+            <li>(0.86, 0.94)</li>
+            <li>(0.88, 0.96)</li>
+            <li>(0.90, 0.98)</li>
+            <li>(0.92, 0.99)</li>
+            <li>(0.94, 0.99)</li>
+            <li>(0.96, 1.00)</li>
+            <li>(1.00, 1.00)</li>
+          </points>
+        </directionBlendCurve>
+
+        <recoilTicks>40</recoilTicks>
+        <recoilDistance>1.5</recoilDistance>
+        <postFireCooldownTicks>40</postFireCooldownTicks>
+
+        <warmupEffecter>Milira_FunnelBit_C_SuperLaser_WarmupEffect</warmupEffecter>
+        <fireEffecter>Milira_FunnelBit_C_SuperLaser_MuzzleFlashEffect</fireEffecter>
+
+        <beamMoteDef>Milira_FunnelBit_C_SuperLaser_Beam</beamMoteDef>
+        <beamStartOffset>0.8</beamStartOffset>
+        <beamWidth>50</beamWidth>
+      </li>
+    </comps>
+  </AbilityDef>
+
+</Defs>

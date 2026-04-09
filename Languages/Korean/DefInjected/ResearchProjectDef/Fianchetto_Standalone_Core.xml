@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Milira_FloatUnitII.label>부유 유닛 설계</Milira_FloatUnitII.label>
+  <Milira_FloatUnitII.description>피안케토의 원격 타격 드론 프레임을 일반 스페이서 제작 공정과 인간 운용자에게 맞게 개량합니다.</Milira_FloatUnitII.description>
+
+  <Milira_FieldTheory.label>퍼널 장 제어</Milira_FieldTheory.label>
+  <Milira_FieldTheory.description>휴대형 드론 병장을 위한 역장 위치 제어, 펄스 장벽, 초저지연 군집 제어 기술을 정교화합니다.</Milira_FieldTheory.description>
+
+  <Milira_ConceptWeaponry.label>복합 드론 병장</Milira_ConceptWeaponry.label>
+  <Milira_ConceptWeaponry.description>중형 블레이드, 빔 캐논, 협동 마이크로 드론을 하나의 복합 퍼널비트 패키지로 통합합니다.</Milira_ConceptWeaponry.description>
+</LanguageData>

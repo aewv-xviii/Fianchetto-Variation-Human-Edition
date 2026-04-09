@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <FunnelBit_Toggle_Auto>Toggle attack permission.\n\nWhen disabled, all drones will stop attacking automatically regardless of other settings.\nAny drones currently deployed will immediately cease fire and return.</FunnelBit_Toggle_Auto>
+  <FunnelBit_Toggle_PawnFireAtWill>Toggle 'Fire at will' for the pawn.</FunnelBit_Toggle_PawnFireAtWill>
+  <FunnelBit_Toggle_TurretFireAtWill>Toggle 'Fire at will' for the turret.</FunnelBit_Toggle_TurretFireAtWill>
+  <FunnelBit_Toggle_TurretFocusFire>Toggle focus fire mode.\n\nWhen enabled, drones will prioritize and concentrate fire on the same target their master is attacking.\nIf the master is not attacking anyone, drones will behave normally and seek nearby enemies.</FunnelBit_Toggle_TurretFocusFire>
+  <FunnelBit_Toggle_TurretAutoFireAtFocus>Toggle synchronized attack mode.\n\nWhen enabled, drones will automatically deploy and attack the enemy that their master is currently engaging.</FunnelBit_Toggle_TurretAutoFireAtFocus>
+  <FunnelBit_Toggle_TurretAutoFire>Toggle automatic targeting.\n\nWhen enabled, drones will automatically search for and attack enemies within range.\nWhen disabled, they will stop auto-attacking. However, if synchronized attack mode is enabled, they will still react to the master’s target.</FunnelBit_Toggle_TurretAutoFire>
+  <FunnelBit_Toggle_TurretOnlyAutoFireWhileDraft>Toggle 'Auto-fire only while master is drafted'.\n\nWhen enabled, if the master is not drafted, drones will not automatically attack enemies within range.</FunnelBit_Toggle_TurretOnlyAutoFireWhileDraft>
+  <FunnelBit_Toggle_TurretDroneWorkEnabled>Toggle Work Assist.\n\nWhen enabled, drones will automatically assist with tasks.</FunnelBit_Toggle_TurretDroneWorkEnabled>
+
+  
+  <!-- Ability validation messages -->
+  <FunnelBit_NoDroneAvailable>No drones available.</FunnelBit_NoDroneAvailable>
+</LanguageData>

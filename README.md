@@ -1,5 +1,13 @@
 Standalone port of the Milira Addon: Fianchetto Variation by rabiosus with the Milira Race dependency removed.
 
+### Credits and Thanks
+
+Full credit for the original assets, concepts, and source content belongs to their original authors.
+
+* [Milira Addon: Fianchetto Variation by rabiosus](https://steamcommunity.com/sharedfiles/filedetails/?id=3621922658)
+* [Milira Race by Ancot](https://steamcommunity.com/sharedfiles/filedetails/?id=3256974620)
+* [Ancot Library by Ancot](https://steamcommunity.com/sharedfiles/filedetails/?id=2988801276)
+
 ### Features
 
 * Standalone port of the Fianchetto Variation arsenal
@@ -40,15 +48,3 @@ Standalone port of the Milira Addon: Fianchetto Variation by rabiosus with the M
 * Milian conductor cloak is still included as leftover source content, and should be treated as legacy Milian-specific content.
 * This was originally made for personal use, so there may still be rough edges or bugs.
 * If you run into a specific use case or weird breakage, feel free to leave a comment.
-
-### CE?
-
-* YES
-
-### Credits and Thanks
-
-Full credit for the original assets, concepts, and source content belongs to their original authors.
-
-* [Milira Addon: Fianchetto Variation by rabiosus](https://steamcommunity.com/sharedfiles/filedetails/?id=3621922658)
-* [Milira Race by Ancot](https://steamcommunity.com/sharedfiles/filedetails/?id=3256974620)
-* [Ancot Library by Ancot](https://steamcommunity.com/sharedfiles/filedetails/?id=2988801276)

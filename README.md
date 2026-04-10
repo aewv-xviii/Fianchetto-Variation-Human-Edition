@@ -4,7 +4,7 @@ Standalone port of the Milira Addon: Fianchetto Variation by rabiosus with the M
 
 * Standalone port of the Fianchetto Variation arsenal
 * Removed dependency on Milira Race, Ancot Library, and the original Fianchetto addon
-* Runs with Harmony only
+* Requires only Harmony
 * Includes CE patch support
 
 ### Included Content

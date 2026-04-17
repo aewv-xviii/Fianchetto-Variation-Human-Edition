@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <loadFolders>
   <v1.6>
-    <li IfModNotActive="rabiosus.funnelbit">_funnelbit</li>
-    <li>Common</li>
-    <li IfModActive="CETeam.CombatExtended,CETeam.CombatExtended_steam,CETeam.CombatExtended_copy">CE</li>
+    <li>Always</li>
+    <li IfModNotActive="rabiosus.funnelbit,rabiosus.funnelmilian">_funnelbit</li>
+    <li IfModNotActive="rabiosus.funnelmilian">Common</li>
+    <li IfModActive="CETeam.CombatExtended,CETeam.CombatExtended_steam,CETeam.CombatExtended_copy,ceteam.combatextended,ceteam.combatextended_steam,ceteam.combatextended_copy">CE</li>
   </v1.6>
 </loadFolders>

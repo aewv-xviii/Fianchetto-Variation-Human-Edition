@@ -405,7 +405,7 @@
       </tacticsWorker>
 
       <!-- trash -->
-      <damageDef>Bullet</damageDef>
+      <damageDef>Deterioration</damageDef>
       <damageAmountBase>0</damageAmountBase>
       <stoppingPower>0</stoppingPower>
 

@@ -100,11 +100,31 @@
     </value>
   </Operation>
 
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/DamageDef[defName="Milira_FunnelBit_D_SubBeam_CE"]</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs</xpath>
+      <value>
+        <DamageDef ParentName="Beam">
+          <defName>Milira_FunnelBit_D_SubBeam_CE</defName>
+          <label>focused particle beam</label>
+          <deathMessage>{0} has been beamed to death.</deathMessage>
+          <hediff>BeamWound</hediff>
+          <armorCategory>Heat</armorCategory>
+          <defaultDamage>6</defaultDamage>
+          <defaultArmorPenetration>2.0</defaultArmorPenetration>
+          <buildingDamageFactorImpassable>0.4</buildingDamageFactorImpassable>
+          <buildingDamageFactorPassable>0.2</buildingDamageFactorPassable>
+        </DamageDef>
+      </value>
+    </nomatch>
+  </Operation>
+
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="Milira_FunnelBit_D_subProjectileB"]/projectile</xpath>
     <value>
       <projectile Class="CombatExtended.ProjectilePropertiesCE">
-        <damageDef>Bullet</damageDef>
+        <damageDef>Milira_FunnelBit_D_SubBeam_CE</damageDef>
         <damageAmountBase>6</damageAmountBase>
         <armorPenetrationSharp>2.0</armorPenetrationSharp>
         <armorPenetrationBlunt>0.5</armorPenetrationBlunt>
@@ -114,6 +134,133 @@
     </value>
   </Operation>
 
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/DamageDef[defName="Milira_FunnelBit_D_CarrierImpact_CE"]</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs</xpath>
+      <value>
+        <DamageDef>
+          <defName>Milira_FunnelBit_D_CarrierImpact_CE</defName>
+          <label>drone carrier impact</label>
+          <workerClass>DamageWorker_AddInjury</workerClass>
+          <externalViolence>false</externalViolence>
+          <deathMessage>{0} was struck by a drone carrier.</deathMessage>
+          <hediff>Bruise</hediff>
+          <armorCategory />
+          <defaultDamage>0</defaultDamage>
+          <defaultArmorPenetration>0</defaultArmorPenetration>
+          <hasForcefulImpact>false</hasForcefulImpact>
+          <makesBlood>false</makesBlood>
+          <canInterruptJobs>false</canInterruptJobs>
+          <isRanged>true</isRanged>
+        </DamageDef>
+      </value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[@Name="Bullet_Milira_FunnelBit_D_subB_Base"]/projectile/damageDef</xpath>
+    <value>
+      <damageDef>Milira_FunnelBit_D_CarrierImpact_CE</damageDef>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Bullet_Milira_FunnelBit_D_subB_A"]/projectile/damageDef</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Bullet_Milira_FunnelBit_D_subB_A"]/projectile/damageDef</xpath>
+      <value>
+        <damageDef>Milira_FunnelBit_D_CarrierImpact_CE</damageDef>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Bullet_Milira_FunnelBit_D_subB_A"]/projectile</xpath>
+      <value>
+        <damageDef>Milira_FunnelBit_D_CarrierImpact_CE</damageDef>
+      </value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Bullet_Milira_FunnelBit_D_subB_B"]/projectile/damageDef</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Bullet_Milira_FunnelBit_D_subB_B"]/projectile/damageDef</xpath>
+      <value>
+        <damageDef>Milira_FunnelBit_D_CarrierImpact_CE</damageDef>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Bullet_Milira_FunnelBit_D_subB_B"]/projectile</xpath>
+      <value>
+        <damageDef>Milira_FunnelBit_D_CarrierImpact_CE</damageDef>
+      </value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Bullet_Milira_FunnelBit_D_subB_C"]/projectile/damageDef</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Bullet_Milira_FunnelBit_D_subB_C"]/projectile/damageDef</xpath>
+      <value>
+        <damageDef>Milira_FunnelBit_D_CarrierImpact_CE</damageDef>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Bullet_Milira_FunnelBit_D_subB_C"]/projectile</xpath>
+      <value>
+        <damageDef>Milira_FunnelBit_D_CarrierImpact_CE</damageDef>
+      </value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Bullet_Milira_FunnelBit_D_subB_D"]/projectile/damageDef</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Bullet_Milira_FunnelBit_D_subB_D"]/projectile/damageDef</xpath>
+      <value>
+        <damageDef>Milira_FunnelBit_D_CarrierImpact_CE</damageDef>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Bullet_Milira_FunnelBit_D_subB_D"]/projectile</xpath>
+      <value>
+        <damageDef>Milira_FunnelBit_D_CarrierImpact_CE</damageDef>
+      </value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[@Name="Bullet_Milira_FunnelBit_D_subB_Base"]/projectile/armorPenetrationBase</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[@Name="Bullet_Milira_FunnelBit_D_subB_Base"]/projectile/armorPenetrationBase</xpath>
+      <value>
+        <armorPenetrationBase>0</armorPenetrationBase>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[@Name="Bullet_Milira_FunnelBit_D_subB_Base"]/projectile</xpath>
+      <value>
+        <armorPenetrationBase>0</armorPenetrationBase>
+      </value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[@Name="Bullet_Milira_FunnelBit_D_subB_Base"]/projectile/additionalSubProjectiles/li[tag="beam_sweep"]/attackWorker/beamArmorPenetration</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[@Name="Bullet_Milira_FunnelBit_D_subB_Base"]/projectile/additionalSubProjectiles/li[tag="beam_sweep"]/attackWorker/beamArmorPenetration</xpath>
+      <value>
+        <beamArmorPenetration>2.0</beamArmorPenetration>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[@Name="Bullet_Milira_FunnelBit_D_subB_Base"]/projectile/additionalSubProjectiles/li[tag="beam_sweep"]/attackWorker</xpath>
+      <value>
+        <beamArmorPenetration>2.0</beamArmorPenetration>
+      </value>
+    </nomatch>
+  </Operation>
+
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="FunnelBit_ShieldSpot"]/comps/li[@Class="FunnelBit.CompProperties_ProjectileInterceptor_FunnelBit"]/interceptNonHostileProjectiles</xpath>
     <value>
@@ -121,25 +268,34 @@
     </value>
   </Operation>
 
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/DamageDef[defName="Milira_PlasmaBullet"]</xpath>
-    <value>
-      <defaultArmorPenetration>6.3</defaultArmorPenetration>
-    </value>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/DamageDef[defName="Milira_PlasmaBullet"]/defaultArmorPenetration</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/DamageDef[defName="Milira_PlasmaBullet"]</xpath>
+      <value>
+        <defaultArmorPenetration>6.3</defaultArmorPenetration>
+      </value>
+    </nomatch>
   </Operation>
 
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/DamageDef[defName="Milira_PlasmaBullet_Vulnerable"]</xpath>
-    <value>
-      <defaultArmorPenetration>6.3</defaultArmorPenetration>
-    </value>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/DamageDef[defName="Milira_PlasmaBullet_Vulnerable"]/defaultArmorPenetration</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/DamageDef[defName="Milira_PlasmaBullet_Vulnerable"]</xpath>
+      <value>
+        <defaultArmorPenetration>6.3</defaultArmorPenetration>
+      </value>
+    </nomatch>
   </Operation>
 
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/DamageDef[defName="Milira_FunnelBit_C_HeavyLaser"]</xpath>
-    <value>
-      <defaultArmorPenetration>30</defaultArmorPenetration>
-    </value>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/DamageDef[defName="Milira_FunnelBit_C_HeavyLaser"]/defaultArmorPenetration</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/DamageDef[defName="Milira_FunnelBit_C_HeavyLaser"]</xpath>
+      <value>
+        <defaultArmorPenetration>30</defaultArmorPenetration>
+      </value>
+    </nomatch>
   </Operation>
 
   <Operation Class="PatchOperationReplace">
@@ -149,38 +305,44 @@
     </value>
   </Operation>
 
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/DamageDef[defName="Milira_FunnelBit_D_cut"]</xpath>
-    <value>
-      <defaultArmorPenetration>15.8</defaultArmorPenetration>
-    </value>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/DamageDef[defName="Milira_FunnelBit_D_cut"]/defaultArmorPenetration</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/DamageDef[defName="Milira_FunnelBit_D_cut"]</xpath>
+      <value>
+        <defaultArmorPenetration>15.8</defaultArmorPenetration>
+      </value>
+    </nomatch>
   </Operation>
 
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs</xpath>
-    <value>
-      <DamageDef>
-        <defName>Milira_PlasmaBullet_HighAP</defName>
-        <label>Plasma Beam</label>
-        <workerClass>DamageWorker_AddInjury</workerClass>
-        <externalViolence>true</externalViolence>
-        <deathMessage>{0} has been shot to death.</deathMessage>
-        <hediff>Gunshot</hediff>
-        <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
-        <impactSoundType>Bullet</impactSoundType>
-        <armorCategory>Sharp</armorCategory>
-        <defaultArmorPenetration>15.8</defaultArmorPenetration>
-        <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
-        <isRanged>true</isRanged>
-        <makesAnimalsFlee>true</makesAnimalsFlee>
-        <additionalHediffs>
-          <li>
-            <hediff>Milira_PlasmaMeltdown</hediff>
-            <victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
-            <severityPerDamageDealt>0.003</severityPerDamageDealt>
-          </li>
-        </additionalHediffs>
-      </DamageDef>
-    </value>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/DamageDef[defName="Milira_PlasmaBullet_HighAP"]</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs</xpath>
+      <value>
+        <DamageDef>
+          <defName>Milira_PlasmaBullet_HighAP</defName>
+          <label>Plasma Beam</label>
+          <workerClass>DamageWorker_AddInjury</workerClass>
+          <externalViolence>true</externalViolence>
+          <deathMessage>{0} has been shot to death.</deathMessage>
+          <hediff>Gunshot</hediff>
+          <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+          <impactSoundType>Bullet</impactSoundType>
+          <armorCategory>Sharp</armorCategory>
+          <defaultArmorPenetration>15.8</defaultArmorPenetration>
+          <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+          <isRanged>true</isRanged>
+          <makesAnimalsFlee>true</makesAnimalsFlee>
+          <additionalHediffs>
+            <li>
+              <hediff>Milira_PlasmaMeltdown</hediff>
+              <victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+              <severityPerDamageDealt>0.003</severityPerDamageDealt>
+            </li>
+          </additionalHediffs>
+        </DamageDef>
+      </value>
+    </nomatch>
   </Operation>
 </Patch>
